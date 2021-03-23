@@ -3,6 +3,8 @@ package by.ruslan.web.command;
 import by.ruslan.web.entity.User;
 import by.ruslan.web.repository.impl.AgeRangeSpecification;
 import by.ruslan.web.repository.impl.UserRepository;
+import by.ruslan.web.service.UserService;
+import by.ruslan.web.service.impl.UserServiceImpl;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -19,9 +21,9 @@ public class AgeRangeCommand implements Command{
         int lowerValue = Integer.parseInt(lowerStringValue);
         int higherValue = Integer.parseInt(higherStringValue);
         AgeRangeSpecification specification = new AgeRangeSpecification(lowerValue, higherValue);
-        UserRepository repository = UserRepository.getInstance();
-        List<User> users = repository.query(specification);
+        UserService userService = new UserServiceImpl();
+        List<User> users = userService.query(specification);
         request.setAttribute("list", users);
-        return "/pages/rangeList.jsp";
+        return PagePath.RANGE_LIST;
     }
 }

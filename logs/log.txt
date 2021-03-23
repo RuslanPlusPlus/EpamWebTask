@@ -1,1 +1,2 @@
-2021-03-23 03:28:17 [http-nio-8085-exec-23] INFO  by.ruslan.web.command.factory.CommandFactory - Command class: class by.ruslan.web.command.AgeRangeCommand
+2021-03-23 04:04:02 [http-nio-8085-exec-5] INFO  by.ruslan.web.command.factory.CommandFactory - Command class: class by.ruslan.web.command.AgeRangeCommand
+2021-03-23 04:04:09 [http-nio-8085-exec-10] INFO  by.ruslan.web.command.factory.CommandFactory - Command class: class by.ruslan.web.command.AgeRangeCommand

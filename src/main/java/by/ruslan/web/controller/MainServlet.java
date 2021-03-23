@@ -8,6 +8,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 import java.util.List;
+import java.util.Optional;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -35,9 +36,11 @@ public class MainServlet extends HttpServlet {
 
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String page;
-        Command command = CommandFactory.defineCommand(request);
-        page = command.execute(request);
-
-        request.getRequestDispatcher(page).forward(request, response);
+        Optional<Command> optionalValue = CommandFactory.defineCommand(request);
+        if (optionalValue.isPresent()){
+            Command command = optionalValue.get();
+            page = command.execute(request);
+            request.getRequestDispatcher(page).forward(request, response);
+        }
     }
 }

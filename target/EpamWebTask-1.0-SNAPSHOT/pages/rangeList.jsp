@@ -12,7 +12,7 @@
     <title>Title</title>
 </head>
 <body>
-div>
+<div>
 <table>
     <c:forEach var="item" items="${list}" varStatus="status">
         <tr>

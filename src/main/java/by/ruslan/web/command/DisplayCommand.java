@@ -2,6 +2,8 @@ package by.ruslan.web.command;
 
 import by.ruslan.web.entity.User;
 import by.ruslan.web.repository.impl.UserRepository;
+import by.ruslan.web.service.UserService;
+import by.ruslan.web.service.impl.UserServiceImpl;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -9,9 +11,9 @@ import java.util.List;
 public class DisplayCommand implements Command{
     @Override
     public String execute(HttpServletRequest request) {
-        UserRepository repository = UserRepository.getInstance();
-        List<User> users = repository.getAll();
+        UserService userService = new UserServiceImpl();
+        List<User> users = userService.getAll();
         request.setAttribute("list", users);
-        return "/pages/list.jsp";
+        return PagePath.LIST;
     }
 }
