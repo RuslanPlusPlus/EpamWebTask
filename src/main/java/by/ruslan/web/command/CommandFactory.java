@@ -1,7 +1,5 @@
-package by.ruslan.web.command.factory;
+package by.ruslan.web.command;
 
-import by.ruslan.web.command.Command;
-import by.ruslan.web.command.CommandType;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

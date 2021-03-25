@@ -1,5 +1,6 @@
 package by.ruslan.web.repository.impl;
 
+import by.ruslan.web.creator.UserCreator;
 import by.ruslan.web.entity.User;
 import by.ruslan.web.repository.Repository;
 import by.ruslan.web.repository.Specification;
@@ -20,6 +21,11 @@ public class UserRepository implements Repository<User> {
 
     public static UserRepository getInstance(){
         return repository;
+    }
+
+    private UserRepository(){
+        List<User> userList = new UserCreator().createUsers();
+        users.addAll(userList);
     }
 
     @Override

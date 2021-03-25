@@ -1,8 +1,11 @@
 package by.ruslan.web.command;
 
-public class PagePath {
-    static final String MAIN = "index.jsp";
-    static final String LIST = "/pages/list.jsp";
-    static final String SORTED_LIST = "/pages/sortedList.jsp";
-    static final String RANGE_LIST = "/pages/rangeList.jsp";
+public final class PagePath {
+    public static final String MAIN = "index.jsp";
+    public static final String LIST = "/pages/list.jsp";
+    public static final String SORTED_LIST = "/pages/sortedList.jsp";
+    public static final String RANGE_LIST = "/pages/rangeList.jsp";
+    public static final String ERROR = "/pages/error.jsp";
+
+    private PagePath(){}
 }

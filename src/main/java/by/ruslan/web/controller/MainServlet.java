@@ -1,13 +1,11 @@
 package by.ruslan.web.controller;
 
 import by.ruslan.web.command.Command;
-import by.ruslan.web.command.factory.CommandFactory;
-import by.ruslan.web.entity.User;
+import by.ruslan.web.command.CommandFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.*;
-import java.util.List;
 import java.util.Optional;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
@@ -36,9 +34,9 @@ public class MainServlet extends HttpServlet {
 
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String page;
-        Optional<Command> optionalValue = CommandFactory.defineCommand(request);
-        if (optionalValue.isPresent()){
-            Command command = optionalValue.get();
+        Optional<Command> optionalCommand = CommandFactory.defineCommand(request);
+        if (optionalCommand.isPresent()){
+            Command command = optionalCommand.get();
             page = command.execute(request);
             request.getRequestDispatcher(page).forward(request, response);
         }

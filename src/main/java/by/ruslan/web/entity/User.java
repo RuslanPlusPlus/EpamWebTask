@@ -18,10 +18,31 @@ public class User {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return age == user.age && name.equals(user.name);
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = result * prime + (name != null? name.hashCode(): 0);
+        result = result * prime + age;
+        return result;
+    }
+
+    @Override
     public String toString() {
-        return "User{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                '}';
+        StringBuilder builder = new StringBuilder();
+        builder.append("User{")
+                .append("name=")
+                .append(name).append(", ")
+                .append("age=")
+                .append(age)
+                .append("}");
+        return builder.toString();
     }
 }

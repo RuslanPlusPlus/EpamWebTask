@@ -9,13 +9,6 @@
 <br/>
 <div>
     <form action="main-servlet" method="get">
-        <input type="hidden" name="command" value="create_user_list">
-        <input type="submit" name="submit" value="Create user list">
-    </form>
-</div>
-<br/>
-<div>
-    <form action="main-servlet" method="get">
         <input type="hidden" name="command" value="display_user_list">
         <input type="submit" name="submit" value="Display user list">
     </form>
