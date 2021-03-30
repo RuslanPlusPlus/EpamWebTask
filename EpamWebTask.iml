@@ -39,5 +39,9 @@
     <orderEntry type="library" name="Maven: org.apache.logging.log4j:log4j-api:2.14.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.logging.log4j:log4j-core:2.14.0" level="project" />
     <orderEntry type="library" name="Maven: jstl:jstl:1.2" level="project" />
+    <orderEntry type="library" name="Maven: org.postgresql:postgresql:42.2.19" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: org.checkerframework:checker-qual:3.5.0" level="project" />
+    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:8.0.23" level="project" />
+    <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:3.11.4" level="project" />
   </component>
 </module>

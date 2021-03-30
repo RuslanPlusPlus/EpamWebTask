@@ -2,6 +2,8 @@ package by.ruslan.web.controller;
 
 import by.ruslan.web.command.Command;
 import by.ruslan.web.command.CommandFactory;
+import by.ruslan.web.command.PagePath;
+import by.ruslan.web.command.Router;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -18,13 +20,7 @@ public class MainServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        /*List<User> users = List.of(new User("Johny"), new User("Kate"), new User("Jane"));
-        logger.info("User list is created");
-        request.setAttribute("list", users);
-        request.getRequestDispatcher("/pages/list.jsp").forward(request, response);*/
-
         processRequest(request, response);
-
     }
 
     @Override
@@ -33,12 +29,21 @@ public class MainServlet extends HttpServlet {
     }
 
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String page;
         Optional<Command> optionalCommand = CommandFactory.defineCommand(request);
         if (optionalCommand.isPresent()){
             Command command = optionalCommand.get();
-            page = command.execute(request);
-            request.getRequestDispatcher(page).forward(request, response);
+            Router router = command.execute(request);
+            String page = router.getPath();
+            switch (router.getType()){
+                case FORWARD -> {
+                    request.getRequestDispatcher(page).forward(request, response);
+                }
+                case REDIRECT -> {
+                    response.sendRedirect(page);
+                }
+            }
+        }else {
+            response.sendRedirect(PagePath.ERROR_404);
         }
     }
 }
