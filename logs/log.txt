@@ -1,3 +1,1 @@
-2021-03-29 20:27:43 [http-nio-8080-exec-4] INFO  by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.DisplayCommand
-2021-03-29 20:27:46 [http-nio-8080-exec-5] INFO  by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.DisplayCommand
-2021-03-29 20:27:50 [http-nio-8080-exec-6] INFO  by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.DisplayCommand
+2021-03-30 03:46:40 [http-nio-8080-exec-22] INFO  by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.DisplayCommand

@@ -15,10 +15,12 @@ public class User {
     }
 
     public long getUserId() {
+
         return userId;
     }
 
     public String getUserName() {
+
         return userName;
     }
 

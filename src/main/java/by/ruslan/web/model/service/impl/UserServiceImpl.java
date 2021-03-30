@@ -9,6 +9,7 @@ import by.ruslan.web.model.service.UserService;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class UserServiceImpl implements UserService {
 
@@ -18,6 +19,15 @@ public class UserServiceImpl implements UserService {
     public List<User> findAll() throws ServiceException {
         try {
             return userDao.findAll();
+        } catch (DAOException e) {
+            throw new ServiceException(e);
+        }
+    }
+
+    @Override
+    public Optional<User> findByEmail(String email) throws ServiceException {
+        try {
+            return userDao.findUserByEmail(email);
         } catch (DAOException e) {
             throw new ServiceException(e);
         }

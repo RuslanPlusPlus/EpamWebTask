@@ -15,10 +15,10 @@
 <h1>User list</h1>
 <div>
     <table>
-        <c:forEach var="item" items="${list}" varStatus="status">
+        <c:forEach var="item" items="${users}" varStatus="status">
             <tr>
-                <td><c:out value="${item.name}"></c:out></td>
-                <td><c:out value="${item.age}"></c:out></td>
+                <td><c:out value="${item.userName}"></c:out></td>
+                <td><c:out value="${item.email}"></c:out></td>
             </tr>
         </c:forEach>
     </table>

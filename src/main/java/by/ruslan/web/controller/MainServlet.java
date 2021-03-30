@@ -43,7 +43,7 @@ public class MainServlet extends HttpServlet {
                 }
             }
         }else {
-            response.sendRedirect(PagePath.ERROR_404);
+            response.sendError(404);
         }
     }
 }

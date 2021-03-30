@@ -7,12 +7,7 @@
 <body>
 <h1>Epam task</h1>
 <br/>
-<div>
-    <form action="main-servlet" method="get">
-        <input type="hidden" name="command" value="display_user_list">
-        <input type="submit" name="submit" value="Display user list">
-    </form>
-</div>
+<jsp:forward page="/pages/main.jsp"></jsp:forward>
 <br/>
 </body>
 </html>
