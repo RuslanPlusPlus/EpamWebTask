@@ -7,7 +7,6 @@ import by.ruslan.web.exception.DAOException;
 import by.ruslan.web.exception.ServiceException;
 import by.ruslan.web.model.service.UserService;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -31,5 +30,16 @@ public class UserServiceImpl implements UserService {
         } catch (DAOException e) {
             throw new ServiceException(e);
         }
+    }
+
+    @Override
+    public boolean addUser(User user, String password) throws ServiceException {
+        boolean isAdded;
+        try {
+            isAdded = userDao.add(user, password);
+        } catch (DAOException e) {
+            throw new ServiceException(e);
+        }
+        return isAdded;
     }
 }

@@ -20,7 +20,7 @@ public class CommandFactory {
         try {
             CommandType commandType = CommandType.valueOf(action.toUpperCase());
             command = commandType.getCommand();
-            logger.info("Command class: " + command.getClass());
+            logger.debug("Command class: " + command.getClass());
         }
         catch (IllegalArgumentException e){
             return Optional.empty();

@@ -7,7 +7,7 @@
 <body>
 <h1>Epam task</h1>
 <br/>
-<jsp:forward page="/pages/main.jsp"></jsp:forward>
+<jsp:forward page="/pages/signin.jsp"></jsp:forward>
 <br/>
 </body>
 </html>

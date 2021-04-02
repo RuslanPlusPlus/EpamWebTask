@@ -14,6 +14,10 @@
 <body>
 <h1>User list</h1>
 <div>
+    <c:if test="${no_users != null}">
+        ${no_users}
+        <c:remove var="errorMessage" />
+    </c:if>
     <table>
         <c:forEach var="item" items="${users}" varStatus="status">
             <tr>

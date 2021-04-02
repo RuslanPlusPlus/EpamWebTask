@@ -26,6 +26,7 @@ public class ConnectionCreator {
             Class.forName(driverName);
         } catch (IOException | ClassNotFoundException e) {
             logger.fatal(e.getMessage());
+            throw new RuntimeException("Failed to register database driver", e);
         }
         DATABASE_URL = (String) properties.get("db.url");
         DATABASE_USERNAME = (String) properties.get("username");

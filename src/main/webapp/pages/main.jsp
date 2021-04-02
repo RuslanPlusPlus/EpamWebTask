@@ -14,10 +14,18 @@
 
 <div>
     <form action="main-servlet" method="get">
-        <input type="hidden" name="command" value="display_user_list">
+        <input type="hidden" name="command" value="find_all_users">
         <input type="submit" name="submit" value="Display user list">
     </form>
 </div>
-
+<div>
+    <form action="main-servlet" method="post">
+        <input type="hidden" name="command" value="find_user_by_email">
+        Email:
+        <input type="email" name="email" value="">
+        <br/>
+        <input type="submit" name="submit" value="Display user">
+    </form>
+</div>
 </body>
 </html>

@@ -20,6 +20,8 @@ public class UserDaoImpl implements UserDao {
             "SELECT user_id, username, email FROM users";
     private static final String SQL_SELECT_USERS_BY_EMAIL =
             "SELECT user_id, username, email FROM users WHERE email=?";
+    private static final String SQL_ADD_USER =
+            "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
 
     @Override
     public List<User> findAll() throws DAOException {
@@ -31,9 +33,6 @@ public class UserDaoImpl implements UserDao {
                 long userId = resultSet.getInt(UsersColumn.USER_ID);
                 String userName = resultSet.getString(UsersColumn.USERNAME);
                 String email = resultSet.getString(UsersColumn.EMAIL);
-                System.out.println(userId);
-                System.out.println(userName);
-                System.out.println(email);
                 User user = new User(userId, email, userName);
                 users.add(user);
             }
@@ -60,6 +59,26 @@ public class UserDaoImpl implements UserDao {
             throw new DAOException(e);
         }
         return userOptional;
+    }
+
+    @Override
+    public boolean add(User user, String encryptedPassword) throws DAOException {
+        boolean result;
+        try(Connection connection = ConnectionCreator.createConnection();
+            PreparedStatement statement = connection.prepareStatement(SQL_ADD_USER)) {
+            String username = user.getUserName();
+            String email = user.getEmail();
+            logger.debug("Email: " + email);
+            logger.debug("username: " + username);
+            logger.debug("password " + encryptedPassword);
+            statement.setString(1, username);
+            statement.setString(2, email);
+            statement.setString(3, encryptedPassword);
+            result = statement.executeUpdate() > 0;
+        } catch (SQLException e) {
+            throw new DAOException(e);
+        }
+        return result;
     }
 
 }

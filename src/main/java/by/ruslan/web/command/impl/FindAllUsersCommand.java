@@ -2,6 +2,7 @@ package by.ruslan.web.command.impl;
 
 import by.ruslan.web.command.Command;
 import by.ruslan.web.command.PagePath;
+import by.ruslan.web.command.RequestAttribute;
 import by.ruslan.web.command.Router;
 import by.ruslan.web.model.entity.User;
 import by.ruslan.web.exception.ServiceException;
@@ -12,13 +13,12 @@ import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
-public class DisplayCommand implements Command {
+public class FindAllUsersCommand implements Command {
 
     static final Logger logger = LogManager.getLogger();
-    private static final String ATTRIBUTE_USERS = "users";
     private final UserService userService;
 
-    public DisplayCommand(UserService userService){
+    public FindAllUsersCommand(UserService userService){
         this.userService = userService;
     }
 
@@ -28,11 +28,12 @@ public class DisplayCommand implements Command {
         Router router;
         try {
             users = userService.findAll();
-            request.setAttribute(ATTRIBUTE_USERS, users);
-            router = new Router(PagePath.LIST, Router.Type.FORWARD);
+            request.setAttribute(RequestAttribute.USERS, users);
+            router = new Router(PagePath.USER_LIST, Router.Type.FORWARD);
         } catch (ServiceException e) {
             logger.error(e.getMessage());
-            router = new Router(PagePath.ERROR_505, Router.Type.REDIRECT);
+            request.setAttribute(RequestAttribute.ERROR, e.getMessage());
+            router = new Router(PagePath.ERROR_500, Router.Type.FORWARD);
         }
         return router;
     }

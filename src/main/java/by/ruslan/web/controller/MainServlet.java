@@ -1,9 +1,6 @@
 package by.ruslan.web.controller;
 
-import by.ruslan.web.command.Command;
-import by.ruslan.web.command.CommandFactory;
-import by.ruslan.web.command.PagePath;
-import by.ruslan.web.command.Router;
+import by.ruslan.web.command.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -20,11 +17,13 @@ public class MainServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        logger.debug("get method");
         processRequest(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        logger.debug("post method");
         processRequest(request, response);
     }
 
@@ -34,6 +33,7 @@ public class MainServlet extends HttpServlet {
             Command command = optionalCommand.get();
             Router router = command.execute(request);
             String page = router.getPath();
+            logger.debug(page);
             switch (router.getType()){
                 case FORWARD -> {
                     request.getRequestDispatcher(page).forward(request, response);
@@ -43,7 +43,8 @@ public class MainServlet extends HttpServlet {
                 }
             }
         }else {
-            response.sendError(404);
+            request.setAttribute(RequestAttribute.ERROR, "Failed to determine command");
+            response.sendError(500);
         }
     }
 }
