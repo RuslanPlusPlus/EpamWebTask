@@ -7,7 +7,7 @@
 <body>
 <h1>Epam task</h1>
 <br/>
-<jsp:forward page="/pages/signin.jsp"></jsp:forward>
+<jsp:forward page="main-servlet?command=to_login_page"></jsp:forward>
 <br/>
 </body>
 </html>

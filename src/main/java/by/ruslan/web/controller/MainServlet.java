@@ -1,6 +1,7 @@
 package by.ruslan.web.controller;
 
 import by.ruslan.web.command.*;
+import by.ruslan.web.model.pool.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -46,5 +47,11 @@ public class MainServlet extends HttpServlet {
             request.setAttribute(RequestAttribute.ERROR, "Failed to determine command");
             response.sendError(500);
         }
+    }
+
+    @Override
+    public void destroy() {
+        super.destroy();
+        ConnectionPool.getInstance().destroyPool();
     }
 }

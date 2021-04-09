@@ -1,20 +1,12 @@
-2021-04-02 08:36:12 [http-nio-8080-exec-9] DEBUG by.ruslan.web.controller.MainServlet - post method
-2021-04-02 08:36:12 [http-nio-8080-exec-9] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.SignUpCommand
-2021-04-02 08:36:13 [http-nio-8080-exec-9] DEBUG by.ruslan.web.model.dao.impl.UserDaoImpl - Email: janepussy@gmail.com
-2021-04-02 08:36:13 [http-nio-8080-exec-9] DEBUG by.ruslan.web.model.dao.impl.UserDaoImpl - username: uuuss
-2021-04-02 08:36:13 [http-nio-8080-exec-9] DEBUG by.ruslan.web.model.dao.impl.UserDaoImpl - password 234v1
-2021-04-02 08:36:13 [http-nio-8080-exec-9] INFO  by.ruslan.web.command.impl.SignUpCommand - User email janepussy@gmail.com successfully registered
-2021-04-02 08:36:13 [http-nio-8080-exec-9] DEBUG by.ruslan.web.controller.MainServlet - index.jsp
-2021-04-02 08:36:16 [http-nio-8080-exec-3] DEBUG by.ruslan.web.controller.MainServlet - get method
-2021-04-02 08:36:16 [http-nio-8080-exec-3] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.NotRegisteredCommand
-2021-04-02 08:36:16 [http-nio-8080-exec-3] DEBUG by.ruslan.web.controller.MainServlet - /pages/signup.jsp
-2021-04-02 08:36:37 [http-nio-8080-exec-7] DEBUG by.ruslan.web.controller.MainServlet - post method
-2021-04-02 08:36:37 [http-nio-8080-exec-7] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.SignUpCommand
-2021-04-02 08:36:37 [http-nio-8080-exec-7] DEBUG by.ruslan.web.model.dao.impl.UserDaoImpl - Email: ruslanned2001@gmail.com
-2021-04-02 08:36:37 [http-nio-8080-exec-7] DEBUG by.ruslan.web.model.dao.impl.UserDaoImpl - username: 23
-2021-04-02 08:36:37 [http-nio-8080-exec-7] DEBUG by.ruslan.web.model.dao.impl.UserDaoImpl - password werv33
-2021-04-02 08:36:37 [http-nio-8080-exec-7] INFO  by.ruslan.web.command.impl.SignUpCommand - User email ruslanned2001@gmail.com successfully registered
-2021-04-02 08:36:37 [http-nio-8080-exec-7] DEBUG by.ruslan.web.controller.MainServlet - index.jsp
-2021-04-02 08:36:45 [http-nio-8080-exec-8] DEBUG by.ruslan.web.controller.MainServlet - get method
-2021-04-02 08:36:45 [http-nio-8080-exec-8] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.NotRegisteredCommand
-2021-04-02 08:36:45 [http-nio-8080-exec-8] DEBUG by.ruslan.web.controller.MainServlet - /pages/signup.jsp
+2021-04-09 07:04:40 [http-nio-8080-exec-14] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-04-09 07:04:40 [http-nio-8080-exec-14] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToLoginPageCommand
+2021-04-09 07:04:40 [http-nio-8080-exec-14] DEBUG by.ruslan.web.controller.MainServlet - /pages/signin.jsp
+2021-04-09 07:04:46 [http-nio-8080-exec-13] DEBUG by.ruslan.web.controller.MainServlet - post method
+2021-04-09 07:04:46 [http-nio-8080-exec-13] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.SignInCommand
+2021-04-09 07:04:47 [http-nio-8080-exec-13] INFO  by.ruslan.web.model.service.impl.UserServiceImpl - beg@gmail.com
+2021-04-09 07:04:47 [http-nio-8080-exec-13] INFO  by.ruslan.web.model.service.impl.UserServiceImpl - dff7c5bcdcd15abea4fef10879413077659d5551
+2021-04-09 07:04:47 [http-nio-8080-exec-13] DEBUG by.ruslan.web.command.impl.SignInCommand - User authorized
+2021-04-09 07:04:47 [http-nio-8080-exec-13] DEBUG by.ruslan.web.controller.MainServlet - main-servlet?command=to_main_page
+2021-04-09 07:04:47 [http-nio-8080-exec-15] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-04-09 07:04:47 [http-nio-8080-exec-15] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToMainPageCommand
+2021-04-09 07:04:47 [http-nio-8080-exec-15] DEBUG by.ruslan.web.controller.MainServlet - /pages/main.jsp

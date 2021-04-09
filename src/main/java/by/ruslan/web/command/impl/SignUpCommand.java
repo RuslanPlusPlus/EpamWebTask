@@ -32,14 +32,14 @@ public class SignUpCommand implements Command {
             Optional<User> similarUser = userService.findByEmail(email);
             if (similarUser.isPresent()){
                 request.setAttribute(RequestAttribute.EMAIL_EXISTS, "User with such email already exists");
-                router = new Router(PagePath.SIGN_UP, Router.Type.REDIRECT);
+                router = new Router(PagePath.SIGN_UP, Router.Type.FORWARD);
             }else {
                 boolean isUserRegistered = userService.addUser(user, password);
                 if (isUserRegistered){
                     logger.info("User email " + email + " successfully registered");
-                    router = new Router(PagePath.MAIN, Router.Type.REDIRECT);
+                    router = new Router(PagePath.INDEX_JSP, Router.Type.REDIRECT);
                 }else {
-                    request.setAttribute(RequestAttribute.ERROR, "Server error! Failed to register user");
+                    request.setAttribute(RequestAttribute.INVALID_DATA, "Invalid data entered! Try again");
                     router = new Router(PagePath.SIGN_UP, Router.Type.FORWARD);
                 }
             }

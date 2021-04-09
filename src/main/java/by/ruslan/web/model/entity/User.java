@@ -4,6 +4,7 @@ public class User {
     private long userId;
     private String email;
     private String userName;
+    private String enPassword;
 
     public User(){
     }
@@ -15,7 +16,6 @@ public class User {
     }
 
     public long getUserId() {
-
         return userId;
     }
 
@@ -34,6 +34,14 @@ public class User {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public String getEnPassword() {
+        return enPassword;
+    }
+
+    public void setEnPassword(String enPassword) {
+        this.enPassword = enPassword;
     }
 
     @Override
