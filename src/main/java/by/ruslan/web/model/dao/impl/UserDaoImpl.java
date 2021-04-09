@@ -4,7 +4,6 @@ import by.ruslan.web.model.dao.UserDao;
 import by.ruslan.web.model.dao.UsersColumn;
 import by.ruslan.web.model.entity.User;
 import by.ruslan.web.exception.DAOException;
-import by.ruslan.web.model.pool.ConnectionFactory;
 import by.ruslan.web.model.pool.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
