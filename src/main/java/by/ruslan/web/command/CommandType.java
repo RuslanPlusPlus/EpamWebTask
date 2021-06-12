@@ -24,9 +24,9 @@ public enum CommandType {
             this.command = new SignUpCommand(new UserServiceImpl());
         }
     },
-    TO_SIGN_UP{
+    TO_REGISTER_PAGE {
         {
-            this.command = new ToSignUpPageCommand();
+            this.command = new ToRegisterPageCommand();
         }
     },
     TO_LOGIN_PAGE{

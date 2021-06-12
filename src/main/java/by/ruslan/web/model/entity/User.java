@@ -1,18 +1,43 @@
 package by.ruslan.web.model.entity;
 
+import java.math.BigDecimal;
+
 public class User {
     private long userId;
     private String email;
     private String userName;
-    private String enPassword;
+    private String encodedPassword; //remove?
+    private UserRole role;
+    private BigDecimal balance;
 
     public User(){
     }
 
-    public User(long userId, String email, String userName){
+    public User(long userId, String email, String userName, UserRole role){
         this.userId = userId;
         this.email = email;
         this.userName = userName;
+        this.role = role;
+    }
+
+    public void setUserId(long userId) {
+        this.userId = userId;
+    }
+
+    public UserRole getRole() {
+        return role;
+    }
+
+    public void setRole(UserRole role) {
+        this.role = role;
+    }
+
+    public BigDecimal getBalance() {
+        return balance;
+    }
+
+    public void setBalance(BigDecimal balance) {
+        this.balance = balance;
     }
 
     public long getUserId() {
@@ -36,12 +61,12 @@ public class User {
         this.userName = userName;
     }
 
-    public String getEnPassword() {
-        return enPassword;
+    public String getEncodedPassword() {
+        return encodedPassword;
     }
 
-    public void setEnPassword(String enPassword) {
-        this.enPassword = enPassword;
+    public void setEncodedPassword(String encodedPassword) {
+        this.encodedPassword = encodedPassword;
     }
 
     @Override

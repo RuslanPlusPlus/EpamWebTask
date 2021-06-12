@@ -24,7 +24,7 @@ public class SignUpCommand implements Command {
         String username = request.getParameter(RequestParameter.USERNAME);
         String email = request.getParameter(RequestParameter.EMAIL);
         String password = request.getParameter(RequestParameter.PASSWORD);
-        Router router;
+        Router router = new Router();
         User user = new User();
         user.setUserName(username);
         user.setEmail(email);
@@ -32,22 +32,23 @@ public class SignUpCommand implements Command {
             Optional<User> similarUser = userService.findByEmail(email);
             if (similarUser.isPresent()){
                 request.setAttribute(RequestAttribute.EMAIL_EXISTS, "User with such email already exists");
-                router = new Router(PagePath.SIGN_UP, Router.Type.FORWARD);
+                router.setPath(PagePath.SIGN_UP);
             }else {
-                boolean isUserRegistered = userService.addUser(user, password);
+                boolean isUserRegistered = userService.registerUser(user, password);
                 if (isUserRegistered){
                     logger.info("User email " + email + " successfully registered");
-                    router = new Router(PagePath.INDEX_JSP, Router.Type.REDIRECT);
+                    router.setPath(PagePath.INDEX_JSP);
+                    router.setType(Router.Type.REDIRECT);
                 }else {
                     request.setAttribute(RequestAttribute.INVALID_DATA, "Invalid data entered! Try again");
-                    router = new Router(PagePath.SIGN_UP, Router.Type.FORWARD);
+                    router.setPath(PagePath.SIGN_UP);
                 }
             }
 
         } catch (ServiceException e) {
             logger.error(e.getMessage());
             request.setAttribute(RequestAttribute.ERROR, e.getMessage());
-            router = new Router(PagePath.ERROR_500, Router.Type.FORWARD);
+            router.setPath(PagePath.ERROR_500);
         }
         return router;
     }

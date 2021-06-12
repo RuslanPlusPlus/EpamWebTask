@@ -5,6 +5,7 @@ import by.ruslan.web.model.dao.impl.UserDaoImpl;
 import by.ruslan.web.model.entity.User;
 import by.ruslan.web.exception.DAOException;
 import by.ruslan.web.exception.ServiceException;
+import by.ruslan.web.model.entity.UserRole;
 import by.ruslan.web.model.service.UserService;
 import by.ruslan.web.util.PasswordEncryptor;
 import by.ruslan.web.validator.UserValidator;
@@ -40,13 +41,14 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean addUser(User user, String password) throws ServiceException {
+    public boolean registerUser(User user, String password) throws ServiceException {
         boolean isAdded = false;
         try {
             if (UserValidator.isEmailValid(user.getEmail()) &&
                 UserValidator.isNameValid(user.getUserName()) &&
                 UserValidator.isPasswordValid(password)) {
                 String encryptedPassword = PasswordEncryptor.encrypt(password);
+                user.setRole(UserRole.CLIENT);
                 isAdded = userDao.add(user, encryptedPassword);
             }
         } catch (DAOException | UnsupportedEncodingException | NoSuchAlgorithmException e) {
@@ -64,9 +66,7 @@ public class UserServiceImpl implements UserService {
                 userOptional = userDao.findUserByEmail(email);
                 if (userOptional.isPresent()) {
                     User user = userOptional.get();
-                    logger.info(user.getEmail());
-                    logger.info(user.getEnPassword());
-                    String userPassword = user.getEnPassword();
+                    String userPassword = user.getEncodedPassword();
                     String enPassword = PasswordEncryptor.encrypt(password);
                     if (!userPassword.equals(enPassword)) {
                         userOptional = Optional.empty();

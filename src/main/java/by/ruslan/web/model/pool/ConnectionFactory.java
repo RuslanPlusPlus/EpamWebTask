@@ -33,6 +33,7 @@ class ConnectionFactory {
         DATABASE_PASSWORD = (String) properties.get("password");
 
     }
+
     private ConnectionFactory(){}
 
     static Connection createConnection() throws SQLException {

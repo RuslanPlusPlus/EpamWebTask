@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
     <title>Main page</title>
@@ -26,6 +27,11 @@
         <br/>
         <input type="submit" name="submit" value="Display user">
     </form>
+</div>
+<div>
+    <p>
+        <a href="${pageContext.request.contextPath}/main-servlet?command=to_login_page">Login</a>
+    </p>
 </div>
 </body>
 </html>

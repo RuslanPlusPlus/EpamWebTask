@@ -10,7 +10,7 @@ public class ToLoginPageCommand implements Command {
 
     @Override
     public Router execute(HttpServletRequest request) {
-        Router router = new Router(PagePath.SIGN_IN, Router.Type.FORWARD);
+        Router router = new Router(PagePath.SIGN_IN);
         return router;
     }
 }

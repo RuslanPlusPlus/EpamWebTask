@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
     <title>Login page</title>
@@ -28,7 +29,7 @@
     <input type="password" name="password" value="" placeholder="enter password"/>
     <br/>
     <input type="submit" value="Login"/>
-    <a href="main-servlet?command=to_sign_up">Not registered?</a>
+    <a href="${pageContext.request.contextPath}/main-servlet?command=to_register_page">Not registered?</a>
 </form>
 </body>
 </html>

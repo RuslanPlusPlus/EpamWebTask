@@ -6,10 +6,10 @@ import by.ruslan.web.command.Router;
 
 import javax.servlet.http.HttpServletRequest;
 
-public class ToSignUpPageCommand implements Command {
+public class ToRegisterPageCommand implements Command {
     @Override
     public Router execute(HttpServletRequest request) {
-        Router router = new Router(PagePath.SIGN_UP, Router.Type.FORWARD);
+        Router router = new Router(PagePath.SIGN_UP);
         return router;
     }
 }

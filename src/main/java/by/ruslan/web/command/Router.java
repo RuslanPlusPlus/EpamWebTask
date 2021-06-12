@@ -7,7 +7,13 @@ public class Router {
     }
 
     private String path;
-    private Type type;
+    private Type type = Type.FORWARD;
+
+    public Router(){}
+
+    public Router(String path){
+        this.path = path;
+    }
 
     public Router(String path, Type type){
         this.path = path;

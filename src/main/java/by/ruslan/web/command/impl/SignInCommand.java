@@ -24,21 +24,22 @@ public class SignInCommand implements Command {
     public Router execute(HttpServletRequest request) {
         String email = request.getParameter(RequestParameter.EMAIL);
         String password = request.getParameter(RequestParameter.PASSWORD);
-        Router router;
+        Router router = new Router();
         try {
             Optional<User> user = userService.authorizeUser(email, password);
             if (user.isPresent()){
-                router = new Router(PagePath.MAIN_SERVLET_PATH, Router.Type.REDIRECT);
+                router.setPath(PagePath.INDEX_JSP);
+                router.setType(Router.Type.REDIRECT);
                 logger.debug("User authorized");
             }else {
                 request.setAttribute(RequestAttribute.LOGIN_ERROR, ERROR_MESSAGE);
-                router = new Router(PagePath.SIGN_IN, Router.Type.FORWARD);
+                router.setPath(PagePath.SIGN_IN);
                 logger.debug("User is not authorized");
             }
         } catch (ServiceException e) {
             logger.error(e.getMessage());
             request.setAttribute(RequestAttribute.ERROR, e.getMessage());
-            router = new Router(PagePath.ERROR_500, Router.Type.FORWARD);
+            router.setPath(PagePath.ERROR_500);
         }
         return router;
     }

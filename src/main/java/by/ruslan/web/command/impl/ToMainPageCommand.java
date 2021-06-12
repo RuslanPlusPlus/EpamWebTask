@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 public class ToMainPageCommand implements Command {
     @Override
     public Router execute(HttpServletRequest request) {
-        Router router = new Router(PagePath.MAIN_PAGE, Router.Type.FORWARD);
+        Router router = new Router(PagePath.MAIN_PAGE);
         return router;
     }
 }
