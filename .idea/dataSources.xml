@@ -8,11 +8,11 @@
       <jdbc-url>jdbc:postgresql://localhost:5432/EpamWeb</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="epam_task@localhost" uuid="5bd01b9e-fb5c-4576-9a56-9d954a8d2e5d">
+    <data-source source="LOCAL" name="totalizator@localhost" uuid="5bd01b9e-fb5c-4576-9a56-9d954a8d2e5d">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/epam_task</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/totalizator</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
       <driver-properties>
         <property name="serverTimezone" value="UTC" />

@@ -12,7 +12,7 @@
 <html>
 <head>
     <title>Register page</title>
-    <jsp:include page="fragments/header.jsp"/>
+    <link href="${contextPath}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -27,6 +27,7 @@
                 </c:if>
                 <c:if test="${not empty invalid_data}">
                     <p class="alert-warning">${invalid_data}</p>
+
                     <c:remove var="invalid_data" />
                 </c:if>
 
@@ -69,24 +70,5 @@
     </div>
 </div>
 
-<!--
-<form name="registerForm" method="post" action="main-servlet">
-    <input type="hidden" name="command" value="sign_up" />
-    Registration
-    <br/>
-    Username:
-    <input type="text" name="username" value="" placeholder="enter username"/>
-    <br/>
-    Email:
-    <input type="email" name="email" value="" placeholder="enter email"/>
-    <br/>
-    Password:
-    <input type="password" name="password" value="" placeholder="enter password"/>
-    <br/>
-    <br/>
-    <input type="submit" value="Register"/>
-    <a href="${pageContext.request.contextPath}/main-servlet?command=to_login_page">Already registered? Login</a>
-</form>
--->
 </body>
 </html>

@@ -1,6 +1,7 @@
 package by.ruslan.web.model.entity;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 public class User {
     private long userId;
@@ -9,6 +10,8 @@ public class User {
     private String encodedPassword; //remove?
     private UserRole role;
     private BigDecimal balance;
+    private List<Bet> activeBets; //many to one
+    private List<Bet> completedBets; //many to one
 
     public User(){
     }
@@ -67,6 +70,22 @@ public class User {
 
     public void setEncodedPassword(String encodedPassword) {
         this.encodedPassword = encodedPassword;
+    }
+
+    public List<Bet> getActiveBets() {
+        return activeBets;
+    }
+
+    public void setActiveBets(List<Bet> activeBets) {
+        this.activeBets = activeBets;
+    }
+
+    public List<Bet> getCompletedBets() {
+        return completedBets;
+    }
+
+    public void setCompletedBets(List<Bet> completedBets) {
+        this.completedBets = completedBets;
     }
 
     @Override
