@@ -1,14 +1,9 @@
-2021-06-13 20:09:18 [http-nio-8080-exec-16] DEBUG by.ruslan.web.controller.MainServlet - get method
-2021-06-13 20:09:18 [http-nio-8080-exec-16] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToLoginPageCommand
-2021-06-13 20:09:18 [http-nio-8080-exec-16] DEBUG by.ruslan.web.controller.MainServlet - /pages/signin.jsp
-2021-06-13 20:09:24 [http-nio-8080-exec-12] DEBUG by.ruslan.web.controller.MainServlet - post method
-2021-06-13 20:09:24 [http-nio-8080-exec-12] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.SignInCommand
-2021-06-13 20:09:24 [http-nio-8080-exec-12] DEBUG by.ruslan.web.command.impl.SignInCommand - User is not authorized
-2021-06-13 20:09:24 [http-nio-8080-exec-12] DEBUG by.ruslan.web.controller.MainServlet - /pages/signin.jsp
-2021-06-13 20:09:29 [http-nio-8080-exec-13] DEBUG by.ruslan.web.controller.MainServlet - post method
-2021-06-13 20:09:29 [http-nio-8080-exec-13] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.SignInCommand
-2021-06-13 20:09:29 [http-nio-8080-exec-13] DEBUG by.ruslan.web.command.impl.SignInCommand - User authorized
-2021-06-13 20:09:29 [http-nio-8080-exec-13] DEBUG by.ruslan.web.controller.MainServlet - index.jsp
-2021-06-13 20:09:29 [http-nio-8080-exec-18] DEBUG by.ruslan.web.controller.MainServlet - get method
-2021-06-13 20:09:29 [http-nio-8080-exec-18] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToMainPageCommand
-2021-06-13 20:09:29 [http-nio-8080-exec-18] DEBUG by.ruslan.web.controller.MainServlet - /pages/main.jsp
+2021-06-14 16:33:21 [http-nio-8080-exec-50] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-14 16:33:21 [http-nio-8080-exec-50] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToMainPageCommand
+2021-06-14 16:33:21 [http-nio-8080-exec-50] DEBUG by.ruslan.web.controller.MainServlet - /pages/main.jsp
+2021-06-14 16:33:22 [http-nio-8080-exec-46] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-14 16:33:22 [http-nio-8080-exec-46] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToLoginPageCommand
+2021-06-14 16:33:22 [http-nio-8080-exec-46] DEBUG by.ruslan.web.controller.MainServlet - /pages/signin.jsp
+2021-06-14 16:33:23 [http-nio-8080-exec-45] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-14 16:33:23 [http-nio-8080-exec-45] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToRegisterPageCommand
+2021-06-14 16:33:23 [http-nio-8080-exec-45] DEBUG by.ruslan.web.controller.MainServlet - /pages/signup.jsp

@@ -8,6 +8,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.Optional;
 
 public class SignInCommand implements Command {
@@ -31,6 +32,8 @@ public class SignInCommand implements Command {
                 router.setPath(PagePath.INDEX_JSP);
                 router.setType(Router.Type.REDIRECT);
                 logger.debug("User authorized");
+                HttpSession session = request.getSession();
+                session.setAttribute(SessionAttribute.USER, user);
             }else {
                 request.setAttribute(RequestAttribute.LOGIN_ERROR, ERROR_MESSAGE);
                 router.setPath(PagePath.SIGN_IN);

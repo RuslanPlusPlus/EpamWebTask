@@ -32,7 +32,7 @@ public class FindByEmailCommand implements Command {
                 users.add(user.get());
                 request.setAttribute(RequestAttribute.USERS, users);
             }else {
-                request.setAttribute(RequestAttribute.NO_USERS, "No user with such email found");
+                request.setAttribute(RequestAttribute.ERROR_NO_USERS, "No user with such email found");
             }
             router = new Router(PagePath.USER_LIST, Router.Type.FORWARD);
 
