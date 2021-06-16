@@ -65,7 +65,7 @@ public class UserDaoImpl implements UserDao {
         boolean result;
         try(Connection connection = ConnectionPool.getInstance().getConnection();
             PreparedStatement statement = connection.prepareStatement(SQL_ADD_USER)) {
-            String username = user.getUserName();
+            String username = user.getUsername();
             String email = user.getEmail();
             String role = user.getRole().getValue();
             logger.debug("Email: " + email);

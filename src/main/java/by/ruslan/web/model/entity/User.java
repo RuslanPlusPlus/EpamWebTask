@@ -6,7 +6,7 @@ import java.util.List;
 public class User {
     private long userId;
     private String email;
-    private String userName;
+    private String username;
     private String encodedPassword; //remove?
     private UserRole role;
     private BigDecimal balance;
@@ -16,10 +16,10 @@ public class User {
     public User(){
     }
 
-    public User(long userId, String email, String userName, UserRole role){
+    public User(long userId, String email, String username, UserRole role){
         this.userId = userId;
         this.email = email;
-        this.userName = userName;
+        this.username = username;
         this.role = role;
     }
 
@@ -47,9 +47,8 @@ public class User {
         return userId;
     }
 
-    public String getUserName() {
-
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
     public String getEmail() {
@@ -60,8 +59,8 @@ public class User {
         this.email = email;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getEncodedPassword() {
@@ -95,7 +94,7 @@ public class User {
         User user = (User) o;
         return userId == user.userId &&
                 email.equals(user.email) &&
-                userName.equals(user.userName);
+                username.equals(user.username);
     }
 
     @Override
@@ -103,7 +102,7 @@ public class User {
         final int prime = 31;
         int result = 1;
         result = (int) (result * prime + userId);
-        result = result * prime + (userName != null? userName.hashCode(): 0);
+        result = result * prime + (username != null? username.hashCode(): 0);
         result = result * prime + (email != null? email.hashCode(): 0);
         return result;
     }
@@ -112,7 +111,7 @@ public class User {
     public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append("User{")
-                .append("username=").append(userName)
+                .append("username=").append(username)
                 .append(", ")
                 .append("email=").append(email)
                 .append("}");

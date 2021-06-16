@@ -1,0 +1,166 @@
+
+header{
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    position: relative;
+    width: 1000px;
+    border-radius: 3px 3px 0 0;
+    background-image: linear-gradient(180deg,rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url("../images/background-header.jpg");
+}
+
+.center-part {
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 15px 15px 5px;
+    box-shadow: -4px 0 5px -4px rgba(0,0,0,0.75);
+}
+
+/*body {
+    font-family: "Open Sans", Tahoma;
+    background-color: #2e2e2e;
+}*/
+
+.title {
+    font-family: "Open Sans", Tahoma, fantasy;
+    position:absolute;
+    top:150px;
+    left:400px;
+    margin:0;
+    color: #fd7e14;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-part {
+    width: 1000px;
+    height: auto;
+    background-color: white;
+    display: flex;
+}
+
+.logo {
+    /*display: inline;
+    vertical-align: top;*/
+    float: left;
+    position: absolute;
+    top:10px;
+    left:10px;
+}
+
+.logo-panel {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.locale {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 5px;
+}
+
+            /* NAVIGATION*/
+
+
+nav {
+    vertical-align: top;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav a {
+    color: #ffd132;
+    text-decoration: none;
+    padding: 0 15px 0 15px;
+    height: 50px;
+    width: auto;
+    margin: -1px;
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    background-color:  #17a2b8;
+}
+
+.main-menu-item-container {
+    display: flex;
+    align-items: center;
+}
+
+.main-menu-item-container > .active > span{
+    border-top: 2px solid #fd7e14;
+    border-bottom: 2px solid #fd7e14;
+    padding: 5px 15px 5px 15px;
+}
+
+.main-menu-item-container a span{
+    border: 2px solid rgba(0,0,0,0);
+    padding: 10px 15px 10px 15px;
+    transition: all 0.3s linear;
+}
+
+.main-menu-item-container a:hover span{
+    border-top: 2px solid #fd7e14;
+    border-bottom: 2px solid #fd7e14;
+    padding: 5px 15px 5px 15px;
+}
+
+.logout-menu-item-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+
+/* FLAGS ANIMATION */
+
+.content {
+    display: block;
+    width: 100%;
+    padding-top: 10px;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+
+.item {
+    display: inline-block;
+    float: left;
+    width: calc(50% - 10px);
+    min-height: 120px;
+    height: 40vh;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    transition: transform .15s;
+}
+
+.item:hover {
+    transform: scale(1.5);
+    z-index: 1;
+    transition: transform .5s;
+}
+
+.item.l-t {
+    transform-origin: left top;
+}
+
+.item.r-t {
+    transform-origin: right top;
+}
+
+.item.l-b {
+    transform-origin: left bottom;
+}
+
+.item.r-b {
+    transform-origin: right bottom;
+}

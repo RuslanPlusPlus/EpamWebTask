@@ -15,8 +15,69 @@
 <head>
     <title>header</title>
     <link href="${contextPath}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${contextPath}/styles/header.css" rel="stylesheet">
 </head>
 <body>
+<header>
+
+    <div class="logo-panel">
+        <div>
+            <img class="logo" src="<c:url value="/images/logo.png" />" alt="logo" />
+        </div>
+        <div class="locale">
+            <div class="content">
+                <div class="item r-t">
+                    <a class href="<c:url value="main-servlet?command=change_locale&language=ru" />">
+                        <img src="<c:url value="/images/ru.png" />">
+                    </a>
+                </div>
+                <div class="item l-t">
+                    <a href="<c:url value="main-servlet?command=change_locale&language=en" />">
+                        <img src="<c:url value="/images/en.png"/>">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="title">
+        <h1>SPORT BET</h1>
+    </div>
+
+    <div class="menu">
+        <nav>
+            <div class="main-menu-item-container">
+                <c:if test="${!empty sessionScope.user}">
+                    <a class="main-menu-item" href="<c:url value="main-servlet?command=to_main_page"/>">
+                        <fmt:message key="header.mainPage"/>
+                    </a>
+                    <a class="main-menu-item" href="<c:url value="main-servlet?command=to_personal_page"/>">
+                        <fmt:message key="header.personalPage"/>
+                    </a>
+                </c:if>
+
+                <c:if test="${empty sessionScope.user}">
+                    <a class="main-menu-item" href="<c:url value="main-servlet?command=to_login_page"/>">
+                        <fmt:message key="header.login"/>
+                    </a>
+                    <a class="main-menu-item" href="<c:url value="main-servlet?command=to_register_page"/>">
+                        <fmt:message key="header.register"/>
+                    </a>
+                </c:if>
+            </div>
+
+            <div class="logout-menu-item-container">
+                <c:if test="${!empty sessionScope.user}">
+                    <a class="main-menu-item" href="<c:url value="main-servlet?command=logout"/>">
+                        <fmt:message key="header.logout"/> (${sessionScope.user.username})
+                    </a>
+                </c:if>
+            </div>
+        </nav>
+    </div>
+
+</header>
+
 
 </body>
 </html>

@@ -37,7 +37,7 @@ public class MainServlet extends HttpServlet {
             logger.debug(page);
             HttpSession session = request.getSession();
             session.setAttribute(SessionAttribute.CURRENT_PAGE, page);
-            session.setAttribute(SessionAttribute.LOCALE, SessionAttribute.RUSSIAN);
+            //session.setAttribute(SessionAttribute.LOCALE, SessionAttribute.ENGLISH);
             switch (router.getType()){
                 case FORWARD -> {
                     request.getRequestDispatcher(page).forward(request, response);

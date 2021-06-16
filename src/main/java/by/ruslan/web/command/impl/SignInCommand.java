@@ -33,7 +33,7 @@ public class SignInCommand implements Command {
                 router.setType(Router.Type.REDIRECT);
                 logger.debug("User authorized");
                 HttpSession session = request.getSession();
-                session.setAttribute(SessionAttribute.USER, user);
+                session.setAttribute(SessionAttribute.USER, user.get());
             }else {
                 request.setAttribute(RequestAttribute.LOGIN_ERROR, ERROR_MESSAGE);
                 router.setPath(PagePath.SIGN_IN);

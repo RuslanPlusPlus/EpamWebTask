@@ -26,7 +26,7 @@ public class SignUpCommand implements Command {
         String password = request.getParameter(RequestParameter.PASSWORD);
         Router router = new Router();
         User user = new User();
-        user.setUserName(username);
+        user.setUsername(username);
         user.setEmail(email);
         try {
             Optional<User> similarUser = userService.findByEmail(email);
@@ -38,7 +38,7 @@ public class SignUpCommand implements Command {
                 if (isUserRegistered){
                     logger.info("User email " + email + " successfully registered");
                     router.setPath(PagePath.SIGN_IN);
-                    router.setType(Router.Type.REDIRECT);
+                    router.setType(Router.Type.FORWARD);
                 }else {
                     request.setAttribute(RequestAttribute.ERROR_INCORRECT_DATA, "Invalid data entered! Try again");
                     router.setPath(PagePath.SIGN_UP);

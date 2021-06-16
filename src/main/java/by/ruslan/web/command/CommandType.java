@@ -24,6 +24,11 @@ public enum CommandType {
             this.command = new SignUpCommand(new UserServiceImpl());
         }
     },
+    CHANGE_LOCALE{
+        {
+            this.command = new ChangeLocaleCommand();
+        }
+    },
     TO_REGISTER_PAGE {
         {
             this.command = new ToRegisterPageCommand();
