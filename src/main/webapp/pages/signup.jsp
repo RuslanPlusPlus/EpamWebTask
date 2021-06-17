@@ -21,7 +21,7 @@
     <div class="main-part">
         <!-- left menu -->
         <div class="center-part">
-            <h1>Registration form</h1>
+            <h1><fmt:message key="registrationForm"/></h1>
             <div class="card">
                 <div class="card-body">
                     <form name="registerForm" method="post" action="main-servlet">
@@ -83,8 +83,6 @@
             </div>
         </div>
     </div>
-
-
 </div>
 
 </body>

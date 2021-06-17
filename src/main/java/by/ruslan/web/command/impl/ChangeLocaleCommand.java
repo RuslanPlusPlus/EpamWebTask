@@ -1,14 +1,13 @@
 package by.ruslan.web.command.impl;
 
-import by.ruslan.web.command.Command;
-import by.ruslan.web.command.RequestParameter;
-import by.ruslan.web.command.Router;
-import by.ruslan.web.command.SessionAttribute;
+import by.ruslan.web.command.*;
+import by.ruslan.web.model.entity.User;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 public class ChangeLocaleCommand implements Command {
 
@@ -22,6 +21,7 @@ public class ChangeLocaleCommand implements Command {
         logger.debug("Current page: " + page);
         session.setAttribute(SessionAttribute.LOCALE, language);
         Router router = new Router(page);
+        router.setType(Router.Type.REDIRECT);
         return router;
     }
 }

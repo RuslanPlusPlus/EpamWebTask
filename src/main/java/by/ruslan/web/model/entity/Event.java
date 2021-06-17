@@ -1,6 +1,7 @@
 package by.ruslan.web.model.entity;
 
 import java.sql.Date;
+import java.sql.Time;
 import java.util.List;
 
 public class Event {
@@ -23,6 +24,7 @@ public class Event {
     private long sport_kind_id;
     private String eventName;
     private Date date;
+    private Time time;
     private EventStatus status;
     private List<EventMember> members; //one to many
     private boolean readyToBet;
@@ -61,6 +63,14 @@ public class Event {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public Time getTime() {
+        return time;
+    }
+
+    public void setTime(Time time) {
+        this.time = time;
     }
 
     public EventStatus getStatus() {

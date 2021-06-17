@@ -24,9 +24,19 @@ public enum CommandType {
             this.command = new SignUpCommand(new UserServiceImpl());
         }
     },
+    LOGOUT{
+        {
+            this.command = new LogoutCommand();
+        }
+    },
     CHANGE_LOCALE{
         {
             this.command = new ChangeLocaleCommand();
+        }
+    },
+    CHANGE_ROLE{
+        {
+            this.command = new ChangeRoleCommand(new UserServiceImpl());
         }
     },
     TO_REGISTER_PAGE {
@@ -42,6 +52,26 @@ public enum CommandType {
     TO_MAIN_PAGE{
         {
             this.command = new ToMainPageCommand();
+        }
+    },
+    TO_PERSONAL_PAGE{
+        {
+            this.command = new ToPersonalPageCommand();
+        }
+    },
+    TO_ADMIN_PAGE{
+        {
+            this.command = new ToAdminPageCommand();
+        }
+    },
+    TO_BOOKMAKER_PAGE{
+        {
+            this.command = new ToBookmakerPageCommand();
+        }
+    },
+    TO_USERS_PAGE{
+        {
+            this.command = new ToUsersPageCommand(new UserServiceImpl());
         }
     };
     Command command;

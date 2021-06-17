@@ -15,14 +15,17 @@
 <body>
 <h1>User list</h1>
 <div>
-    <c:if test="${no_users != null}">
-        ${no_users}
+    <c:if test="${errorNoUsers != null}">
+        ${errorNoUsers}
         <c:remove var="errorMessage" />
     </c:if>
     <table>
-        <c:forEach var="item" items="${users}" varStatus="status">
+        <c:forEach var="item" items="${requestScope.users}" varStatus="status">
             <tr>
-                <td><c:out value="${item.userName}"></c:out></td>
+                <td><c:out value="${item.username}"></c:out></td>
+                <td><c:out value="${item.email}"></c:out></td>
+                <td><c:out value="${item.role}"></c:out></td>
+                <td><c:out value="${item.balance}"></c:out></td>
                 <td><c:out value="${item.email}"></c:out></td>
             </tr>
         </c:forEach>

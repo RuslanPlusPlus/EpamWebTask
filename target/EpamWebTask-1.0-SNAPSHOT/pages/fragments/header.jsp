@@ -13,9 +13,9 @@
 <fmt:setBundle basename="pagecontent"/>
 <html>
 <head>
-    <title>header</title>
+    <title>Header</title>
     <link href="${contextPath}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="${contextPath}/styles/header.css" rel="stylesheet">
+    <link href="${contextPath}/styles/common.css" rel="stylesheet">
 </head>
 <body>
 <header>
@@ -27,7 +27,7 @@
         <div class="locale">
             <div class="content">
                 <div class="item r-t">
-                    <a class href="<c:url value="main-servlet?command=change_locale&language=ru" />">
+                    <a href="<c:url value="main-servlet?command=change_locale&language=ru" />">
                         <img src="<c:url value="/images/ru.png" />">
                     </a>
                 </div>
@@ -53,6 +53,18 @@
                     </a>
                     <a class="main-menu-item" href="<c:url value="main-servlet?command=to_personal_page"/>">
                         <fmt:message key="header.personalPage"/>
+                    </a>
+                </c:if>
+
+                <c:if test="${sessionScope.user.role eq 'ADMIN'}">
+                    <a class="main-menu-item" href="<c:url value="main-servlet?command=to_admin_page"/>">
+                        <fmt:message key="header.adminPage"/>
+                    </a>
+                </c:if>
+
+                <c:if test="${sessionScope.user.role eq 'BOOKMAKER'}">
+                    <a class="main-menu-item" href="<c:url value="main-servlet?command=to_bookmaker_page"/>">
+                        <fmt:message key="header.bookmakerPage"/>
                     </a>
                 </c:if>
 

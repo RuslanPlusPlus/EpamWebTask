@@ -8,6 +8,7 @@ public final class RequestAttribute {
     public static final String ERROR_NO_USERS = "errorNoUsers";
     public static final String ERROR_EMAIL_EXISTS = "errorEmailExists";
     public static final String ERROR_INCORRECT_DATA = "errorIncorrectData";
+    public static final String ERROR_UPDATE_USER = "errorUpdateUser";
 
     private RequestAttribute(){}
 }

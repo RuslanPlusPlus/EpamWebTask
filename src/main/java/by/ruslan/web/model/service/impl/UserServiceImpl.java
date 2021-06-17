@@ -78,4 +78,15 @@ public class UserServiceImpl implements UserService {
         }
         return userOptional;
     }
+
+    @Override
+    public boolean updateUser(User user) throws ServiceException {
+        boolean result;
+        try {
+            result = userDao.update(user);
+        } catch (DAOException e) {
+            throw new ServiceException(e);
+        }
+        return result;
+    }
 }

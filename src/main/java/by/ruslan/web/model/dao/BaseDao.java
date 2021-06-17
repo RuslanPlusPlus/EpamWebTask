@@ -5,6 +5,6 @@ import by.ruslan.web.exception.DAOException;
 
 import java.util.List;
 
-public interface BaseDao<K, T extends User> {
+public interface BaseDao<T> {
     List<T> findAll() throws DAOException;
 }

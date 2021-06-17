@@ -32,8 +32,10 @@ public class SignInCommand implements Command {
                 router.setPath(PagePath.INDEX_JSP);
                 router.setType(Router.Type.REDIRECT);
                 logger.debug("User authorized");
+                logger.debug("User role: " + user.get().getRole());
                 HttpSession session = request.getSession();
                 session.setAttribute(SessionAttribute.USER, user.get());
+                session.setAttribute(SessionAttribute.ROLE, null);
             }else {
                 request.setAttribute(RequestAttribute.LOGIN_ERROR, ERROR_MESSAGE);
                 router.setPath(PagePath.SIGN_IN);

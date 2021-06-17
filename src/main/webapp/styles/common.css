@@ -68,7 +68,6 @@ header{
 
             /* NAVIGATION*/
 
-
 nav {
     vertical-align: top;
     height: 50px;
@@ -163,4 +162,86 @@ header nav a {
 
 .item.r-b {
     transform-origin: right bottom;
+}
+
+        /* ADMIN PAGE */
+.user-table {
+    width: 100%;
+    padding: 5px;
+    border-collapse: collapse;
+}
+
+.user-table td {
+    border-top: 1px solid orange;
+}
+
+.user-table td {
+    margin: 0;
+    text-align: center;
+}
+
+.admin-btn {
+    width: 200px;
+    color: white;
+    margin-top: 10px;
+    background: #eba11a;
+    border: 1px solid white;
+    border-radius: 4px;
+    transition: all 0.2s linear;
+}
+.admin-btn:hover {
+    background: #eb701a;
+}
+
+
+                /* EVENT STYLES */
+
+.event {
+    border-radius: 5px 5px;
+    background-color: #efeeee;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.event-main {
+    padding: 10px;
+}
+
+.event-secondary {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.event-secondary p {
+    margin: 0;
+}
+
+.event-league {
+    font-size: 0.7em;
+    color: gray;
+}
+
+.event-name {
+    font-size: 1em;
+    margin: 0;
+}
+
+.event-btn {
+    background: linear-gradient(to bottom, #ffd132 0%,#f7ff89 100%);
+    border: none;
+    border-radius: 4px;
+    height: 30px;
+    width: 101px;
+    transition: all 0.6s linear;
+}
+
+.event-btn:hover {
+    background: linear-gradient(to bottom, #ffc70f 0%,#f7ff87 55%);
+}
+
+.event-btn:active {
+    background: linear-gradient(to top, #ffd132 0%,#f7ff89 100%);
 }

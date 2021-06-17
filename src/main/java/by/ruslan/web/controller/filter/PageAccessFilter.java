@@ -24,6 +24,7 @@ public class PageAccessFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
         response.sendRedirect(request.getContextPath() + path);
+        filterChain.doFilter(request, response);
     }
 
     @Override

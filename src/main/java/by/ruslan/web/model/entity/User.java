@@ -114,6 +114,10 @@ public class User {
                 .append("username=").append(username)
                 .append(", ")
                 .append("email=").append(email)
+                .append(", ")
+                .append("role=").append(role)
+                .append(", ")
+                .append("balance=").append(balance)
                 .append("}");
         return builder.toString();
     }

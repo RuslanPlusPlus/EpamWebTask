@@ -26,6 +26,8 @@ public class UserDaoImpl implements UserDao {
             "INSERT INTO users (username, email, password, role) VALUES (?, ?, ?, ?)";
     private static final String FIND_USER_BY_EMAIL_AND_PASSWORD =
             "SELECT user_id, email, username, balance, role FROM users WHERE email = ? AND password = ?";
+    private static final String UPDATE_USER =
+            "UPDATE users SET username = ?, email = ?, password = ?, balance = ?, role = ? WHERE user_id = ?";
 
     @Override
     public List<User> findAll() throws DAOException {
@@ -76,6 +78,30 @@ public class UserDaoImpl implements UserDao {
             statement.setString(2, email);
             statement.setString(3, encryptedPassword);
             statement.setString(4, role);
+            result = statement.executeUpdate() > 0;
+        } catch (SQLException e) {
+            throw new DAOException(e);
+        }
+        return result;
+    }
+
+    @Override
+    public boolean update(User user) throws DAOException {
+        boolean result;
+        try(Connection connection = ConnectionPool.getInstance().getConnection();
+            PreparedStatement statement = connection.prepareStatement(UPDATE_USER)){
+            long userId = user.getUserId();
+            String username = user.getUsername();
+            String email = user.getEmail();
+            String password = user.getEncodedPassword();
+            BigDecimal balance = user.getBalance();
+            String role = user.getRole().getValue();
+            statement.setString(1, username);
+            statement.setString(2, email);
+            statement.setString(3, password);
+            statement.setBigDecimal(4, balance);
+            statement.setString(5, role);
+            statement.setLong(6, userId);
             result = statement.executeUpdate() > 0;
         } catch (SQLException e) {
             throw new DAOException(e);

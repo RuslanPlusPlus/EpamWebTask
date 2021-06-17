@@ -8,28 +8,64 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
+<fmt:setLocale value="${sessionScope.currentLocale}"/>
+<fmt:setBundle basename="pagecontent"/>
 <html>
 <head>
     <title>Login page</title>
 </head>
 <body>
-<form name="loginForm" method="post" action="main-servlet">
-    <input type="hidden" name="command" value="sign_in" />
-    <c:if test="${login_error != null}">
-        ${login_error}
-        <c:remove var="login_error" />
-        <br/>
-    </c:if>
-    Login:
-    <br/>
-    Email:
-    <input type="text" name="email" value="" placeholder="enter email"/>
-    <br/>
-    Password:
-    <input type="password" name="password" value="" placeholder="enter password"/>
-    <br/>
-    <input type="submit" value="Login"/>
-    <a href="${pageContext.request.contextPath}/main-servlet?command=to_register_page">Not registered?</a>
-</form>
+
+<div class="container">
+    <c:import url="fragments/header.jsp"/>
+    <div class="main-part">
+        <!-- left menu -->
+        <div class="center-part">
+            <h1><fmt:message key="loginForm"/></h1>
+            <div class="card">
+                <div class="card-body">
+                    <form name="loginForm" method="post" action="main-servlet">
+                        <input type="hidden" name="command" value="sign_in" />
+
+                        <c:if test="${login_error != null}">
+                            <fmt:message key="error.login.incorrectEmailOrPassword"/>
+                            <c:remove var="login_error" />
+                        </c:if>
+
+                        <div class="form-group row">
+                            <label for="email" class="col-sm-2 col-form-label">
+                                <fmt:message key="email"/>
+                            </label>
+                            <div class="col-sm-7">
+                                <input type="email" name="email" id="email" class="form-control"
+                                       placeholder="Enter email">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password" class="col-sm-2 col-form-label">
+                                <fmt:message key="password"/>
+                            </label>
+                            <div class="col-sm-7">
+                                <input type="password" name="password" id="password" class="form-control"
+                                       placeholder="Enter password">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            <fmt:message key="header.login"/>
+                        </button>
+                        <a href="${pageContext.request.contextPath}/main-servlet?command=to_register_page">
+                            <fmt:message key="notRegistered"/>
+                        </a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 </body>
 </html>

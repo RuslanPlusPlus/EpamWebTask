@@ -21,13 +21,12 @@
     <div class="main-part">
         <!-- left menu -->
 
+
+
         <!--
         <div class="center-part">
             <div>
-                <form action="main-servlet" method="get">
-                    <input type="hidden" name="command" value="find_all_users">
-                    <input type="submit" name="submit" value="Display user list">
-                </form>
+
             </div>
             <div>
                 <form action="main-servlet" method="post">

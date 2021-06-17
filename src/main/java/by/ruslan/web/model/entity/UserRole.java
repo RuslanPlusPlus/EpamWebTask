@@ -1,6 +1,7 @@
 package by.ruslan.web.model.entity;
 
 public enum UserRole {
+    GUEST("GUEST"),
     CLIENT("CLIENT"),
     ADMIN("ADMIN"),
     BOOKMAKER("BOOKMAKER");

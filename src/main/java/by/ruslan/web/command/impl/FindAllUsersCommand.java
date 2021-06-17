@@ -25,15 +25,16 @@ public class FindAllUsersCommand implements Command {
     @Override
     public Router execute(HttpServletRequest request) {
         List<User> users;
-        Router router;
+        Router router = new Router();
         try {
             users = userService.findAll();
+            logger.debug(users);
             request.setAttribute(RequestAttribute.USERS, users);
-            router = new Router(PagePath.USER_LIST, Router.Type.FORWARD);
+            router.setPath(PagePath.USER_LIST);
         } catch (ServiceException e) {
             logger.error(e.getMessage());
             request.setAttribute(RequestAttribute.ERROR, e.getMessage());
-            router = new Router(PagePath.ERROR_500, Router.Type.FORWARD);
+            router.setPath(PagePath.ERROR_500);
         }
         return router;
     }
