@@ -33,4 +33,13 @@ public class SportKind {
     public void setMembers(List<EventMember> members) {
         this.members = members;
     }
+
+    @Override
+    public String toString() {
+        return "SportKind{" +
+                "kind_id=" + kind_id +
+                ", kindName='" + kindName + '\'' +
+                ", members=" + members +
+                '}';
+    }
 }

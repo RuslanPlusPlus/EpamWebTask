@@ -1,36 +1,43 @@
 package by.ruslan.web.model.entity;
 
 public class EventMember {
-    private long member_id;
-    private String eventName;
-
-    //Many to one, JoinColumn(name = "kind_id", referencedColumnName = "event_id")
-    private long kind_id;
+    private long memberId;
+    private String memberName;
+    private long kindId;
 
     public EventMember(){
     }
 
-    public long getMember_id() {
-        return member_id;
+    public long getMemberId() {
+        return memberId;
     }
 
-    public void setMember_id(long member_id) {
-        this.member_id = member_id;
+    public void setMemberId(long memberId) {
+        this.memberId = memberId;
     }
 
-    public String getEventName() {
-        return eventName;
+    public String getMemberName() {
+        return memberName;
     }
 
-    public void setEventName(String eventName) {
-        this.eventName = eventName;
+    public void setMemberName(String memberName) {
+        this.memberName = memberName;
     }
 
-    public long getKind_id() {
-        return kind_id;
+    public long getKindId() {
+        return kindId;
     }
 
-    public void setKind_id(long kind_id) {
-        this.kind_id = kind_id;
+    public void setKindId(long kindId) {
+        this.kindId = kindId;
+    }
+
+    @Override
+    public String toString() {
+        return "EventMember{" +
+                "memberId=" + memberId +
+                ", memberName='" + memberName + '\'' +
+                ", kindId=" + kindId +
+                '}';
     }
 }

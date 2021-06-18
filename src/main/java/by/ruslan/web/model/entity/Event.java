@@ -20,33 +20,34 @@ public class Event {
         }
     }
 
-    private long event_id;
-    private long sport_kind_id;
+    private long eventId;
+    private long sportKindId;
     private String eventName;
     private Date date;
     private Time time;
     private EventStatus status;
     private List<EventMember> members; //one to many
+    private EventResult eventResult;
     private boolean readyToBet;
     private boolean readyToMakeResult;
 
     public Event(){
     }
 
-    public long getEvent_id() {
-        return event_id;
+    public long getEventId() {
+        return eventId;
     }
 
-    public void setEvent_id(long event_id) {
-        this.event_id = event_id;
+    public void setEventId(long eventId) {
+        this.eventId = eventId;
     }
 
-    public long getSport_kind_id() {
-        return sport_kind_id;
+    public long getSportKindId() {
+        return sportKindId;
     }
 
-    public void setSport_kind_id(long sport_kind_id) {
-        this.sport_kind_id = sport_kind_id;
+    public void setSportKindId(long sportKindId) {
+        this.sportKindId = sportKindId;
     }
 
     public String getEventName() {
@@ -89,6 +90,14 @@ public class Event {
         this.members = members;
     }
 
+    public EventResult getEventResult() {
+        return eventResult;
+    }
+
+    public void setEventResult(EventResult eventResult) {
+        this.eventResult = eventResult;
+    }
+
     public boolean isReadyToBet() {
         return readyToBet;
     }
@@ -103,5 +112,21 @@ public class Event {
 
     public void setReadyToMakeResult(boolean readyToMakeResult) {
         this.readyToMakeResult = readyToMakeResult;
+    }
+
+    @Override
+    public String toString() {
+        return "Event{" +
+                "eventId=" + eventId +
+                ", sportKindId=" + sportKindId +
+                ", eventName='" + eventName + '\'' +
+                ", date=" + date +
+                ", time=" + time +
+                ", status=" + status +
+                ", members=" + members +
+                ", eventResult=" + eventResult +
+                ", readyToBet=" + readyToBet +
+                ", readyToMakeResult=" + readyToMakeResult +
+                '}';
     }
 }

@@ -5,7 +5,7 @@ import java.sql.Date;
 
 public class Bet {
     public static enum BetType{
-        DRAW("DRAW"), WIN("WIN"), LOSS("LOSS"), EXACT_SCORE("EXACT_SCORE");
+        DRAW("DRAW"), WIN("WIN"), /*LOSS("LOSS"),*/ EXACT_SCORE("EXACT_SCORE");
 
         private String value;
 
@@ -18,28 +18,27 @@ public class Bet {
         }
     }
 
-    private long bet_id;
+    private long betId;
     private BetType type;
     private BigDecimal money;
-    private BigDecimal win_money;
-    private Date betDate;
+    private BigDecimal winMoney;
     private String userEmail;
-    private long event_id; //one to many
-    private long user_id; //one to many
-    private long member1_id;
-    private long member2_id;
-    private int member1_score;
-    private long member2_score;
+    private long eventId; //one to many
+    private long userId; //one to many
+    private long member1Id;
+    private long member2Id;
+    private int member1Score;
+    private int member2Score;
 
     public Bet() {
     }
 
-    public long getBet_id() {
-        return bet_id;
+    public long getBetId() {
+        return betId;
     }
 
-    public void setBet_id(long bet_id) {
-        this.bet_id = bet_id;
+    public void setBetId(long betId) {
+        this.betId = betId;
     }
 
     public BetType getType() {
@@ -58,20 +57,12 @@ public class Bet {
         this.money = money;
     }
 
-    public Date getBetDate() {
-        return betDate;
+    public BigDecimal getWinMoney() {
+        return winMoney;
     }
 
-    public void setBetDate(Date betDate) {
-        this.betDate = betDate;
-    }
-
-    public BigDecimal getWin_money() {
-        return win_money;
-    }
-
-    public void setWin_money(BigDecimal win_money) {
-        this.win_money = win_money;
+    public void setWinMoney(BigDecimal winMoney) {
+        this.winMoney = winMoney;
     }
 
     public String getUserEmail() {
@@ -82,51 +73,68 @@ public class Bet {
         this.userEmail = userEmail;
     }
 
-    public long getEvent_id() {
-        return event_id;
+    public long getEventId() {
+        return eventId;
     }
 
-    public void setEvent_id(long event_id) {
-        this.event_id = event_id;
+    public void setEventId(long eventId) {
+        this.eventId = eventId;
     }
 
-    public long getUser_id() {
-        return user_id;
+    public long getUserId() {
+        return userId;
     }
 
-    public void setUser_id(long user_id) {
-        this.user_id = user_id;
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
 
-    public long getMember1_id() {
-        return member1_id;
+    public long getMember1Id() {
+        return member1Id;
     }
 
-    public void setMember1_id(long member1_id) {
-        this.member1_id = member1_id;
+    public void setMember1Id(long member1Id) {
+        this.member1Id = member1Id;
     }
 
-    public long getMember2_id() {
-        return member2_id;
+    public long getMember2Id() {
+        return member2Id;
     }
 
-    public void setMember2_id(long member2_id) {
-        this.member2_id = member2_id;
+    public void setMember2Id(long member2Id) {
+        this.member2Id = member2Id;
     }
 
-    public int getMember1_score() {
-        return member1_score;
+    public int getMember1Score() {
+        return member1Score;
     }
 
-    public void setMember1_score(int member1_score) {
-        this.member1_score = member1_score;
+    public void setMember1Score(int member1Score) {
+        this.member1Score = member1Score;
     }
 
-    public long getMember2_score() {
-        return member2_score;
+    public int getMember2Score() {
+        return member2Score;
     }
 
-    public void setMember2_score(long member2_score) {
-        this.member2_score = member2_score;
+    public void setMember2Score(int member2Score) {
+        this.member2Score = member2Score;
+    }
+
+    @Override
+    public String toString() {
+        return "Bet{" +
+                "betId=" + betId +
+                ", type=" + type +
+                ", money=" + money +
+                ", winMoney=" + winMoney +
+                ", userEmail='" + userEmail + '\'' +
+                ", eventId=" + eventId +
+                ", userId=" + userId +
+                ", member1Id=" + member1Id +
+                ", member2Id=" + member2Id +
+                ", member1Score=" + member1Score +
+                ", member2Score=" + member2Score +
+                '}';
     }
 }

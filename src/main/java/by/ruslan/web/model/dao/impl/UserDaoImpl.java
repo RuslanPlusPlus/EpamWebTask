@@ -17,7 +17,7 @@ import java.util.Optional;
 
 public class UserDaoImpl implements UserDao {
 
-    private static final Logger logger = LogManager.getLogger();
+    static final Logger logger = LogManager.getLogger();
     private static final String SQL_SELECT_ALL_USERS =
             "SELECT * FROM users";
     private static final String SQL_SELECT_USERS_BY_EMAIL =

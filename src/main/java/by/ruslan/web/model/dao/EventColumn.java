@@ -6,5 +6,5 @@ public final class EventColumn {
     public static final String EVENT_NAME = "event_name";
     public static final String DATE = "date";
     public static final String EVENT_STATUS = "event_status";
-    public static final String TIME = "time";
+    //public static final String TIME = "time";
 }

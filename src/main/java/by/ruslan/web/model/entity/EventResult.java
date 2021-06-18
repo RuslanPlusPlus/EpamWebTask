@@ -1,52 +1,63 @@
 package by.ruslan.web.model.entity;
 
 public class EventResult {
-    private long event_id; //one to one
-    private long winner_id;
-    private long loser_id;
-    private int winner_score;
-    private int loser_score;
+    private long eventId; //one to one
+    private long winnerId;
+    private long loserId;
+    private int winnerScore;
+    private int loserScore;
 
     public EventResult() {
     }
 
-    public long getEvent_id() {
-        return event_id;
+    public long getEventId() {
+        return eventId;
     }
 
-    public void setEvent_id(long event_id) {
-        this.event_id = event_id;
+    public void setEventId(long eventId) {
+        this.eventId = eventId;
     }
 
-    public long getWinner_id() {
-        return winner_id;
+    public long getWinnerId() {
+        return winnerId;
     }
 
-    public void setWinner_id(long winner_id) {
-        this.winner_id = winner_id;
+    public void setWinnerId(long winnerId) {
+        this.winnerId = winnerId;
     }
 
-    public long getLoser_id() {
-        return loser_id;
+    public long getLoserId() {
+        return loserId;
     }
 
-    public void setLoser_id(long loser_id) {
-        this.loser_id = loser_id;
+    public void setLoserId(long loserId) {
+        this.loserId = loserId;
     }
 
-    public int getWinner_score() {
-        return winner_score;
+    public int getWinnerScore() {
+        return winnerScore;
     }
 
-    public void setWinner_score(int winner_score) {
-        this.winner_score = winner_score;
+    public void setWinnerScore(int winnerScore) {
+        this.winnerScore = winnerScore;
     }
 
-    public int getLoser_score() {
-        return loser_score;
+    public int getLoserScore() {
+        return loserScore;
     }
 
-    public void setLoser_score(int loser_score) {
-        this.loser_score = loser_score;
+    public void setLoserScore(int loserScore) {
+        this.loserScore = loserScore;
+    }
+
+    @Override
+    public String toString() {
+        return "EventResult{" +
+                "eventId=" + eventId +
+                ", winnerId=" + winnerId +
+                ", loserId=" + loserId +
+                ", winnerScore=" + winnerScore +
+                ", loserScore=" + loserScore +
+                '}';
     }
 }
