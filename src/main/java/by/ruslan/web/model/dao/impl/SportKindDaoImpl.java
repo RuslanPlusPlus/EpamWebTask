@@ -24,7 +24,7 @@ public class SportKindDaoImpl implements SportKindDao {
             "INSERT INTO sport_kinds (kind_name) " +
                     "VALUES (?);";
     private static final String SQL_UPDATE_SPORT_KIND =
-            "UPDATE sport_kinds SET kind_name = ?" +
+            "UPDATE sport_kinds SET kind_name = ? " +
                     "WHERE kind_id = ?";
     private static final String SQL_FIND_SPORT_KIND_BY_ID =
             "SELECT * FROM sport_kinds WHERE kind_id = ?";

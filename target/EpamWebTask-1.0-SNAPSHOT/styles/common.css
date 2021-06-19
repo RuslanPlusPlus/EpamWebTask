@@ -198,7 +198,7 @@ header nav a {
 
 .event {
     border-radius: 5px 5px;
-    background-color: #efeeee;
+    background-color: #17a2b8;
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
@@ -219,9 +219,9 @@ header nav a {
     margin: 0;
 }
 
-.event-league {
-    font-size: 0.7em;
-    color: gray;
+.event-sport_kind {
+    font-size: 0.9em;
+    color: #ffd132;
 }
 
 .event-name {

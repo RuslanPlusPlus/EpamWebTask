@@ -20,11 +20,11 @@ public class EventResultDaoImpl implements EventResultDao {
 
     private static final String SQL_ADD_EVENT_RESULT =
             "INSERT INTO event_results (event_id, winner_id, loser_is, winner_score, loser_score) " +
-                    "VALUES (?, ?, ?, ?, ?)";
+                    "VALUES (?, ?, ?, ?, ?) ";
     private static final String SQL_FIND_EVENT_RESULT_BY_EVENT =
-            "SELECT * FROM event_results WHERE event_id = ?";
+            "SELECT * FROM event_results WHERE event_id = ? ";
     private static final String SQL_FIND_ALL_EVENT_RESULTS =
-            "SELECT * FROM event_results";
+            "SELECT * FROM event_results ";
 
     @Override
     public List<EventResult> findAll() throws DAOException {

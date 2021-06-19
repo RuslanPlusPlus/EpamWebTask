@@ -10,8 +10,8 @@ public interface EventDao extends BaseDao<Event>{
     boolean add(Event event) throws DAOException;
     List<Event> findAllActiveEvents() throws DAOException;
     List<Event> findAllCompletedEvents() throws DAOException;
-    List<Event> findAllActiveEventsBySportKind(long kind_id) throws DAOException;
+    List<Event> findAllActiveEventsBySportKind(long kindId) throws DAOException;
     List<Event> findAllActiveEventsSortedByDate() throws DAOException;
-    Optional<Event> findEventById(long event_id) throws DAOException;
+    Optional<Event> findEventById(long eventId) throws DAOException;
     boolean updateEvent(Event event) throws DAOException;
 }

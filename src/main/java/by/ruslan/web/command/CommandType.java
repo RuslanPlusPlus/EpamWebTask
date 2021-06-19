@@ -1,6 +1,7 @@
 package by.ruslan.web.command;
 
 import by.ruslan.web.command.impl.*;
+import by.ruslan.web.model.service.impl.EventServiceImpl;
 import by.ruslan.web.model.service.impl.UserServiceImpl;
 
 public enum CommandType {
@@ -51,7 +52,7 @@ public enum CommandType {
     },
     TO_MAIN_PAGE{
         {
-            this.command = new ToMainPageCommand();
+            this.command = new ToMainPageCommand(new EventServiceImpl());
         }
     },
     TO_PERSONAL_PAGE{

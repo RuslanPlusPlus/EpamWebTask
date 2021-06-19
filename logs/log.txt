@@ -1,8 +1,4 @@
-2021-06-17 23:17:00 [http-nio-8080-exec-18] DEBUG by.ruslan.web.controller.MainServlet - get method
-2021-06-17 23:17:00 [http-nio-8080-exec-18] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ChangeLocaleCommand
-2021-06-17 23:17:00 [http-nio-8080-exec-18] DEBUG by.ruslan.web.command.impl.ChangeLocaleCommand - Current page: /main-servlet?command=to_users_page
-2021-06-17 23:17:00 [http-nio-8080-exec-18] DEBUG by.ruslan.web.controller.MainServlet - /main-servlet?command=to_users_page
-2021-06-17 23:17:00 [http-nio-8080-exec-19] DEBUG by.ruslan.web.controller.MainServlet - get method
-2021-06-17 23:17:00 [http-nio-8080-exec-19] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToUsersPageCommand
-2021-06-17 23:17:00 [http-nio-8080-exec-19] DEBUG by.ruslan.web.command.impl.ToUsersPageCommand - [User{username=ruslan, email=ruslanned2001@gmail.com, role=ADMIN, balance=0.00}, User{username=jane, email=janepussy@gmail.com, role=BOOKMAKER, balance=0.00}]
-2021-06-17 23:17:00 [http-nio-8080-exec-19] DEBUG by.ruslan.web.controller.MainServlet - /pages/users.jsp
+2021-06-19 12:15:50 [http-nio-8080-exec-86] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-19 12:15:50 [http-nio-8080-exec-86] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToMainPageCommand
+2021-06-19 12:15:50 [http-nio-8080-exec-86] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - [Event{eventId=2, sportKindId=1, eventName='Napoli - Liverpool', date=2021-07-05, time=10:10:00, status=null, members=null, eventResult=null, readyToBet=false, readyToMakeResult=false}, Event{eventId=1, sportKindId=1, eventName='Barcelona - Real Madrid', date=2021-07-19, time=12:10:00, status=null, members=null, eventResult=null, readyToBet=false, readyToMakeResult=false}]
+2021-06-19 12:15:50 [http-nio-8080-exec-86] DEBUG by.ruslan.web.controller.MainServlet - /pages/main.jsp

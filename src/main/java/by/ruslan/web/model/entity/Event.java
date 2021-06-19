@@ -23,6 +23,7 @@ public class Event {
     private long eventId;
     private long sportKindId;
     private String eventName;
+    private String sportKindName;
     private Date date;
     private Time time;
     private EventStatus status;
@@ -96,6 +97,14 @@ public class Event {
 
     public void setEventResult(EventResult eventResult) {
         this.eventResult = eventResult;
+    }
+
+    public String getSportKindName() {
+        return sportKindName;
+    }
+
+    public void setSportKindName(String sportKindName) {
+        this.sportKindName = sportKindName;
     }
 
     public boolean isReadyToBet() {

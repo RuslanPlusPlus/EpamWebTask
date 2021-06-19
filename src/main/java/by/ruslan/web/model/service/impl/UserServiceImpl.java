@@ -20,7 +20,7 @@ import java.util.Optional;
 public class UserServiceImpl implements UserService {
 
     static final Logger logger = LogManager.getLogger();
-    private UserDao userDao = new UserDaoImpl();
+    private final UserDao userDao = new UserDaoImpl();
 
     @Override
     public List<User> findAll() throws ServiceException {

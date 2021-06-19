@@ -4,6 +4,7 @@ import by.ruslan.web.exception.DAOException;
 import by.ruslan.web.model.dao.EventColumn;
 import by.ruslan.web.model.dao.EventDao;
 
+import by.ruslan.web.model.dao.SportKindColumn;
 import by.ruslan.web.model.entity.Event;
 
 import by.ruslan.web.model.pool.ConnectionPool;
@@ -19,26 +20,26 @@ public class EventDaoImpl implements EventDao {
 
     static final Logger logger = LogManager.getLogger();
     private static final String SQL_SELECT_ALL_EVENTS =
-            "SELECT * FROM events JOIN sport_kinds ON sport_kind_id = sport_kinds.kind_id";
+            "SELECT * FROM events JOIN sport_kinds ON sport_kind_id = sport_kinds.kind_id ";
     private static final String SQL_FIND_EVENT_BY_ID =
             "SELECT * FROM events JOIN sport_kinds ON sport_kind_id = sport_kinds.kind_id WHERE event_id = ?";
     private static final String SQL_SELECT_ALL_ACTIVE_EVENTS =
-            "SELECT * FROM events JOIN sport_kinds ON sport_kind_id = sport_kinds.kind_id + " +
-                    "WHERE event_status = 'ACTIVE' OR date > now()";
+            "SELECT * FROM events JOIN sport_kinds ON sport_kind_id = sport_kinds.kind_id " +
+                    "WHERE event_status = 'ACTIVE' AND date > now()";
     private static final String SQL_SELECT_ALL_COMPLETED_EVENTS =
-            "SELECT * FROM events JOIN sport_kinds ON sport_kind_id = sport_kinds.kind_id + " +
+            "SELECT * FROM events JOIN sport_kinds ON sport_kind_id = sport_kinds.kind_id " +
                     "WHERE event_status = 'COMPLETED' OR date < now()";
     private static final String SQL_SELECT_ALL_ACTIVE_EVENTS_SORTED_BY_DATE =
-            "SELECT * FROM events JOIN sport_kinds ON sport_kind_id = sport_kinds.kind_id + " +
-                    "WHERE event_status = 'ACTIVE' OR date > now() ORDER BY date";
+            "SELECT * FROM events JOIN sport_kinds ON sport_kind_id = sport_kinds.kind_id " +
+                    "WHERE event_status = 'ACTIVE' AND date > now() ORDER BY date";
     private static final String SQL_SELECT_ALL_ACTIVE_EVENTS_BY_SPORT_KIND_ID =
-            "SELECT * FROM events JOIN sport_kinds ON sport_kind_id = sport_kinds.kind_id + " +
+            "SELECT * FROM events JOIN sport_kinds ON sport_kind_id = sport_kinds.kind_id " +
                     "WHERE (event_status = 'ACTIVE' OR date > now()) AND sport_kind_id = ?";
     private static final String SQL_ADD_EVENT =
             "INSERT INTO events (sport_kind_id, event_name, date, event_status) " +
                     "VALUES (?, ?, ?, ?);";
     private static final String SQL_UPDATE_EVENT =
-            "UPDATE events SET sport_kind_id = ?, event_name = ?, date = ?, event_status = ?"+
+            "UPDATE events SET sport_kind_id = ?, event_name = ?, date = ?, event_status = ? "+
                     "WHERE event_id = ?";
     @Override
     public List<Event> findAll() throws DAOException {
@@ -47,7 +48,7 @@ public class EventDaoImpl implements EventDao {
 
     @Override
     public boolean add(Event event) throws DAOException {
-        boolean result = false;
+        boolean result;
         try(Connection connection = ConnectionPool.getInstance().getConnection();
             PreparedStatement statement = connection.prepareStatement(SQL_ADD_EVENT)){
             long sport_kind_id = event.getSportKindId();
@@ -137,22 +138,6 @@ public class EventDaoImpl implements EventDao {
         return result;
     }
 
-    /*private List<Event> executeSqlRequestWithId(String request, Long id) throws DAOException{
-        List<Event> events = new ArrayList<>();
-        try(Connection connection = ConnectionPool.getInstance().getConnection();
-            PreparedStatement statement = connection.prepareStatement(request)) {
-            statement.setLong(1, id);
-            ResultSet resultSet = statement.executeQuery();
-            while(resultSet.next()){
-                Event event = buildEvent(resultSet);
-                events.add(event);
-            }
-        } catch (SQLException e) {
-            throw new DAOException(e);
-        }
-        return events;
-    }*/
-
     private List<Event> executeSqlRequest(String request) throws DAOException{
         List<Event> events = new ArrayList<>();
         try(Connection connection = ConnectionPool.getInstance().getConnection();
@@ -173,6 +158,7 @@ public class EventDaoImpl implements EventDao {
         long eventId = resultSet.getLong(EventColumn.EVENT_ID);
         long sportKindId = resultSet.getLong(EventColumn.SPORT_KIND_ID);
         String eventName = resultSet.getString(EventColumn.EVENT_NAME);
+        String sportKindName = resultSet.getString(SportKindColumn.KIND_NAME);
         //TimeStamp object contains date and time
         Date date = resultSet.getDate(EventColumn.DATE);
         Time time = resultSet.getTime(EventColumn.DATE);
@@ -180,6 +166,7 @@ public class EventDaoImpl implements EventDao {
         event.setEventId(eventId);
         event.setEventName(eventName);
         event.setSportKindId(sportKindId);
+        event.setSportKindName(sportKindName);
         event.setDate(date);
         event.setTime(time);
         //members are set in service

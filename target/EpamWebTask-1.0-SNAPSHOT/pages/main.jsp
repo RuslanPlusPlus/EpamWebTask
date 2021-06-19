@@ -21,35 +21,24 @@
     <div class="main-part">
         <!-- left menu -->
 
-
-
-        <!--
         <div class="center-part">
-            <div>
-
-            </div>
-            <div>
-                <form action="main-servlet" method="post">
-                    <input type="hidden" name="command" value="find_user_by_email">
-                    Email:
-                    <input type="email" name="email" value="">
-                    <br/>
-                    <input type="submit" name="submit" value="Display user">
-                </form>
-            </div>
-            <div>
-                <p>
-                    <a href="${pageContext.request.contextPath}/main-servlet?command=to_login_page">Login</a>
-                </p>
-            </div>
+            <c:forEach var="event" items="${requestScope.events}">
+                <div class="event">
+                    <div class="event-main">
+                        <h3 class="event-name"><c:out value="${event.eventName}" /></h3>
+                        <p class="event-sport_kind">${event.sportKindName}</p>
+                        <time class="event-date">${event.date} ${event.time}</time>
+                    </div>
+                    <div class="event-secondary">
+                        <a href="<c:url value="main-servlet?command=to_event_page&eventId=${event.eventId}" />">
+                            <button class="event-btn"><fmt:message key="main.event.btn" /></button>
+                        </a>
+                    </div>
+                </div>
+            </c:forEach>
         </div>
-        -->
-
-
     </div>
 </div>
-
-
 
 </body>
 </html>
