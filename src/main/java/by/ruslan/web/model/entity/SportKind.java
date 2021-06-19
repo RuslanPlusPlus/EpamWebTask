@@ -1,21 +1,18 @@
 package by.ruslan.web.model.entity;
 
-import java.util.List;
-
 public class SportKind {
-    private long kind_id;
+    private long kindId;
     private String kindName;
-    private List<EventMember> members; //one to many
 
     public SportKind(){
     }
 
-    public long getKind_id() {
-        return kind_id;
+    public long getKindId() {
+        return kindId;
     }
 
-    public void setKind_id(long kind_id) {
-        this.kind_id = kind_id;
+    public void setKindId(long kindId) {
+        this.kindId = kindId;
     }
 
     public String getKindName() {
@@ -26,20 +23,11 @@ public class SportKind {
         this.kindName = kindName;
     }
 
-    public List<EventMember> getMembers() {
-        return members;
-    }
-
-    public void setMembers(List<EventMember> members) {
-        this.members = members;
-    }
-
     @Override
     public String toString() {
         return "SportKind{" +
-                "kind_id=" + kind_id +
-                ", kindName='" + kindName + '\'' +
-                ", members=" + members +
+                "kind_id=" + kindId +
+                ", kindName='" + kindName +
                 '}';
     }
 }

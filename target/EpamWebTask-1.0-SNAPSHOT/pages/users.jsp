@@ -16,9 +16,9 @@
     <title>Users page</title>
 </head>
 <body>
-<div class="container">
+<div class="container_s">
     <c:import url="fragments/header.jsp"/>
-    <div class="main-part">
+    <div class="main">
         <!-- left menu -->
         <div class="center-part">
 

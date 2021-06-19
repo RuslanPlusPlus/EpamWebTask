@@ -47,10 +47,10 @@
     <div class="menu">
         <nav>
             <div class="main-menu-item-container">
+                <a class="main-menu-item" href="<c:url value="main-servlet?command=to_main_page"/>">
+                    <fmt:message key="header.mainPage"/>
+                </a>
                 <c:if test="${!empty sessionScope.user}">
-                    <a class="main-menu-item" href="<c:url value="main-servlet?command=to_main_page"/>">
-                        <fmt:message key="header.mainPage"/>
-                    </a>
                     <a class="main-menu-item" href="<c:url value="main-servlet?command=to_personal_page"/>">
                         <fmt:message key="header.personalPage"/>
                     </a>
@@ -89,7 +89,5 @@
     </div>
 
 </header>
-
-
 </body>
 </html>

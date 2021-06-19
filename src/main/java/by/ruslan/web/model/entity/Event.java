@@ -11,7 +11,7 @@ public class Event {
 
         private String value;
 
-        private EventStatus(String value){
+        EventStatus(String value){
             this.value = value;
         }
 
@@ -30,7 +30,7 @@ public class Event {
     private List<EventMember> members; //one to many
     private EventResult eventResult;
     private boolean readyToBet;
-    private boolean readyToMakeResult;
+    private boolean readyToAddResult;
 
     public Event(){
     }
@@ -115,12 +115,12 @@ public class Event {
         this.readyToBet = readyToBet;
     }
 
-    public boolean isReadyToMakeResult() {
-        return readyToMakeResult;
+    public boolean isReadyToAddResult() {
+        return readyToAddResult;
     }
 
-    public void setReadyToMakeResult(boolean readyToMakeResult) {
-        this.readyToMakeResult = readyToMakeResult;
+    public void setReadyToAddResult(boolean readyToAddResult) {
+        this.readyToAddResult = readyToAddResult;
     }
 
     @Override
@@ -135,7 +135,7 @@ public class Event {
                 ", members=" + members +
                 ", eventResult=" + eventResult +
                 ", readyToBet=" + readyToBet +
-                ", readyToMakeResult=" + readyToMakeResult +
+                ", readyToMakeResult=" + readyToAddResult +
                 '}';
     }
 }

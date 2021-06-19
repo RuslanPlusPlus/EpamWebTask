@@ -10,7 +10,7 @@ import java.util.Optional;
 public interface EventService {
     List<Event> findActiveEvents() throws ServiceException;
     List<Event> findActiveEventsSortedByDate() throws ServiceException;
-    List<Event> findActiveEventsSortedBySportKind(long kindId) throws ServiceException;
+    List<Event> findActiveEventsBySportKind(long kindId) throws ServiceException;
     Optional<Event> findEventById(long eventId) throws ServiceException;
     boolean add(Event event) throws DAOException;
 }

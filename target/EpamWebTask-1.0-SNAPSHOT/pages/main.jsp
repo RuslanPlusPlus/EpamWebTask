@@ -16,16 +16,15 @@
     <title>Main page</title>
 </head>
 <body>
-<div class="container">
+<div class="container_s">
     <c:import url="fragments/header.jsp"/>
-    <div class="main-part">
-        <!-- left menu -->
-
-        <div class="center-part">
+    <div class="main">
+        <div class="center-part"
+        <c:import url="fragments/sidebar.jsp"/>
             <c:forEach var="event" items="${requestScope.events}">
                 <div class="event">
                     <div class="event-main">
-                        <h3 class="event-name"><c:out value="${event.eventName}" /></h3>
+                        <h5 class="event-name"><c:out value="${event.eventName}" /></h5>
                         <p class="event-sport_kind">${event.sportKindName}</p>
                         <time class="event-date">${event.date} ${event.time}</time>
                     </div>

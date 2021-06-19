@@ -19,7 +19,7 @@ html {
   box-sizing: inherit;
 }
 
-.container {
+.container_s {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
@@ -28,25 +28,25 @@ html {
 }
 
 @media (min-width: 576px) {
-  .container {
+  .container_s {
     max-width: 540px;
   }
 }
 
 @media (min-width: 768px) {
-  .container {
+  .container_s {
     max-width: 720px;
   }
 }
 
 @media (min-width: 992px) {
-  .container {
+  .container_s {
     max-width: 960px;
   }
 }
 
 @media (min-width: 1200px) {
-  .container {
+  .container_s {
     max-width: 1140px;
   }
 }

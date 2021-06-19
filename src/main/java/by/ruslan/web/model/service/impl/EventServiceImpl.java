@@ -7,10 +7,12 @@ import by.ruslan.web.model.dao.EventMemberDao;
 import by.ruslan.web.model.dao.impl.EventDaoImpl;
 import by.ruslan.web.model.dao.impl.EventMemberDaoImpl;
 import by.ruslan.web.model.entity.Event;
+import by.ruslan.web.model.entity.EventMember;
 import by.ruslan.web.model.service.EventService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -47,7 +49,7 @@ public class EventServiceImpl implements EventService {
     }
 
     @Override
-    public List<Event> findActiveEventsSortedBySportKind(long kindId) throws ServiceException {
+    public List<Event> findActiveEventsBySportKind(long kindId) throws ServiceException {
         List<Event> events;
         try {
             events = eventDao.findAllActiveEventsBySportKind(kindId);
@@ -63,6 +65,20 @@ public class EventServiceImpl implements EventService {
         Optional<Event> eventOptional;
         try {
             eventOptional = eventDao.findEventById(eventId);
+            if (eventOptional.isPresent()){
+                List<EventMember> members = memberDao.findEventMembersByEvent(eventId);
+                Event event = eventOptional.get();
+                event.setMembers(members);
+                long eventTime = event.getDate().getTime();
+                long currentTime = new Date().getTime();
+                if (eventTime > currentTime && event.getStatus() == Event.EventStatus.ACTIVE){
+                    event.setReadyToBet(true);
+                    logger.debug("Event " + eventId + " is ready to bet");
+                }else if(eventTime < currentTime && event.getStatus() == Event.EventStatus.ACTIVE){
+                    event.setReadyToAddResult(true);
+                    logger.debug("Event " + eventId + " is ready to be added the result");
+                }
+            }
             logger.debug(eventOptional);
         } catch (DAOException e) {
             throw new ServiceException(e);

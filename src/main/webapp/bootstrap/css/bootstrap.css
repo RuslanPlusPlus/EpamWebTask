@@ -553,7 +553,7 @@ pre code {
   overflow-y: scroll;
 }
 
-.container {
+.container_s {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
@@ -562,25 +562,25 @@ pre code {
 }
 
 @media (min-width: 576px) {
-  .container {
+  .container_s {
     max-width: 540px;
   }
 }
 
 @media (min-width: 768px) {
-  .container {
+  .container_s {
     max-width: 720px;
   }
 }
 
 @media (min-width: 992px) {
-  .container {
+  .container_s {
     max-width: 960px;
   }
 }
 
 @media (min-width: 1200px) {
-  .container {
+  .container_s {
     max-width: 1140px;
   }
 }
@@ -3949,7 +3949,7 @@ tbody.collapse.show {
   padding: 0.5rem 1rem;
 }
 
-.navbar > .container,
+.navbar > .container_s,
 .navbar > .container-fluid {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4046,7 +4046,7 @@ tbody.collapse.show {
 }
 
 @media (max-width: 575.98px) {
-  .navbar-expand-sm > .container,
+  .navbar-expand-sm > .container_s,
   .navbar-expand-sm > .container-fluid {
     padding-right: 0;
     padding-left: 0;
@@ -4080,7 +4080,7 @@ tbody.collapse.show {
     padding-right: 0.5rem;
     padding-left: 0.5rem;
   }
-  .navbar-expand-sm > .container,
+  .navbar-expand-sm > .container_s,
   .navbar-expand-sm > .container-fluid {
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
@@ -4102,7 +4102,7 @@ tbody.collapse.show {
 }
 
 @media (max-width: 767.98px) {
-  .navbar-expand-md > .container,
+  .navbar-expand-md > .container_s,
   .navbar-expand-md > .container-fluid {
     padding-right: 0;
     padding-left: 0;
@@ -4136,7 +4136,7 @@ tbody.collapse.show {
     padding-right: 0.5rem;
     padding-left: 0.5rem;
   }
-  .navbar-expand-md > .container,
+  .navbar-expand-md > .container_s,
   .navbar-expand-md > .container-fluid {
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
@@ -4158,7 +4158,7 @@ tbody.collapse.show {
 }
 
 @media (max-width: 991.98px) {
-  .navbar-expand-lg > .container,
+  .navbar-expand-lg > .container_s,
   .navbar-expand-lg > .container-fluid {
     padding-right: 0;
     padding-left: 0;
@@ -4192,7 +4192,7 @@ tbody.collapse.show {
     padding-right: 0.5rem;
     padding-left: 0.5rem;
   }
-  .navbar-expand-lg > .container,
+  .navbar-expand-lg > .container_s,
   .navbar-expand-lg > .container-fluid {
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
@@ -4214,7 +4214,7 @@ tbody.collapse.show {
 }
 
 @media (max-width: 1199.98px) {
-  .navbar-expand-xl > .container,
+  .navbar-expand-xl > .container_s,
   .navbar-expand-xl > .container-fluid {
     padding-right: 0;
     padding-left: 0;
@@ -4248,7 +4248,7 @@ tbody.collapse.show {
     padding-right: 0.5rem;
     padding-left: 0.5rem;
   }
-  .navbar-expand-xl > .container,
+  .navbar-expand-xl > .container_s,
   .navbar-expand-xl > .container-fluid {
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
@@ -4279,7 +4279,7 @@ tbody.collapse.show {
   justify-content: flex-start;
 }
 
-.navbar-expand > .container,
+.navbar-expand > .container_s,
 .navbar-expand > .container-fluid {
   padding-right: 0;
   padding-left: 0;
@@ -4306,7 +4306,7 @@ tbody.collapse.show {
   padding-left: 0.5rem;
 }
 
-.navbar-expand > .container,
+.navbar-expand > .container_s,
 .navbar-expand > .container-fluid {
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
@@ -8951,7 +8951,7 @@ a.text-dark:hover, a.text-dark:focus {
   body {
     min-width: 992px !important;
   }
-  .container {
+  .container_s {
     min-width: 992px !important;
   }
   .navbar {

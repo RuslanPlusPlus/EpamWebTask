@@ -2,6 +2,7 @@ package by.ruslan.web.command;
 
 import by.ruslan.web.command.impl.*;
 import by.ruslan.web.model.service.impl.EventServiceImpl;
+import by.ruslan.web.model.service.impl.SportKindServiceImpl;
 import by.ruslan.web.model.service.impl.UserServiceImpl;
 
 public enum CommandType {
@@ -52,7 +53,7 @@ public enum CommandType {
     },
     TO_MAIN_PAGE{
         {
-            this.command = new ToMainPageCommand(new EventServiceImpl());
+            this.command = new ToMainPageCommand(new EventServiceImpl(), new SportKindServiceImpl());
         }
     },
     TO_PERSONAL_PAGE{
@@ -73,6 +74,16 @@ public enum CommandType {
     TO_USERS_PAGE{
         {
             this.command = new ToUsersPageCommand(new UserServiceImpl());
+        }
+    },
+    TO_EVENT_PAGE{
+        {
+            this.command = new ToEventPageCommand(new EventServiceImpl());
+        }
+    },
+    SHOW_EVENTS_BY_SPORT_KIND{
+        {
+            this.command = new ShowEventsBySportKindCommand(new EventServiceImpl(), new SportKindServiceImpl());
         }
     };
     Command command;

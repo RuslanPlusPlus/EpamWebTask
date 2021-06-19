@@ -8,6 +8,7 @@ public final class PagePath {
     public static final String SIGN_UP = "/pages/signup.jsp";
     public static final String USER_LIST = "/pages/user-list.jsp";
     public static final String ADMIN_PAGE = "/pages/admin.jsp";
+    public static final String EVENT_PAGE = "/pages/event.jsp";
     public static final String BOOKMAKER_PAGE = "/pages/bookmaker.jsp";
     public static final String USERS_PAGE = "/pages/users.jsp";
     public static final String ERROR_500 = "/pages/errors/error500.jsp";
@@ -18,5 +19,8 @@ public final class PagePath {
     public static final String TO_LOGIN_PAGE = "/main-servlet?command=to_login_page";
     public static final String TO_REGISTER_PAGE = "/main-servlet?command=to_register_page";
     public static final String TO_ADMIN_PAGE = "/main-servlet?command=to_admin_page";
+    public static final String TO_EVENT_PAGE = "/main-servlet?command=to_event_page";
+    public static final String SHOW_EVENTS_BY_SPORT_KIND = "/main-servlet?command=show_events_by_sport_kind";
+
     private PagePath(){}
 }

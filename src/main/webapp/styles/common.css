@@ -1,4 +1,3 @@
-
 header{
     background-repeat: no-repeat;
     background-position: top center;
@@ -31,14 +30,14 @@ header{
     color: #fd7e14;
 }
 
-.container {
+.container_s {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.main-part {
+.main {
     width: 1000px;
     height: auto;
     background-color: white;
@@ -193,7 +192,6 @@ header nav a {
     background: #eb701a;
 }
 
-
                 /* EVENT STYLES */
 
 .event {
@@ -244,4 +242,101 @@ header nav a {
 
 .event-btn:active {
     background: linear-gradient(to top, #ffd132 0%,#f7ff89 100%);
+}
+
+.event-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.event-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.make-rate-link {
+    color: white;
+    margin-top: 10px;
+    background: #eba11a;
+    border: 1px solid white;
+    transition: all 0.2s linear;
+    border-radius: 4px;
+    text-decoration: none;
+    padding: 3px;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+}
+
+.add-result-link {
+    color: white;
+    background: #eba11a;
+    border: 1px solid white;
+    transition: all 0.2s linear;
+    border-radius: 4px;
+    text-decoration: none;
+    padding: 3px;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+}
+
+.make-rate-link:hover {
+    background: #eb701a;
+}
+
+.event-secondary {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.members-div ul {
+    list-style-type: square;
+}
+
+.event-result {
+    margin: 0px;
+}
+
+.event-result p {
+    margin: 0px;
+}
+
+    /* LEFT MENU */
+.sideBar {
+    width: 185px;
+    height: auto;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.sideBar nav {
+    display: inline;
+}
+
+.sideBar nav a {
+    color: #17a2b8;
+    text-decoration: none;
+    padding: 0 10px 0 10px;
+    line-height: 50px;
+    height: 50px;
+    display: block;
+    margin: -1px;
+    transition: 0.2s linear;
+}
+
+.sideBar nav a:hover {
+    background-color: lightgray;
+}
+
+.sideBar nav b {
+    color: #ffd132;
+    padding: 0 10px 0 10px;
+    line-height: 50px;
+    height: 50px;
+    display: block;
+    margin: -1px;
+    background-color: #17a2b8;
 }

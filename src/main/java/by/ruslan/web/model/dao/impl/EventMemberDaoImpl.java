@@ -22,13 +22,13 @@ public class EventMemberDaoImpl implements EventMemberDao {
             "SELECT * FROM event_members JOIN sport_kinds ON kind_id = sport_kinds.kind_id " +
                     "WHERE member_id = ?";
     private static final String SQL_FIND_EVENT_MEMBERS_BY_EVENT =
-            "SELECT * FROM event_members JOIN even_link_eventmember ON member_id = even_link_eventmember.member_id" +
-                    "WHERE even_link_eventmember.event_id = ?";
+            "SELECT * FROM event_members JOIN event_link_eventmember ON event_members.member_id = event_link_eventmember.member_id " +
+                    "WHERE event_link_eventmember.event_id = ?";
     private static final String SQL_FIND_EVENT_MEMBER_BY_SPORT_KIND_ID =
             "SELECT * FROM event_members JOIN sport_kinds ON kind_id = sport_kinds.kind_id" +
                     "WHERE sport_kind_id = ?";
     private static final String SQL_LINK_MEMBER_TO_EVENT =
-            "INSERT INTO even_link_eventmember (event_id, member_id) " +
+            "INSERT INTO event_link_eventmember (event_id, member_id) " +
                     "VALUES (?, ?)";
     private static final String SQL_ADD_EVENT_MEMBER =
             "INSERT INTO event_members (member_name, kind_id) " +

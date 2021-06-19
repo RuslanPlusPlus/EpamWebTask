@@ -1,10 +1,8 @@
 package by.ruslan.web.model.dao.impl;
 
 import by.ruslan.web.exception.DAOException;
-import by.ruslan.web.model.dao.EventMemberColumn;
 import by.ruslan.web.model.dao.SportKindColumn;
 import by.ruslan.web.model.dao.SportKindDao;
-import by.ruslan.web.model.entity.EventMember;
 import by.ruslan.web.model.entity.SportKind;
 import by.ruslan.web.model.pool.ConnectionPool;
 
@@ -66,7 +64,7 @@ public class SportKindDaoImpl implements SportKindDao {
             PreparedStatement statement = connection.prepareStatement(SQL_UPDATE_SPORT_KIND)){
             String kindName = sportKind.getKindName();
             statement.setString(1, kindName);
-            statement.setLong(2, sportKind.getKind_id());
+            statement.setLong(2, sportKind.getKindId());
             result = statement.executeUpdate() > 0;
         } catch (SQLException e) {
             throw new DAOException(e);
@@ -95,7 +93,7 @@ public class SportKindDaoImpl implements SportKindDao {
         long kindId = resultSet.getLong(SportKindColumn.KIND_ID);
         String kindName = resultSet.getString(SportKindColumn.KIND_NAME);
         SportKind sportKind = new SportKind();
-        sportKind.setKind_id(kindId);
+        sportKind.setKindId(kindId);
         sportKind.setKindName(kindName);
         return sportKind;
     }

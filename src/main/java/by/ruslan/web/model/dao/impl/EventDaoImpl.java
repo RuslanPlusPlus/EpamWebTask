@@ -162,6 +162,7 @@ public class EventDaoImpl implements EventDao {
         //TimeStamp object contains date and time
         Date date = resultSet.getDate(EventColumn.DATE);
         Time time = resultSet.getTime(EventColumn.DATE);
+        Event.EventStatus status = Event.EventStatus.valueOf(resultSet.getString(EventColumn.EVENT_STATUS));
         Event event = new Event();
         event.setEventId(eventId);
         event.setEventName(eventName);
@@ -169,6 +170,7 @@ public class EventDaoImpl implements EventDao {
         event.setSportKindName(sportKindName);
         event.setDate(date);
         event.setTime(time);
+        event.setStatus(status);
         //members are set in service
         return event;
     }
