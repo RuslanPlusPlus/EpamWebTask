@@ -31,6 +31,12 @@ public class ControllerSecurityFilter implements Filter {
         HttpSession session = request.getSession();
 
         String commandName = request.getParameter(RequestParameter.COMMAND);
+        if (commandName == null){
+            logger.error("Cannot determine command name");
+            request.setAttribute(RequestAttribute.ERROR, "Cannot determine command name");
+            response.sendError(500);
+            return;
+        }
         CommandType commandType = CommandType.valueOf(commandName.toUpperCase());
         Set<CommandType> allowedCommands;
 
@@ -40,17 +46,11 @@ public class ControllerSecurityFilter implements Filter {
             role = user.getRole();
         }
 
-        switch (role) {
-            case CLIENT:
-                allowedCommands = RoleAccessType.CLIENT.getAllowedCommands();
-                break;
-            case ADMIN:
-                allowedCommands = RoleAccessType.ADMIN.getAllowedCommands();
-                break;
-            default:
-                allowedCommands = RoleAccessType.GUEST.getAllowedCommands();
-                break;
-        }
+        allowedCommands = switch (role) {
+            case CLIENT -> RoleAccessType.CLIENT.getAllowedCommands();
+            case ADMIN -> RoleAccessType.ADMIN.getAllowedCommands();
+            default -> RoleAccessType.GUEST.getAllowedCommands();
+        };
 
         boolean accessAllowed = false;
         if (allowedCommands.contains(commandType)){

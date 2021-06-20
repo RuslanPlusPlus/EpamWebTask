@@ -1,22 +1,17 @@
-2021-06-21 01:51:33 [http-nio-8080-exec-220] DEBUG by.ruslan.web.controller.MainServlet - get method
-2021-06-21 01:51:33 [http-nio-8080-exec-220] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToMainPageCommand
-2021-06-21 01:51:33 [http-nio-8080-exec-220] DEBUG by.ruslan.web.controller.MainServlet - /pages/main.jsp
-2021-06-21 01:51:35 [http-nio-8080-exec-219] DEBUG by.ruslan.web.controller.MainServlet - get method
-2021-06-21 01:51:35 [http-nio-8080-exec-219] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToEventPageCommand
-2021-06-21 01:51:35 [http-nio-8080-exec-219] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Event 1 is ready to bet
-2021-06-21 01:51:35 [http-nio-8080-exec-219] DEBUG by.ruslan.web.controller.MainServlet - /pages/event.jsp
-2021-06-21 01:51:36 [http-nio-8080-exec-225] DEBUG by.ruslan.web.controller.MainServlet - get method
-2021-06-21 01:51:36 [http-nio-8080-exec-225] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToMakeBetPageCommand
-2021-06-21 01:51:36 [http-nio-8080-exec-225] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Event 1 is ready to bet
-2021-06-21 01:51:36 [http-nio-8080-exec-225] DEBUG by.ruslan.web.controller.MainServlet - /pages/makeBetPage.jsp
-2021-06-21 01:51:37 [http-nio-8080-exec-228] DEBUG by.ruslan.web.controller.MainServlet - get method
-2021-06-21 01:51:37 [http-nio-8080-exec-228] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToDrawBetPageCommand
-2021-06-21 01:51:37 [http-nio-8080-exec-228] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Event 1 is ready to bet
-2021-06-21 01:51:37 [http-nio-8080-exec-228] DEBUG by.ruslan.web.controller.MainServlet - /pages/drawBet.jsp
-2021-06-21 01:51:39 [http-nio-8080-exec-222] DEBUG by.ruslan.web.controller.MainServlet - post method
-2021-06-21 01:51:39 [http-nio-8080-exec-222] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.MakeDrawBetCommand
-2021-06-21 01:51:39 [http-nio-8080-exec-222] DEBUG by.ruslan.web.controller.MainServlet - /main-servlet?command=to_event_page
-2021-06-21 01:51:39 [http-nio-8080-exec-222] DEBUG by.ruslan.web.controller.MainServlet - post method
-2021-06-21 01:51:39 [http-nio-8080-exec-222] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToEventPageCommand
-2021-06-21 01:51:39 [http-nio-8080-exec-222] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Event 1 is ready to bet
-2021-06-21 01:51:39 [http-nio-8080-exec-222] DEBUG by.ruslan.web.controller.MainServlet - /pages/event.jsp
+2021-06-21 02:16:44 [http-nio-8080-exec-239] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-21 02:16:44 [http-nio-8080-exec-239] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToMainPageCommand
+2021-06-21 02:16:44 [http-nio-8080-exec-239] DEBUG by.ruslan.web.controller.MainServlet - /pages/main.jsp
+2021-06-21 02:16:47 [http-nio-8080-exec-255] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-21 02:16:47 [http-nio-8080-exec-255] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToLoginPageCommand
+2021-06-21 02:16:47 [http-nio-8080-exec-255] DEBUG by.ruslan.web.controller.MainServlet - /pages/signin.jsp
+2021-06-21 02:16:52 [http-nio-8080-exec-253] DEBUG by.ruslan.web.controller.MainServlet - post method
+2021-06-21 02:16:52 [http-nio-8080-exec-253] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.SignInCommand
+2021-06-21 02:16:52 [http-nio-8080-exec-253] DEBUG by.ruslan.web.command.impl.SignInCommand - User authorized
+2021-06-21 02:16:52 [http-nio-8080-exec-253] DEBUG by.ruslan.web.command.impl.SignInCommand - Optional[User{username=Ruslan, userId=2, email=ruslanned2001@gmail.com, role=ADMIN, balance=0.00Active bets=[]Completed bets bets=null}]
+2021-06-21 02:16:52 [http-nio-8080-exec-253] DEBUG by.ruslan.web.controller.MainServlet - /index.jsp
+2021-06-21 02:16:52 [http-nio-8080-exec-252] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-21 02:16:52 [http-nio-8080-exec-252] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToMainPageCommand
+2021-06-21 02:16:52 [http-nio-8080-exec-252] DEBUG by.ruslan.web.controller.MainServlet - /pages/main.jsp
+2021-06-21 02:16:53 [http-nio-8080-exec-240] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-21 02:16:53 [http-nio-8080-exec-240] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToAdminPageCommand
+2021-06-21 02:16:53 [http-nio-8080-exec-240] DEBUG by.ruslan.web.controller.MainServlet - /pages/admin.jsp

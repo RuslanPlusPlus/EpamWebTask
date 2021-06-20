@@ -27,7 +27,7 @@
                     <div class="col-2 m-2">
                         <div class="list-group">
                             <a href="${pageContext.request.contextPath}/main-servlet?command=to_users_page"
-                               class="list-group-item list-group-item-action text-style active">
+                               class="make-bet-link">
                                 <fmt:message key="admin.users"/>
                             </a>
                             <br/>
@@ -36,7 +36,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 </body>
