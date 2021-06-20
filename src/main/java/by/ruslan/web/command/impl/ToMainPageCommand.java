@@ -34,6 +34,9 @@ public class ToMainPageCommand implements Command {
         if (session.getAttribute(SessionAttribute.ROLE) == null) {
             session.setAttribute(SessionAttribute.ROLE, UserRole.GUEST);
         }
+        if (session.getAttribute(SessionAttribute.LOCALE) == null) {
+            session.setAttribute(SessionAttribute.LOCALE, SessionAttribute.ENGLISH);
+        }
         session.setAttribute(SessionAttribute.CURRENT_PAGE, PagePath.TO_MAIN_PAGE);
         try {
             RequestEditor.addSportKindsToRequest(request, sportKindService);
@@ -48,5 +51,4 @@ public class ToMainPageCommand implements Command {
         router = new Router(PagePath.MAIN_PAGE);
         return router;
     }
-
 }

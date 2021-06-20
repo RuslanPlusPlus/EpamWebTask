@@ -7,6 +7,7 @@ public final class RequestAttribute {
     public static final String USERS = "users";
     public static final String EVENTS = "events";
     public static final String EVENT = "event";
+    public static final String EVENT_ID = "eventId";
     public static final String SPORT_KINDS = "sportKinds";
     public static final String ERROR_NO_USERS = "errorNoUsers";
     public static final String ERROR_EMAIL_EXISTS = "errorEmailExists";

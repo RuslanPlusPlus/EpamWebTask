@@ -52,7 +52,7 @@
                         </div>
                         <c:if test="${requestScope.event.readyToBet}">
                             <a class="make-rate-link"
-                               href="<c:url value="main-servlet?command=to_make_rate_page&eventId=${requestScope.event.eventId}"/>">
+                               href="<c:url value="main-servlet?command=to_make_bet_page&eventId=${requestScope.event.eventId}"/>">
                                 <fmt:message key="event.makeRate"/>
                             </a>
                         </c:if>

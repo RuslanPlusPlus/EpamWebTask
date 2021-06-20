@@ -12,6 +12,10 @@
         <location>/pages/errors/error500.jsp</location>
     </error-page>
     <error-page>
+        <error-code>403</error-code>
+        <location>/pages/errors/error403.jsp</location>
+    </error-page>
+    <error-page>
         <exception-type>java.lang.RuntimeException</exception-type>
         <location>/pages/errors/error-runtime.jsp</location>
     </error-page>

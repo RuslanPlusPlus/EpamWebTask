@@ -12,8 +12,8 @@
 </head>
 <body>
 <h1>Error. Status code: 500</h1>
-<div>
-    Error message: ${error}
+<div class="ui-state-error-text">
+    Error message: ${requestScope.error}
 </div>
 </body>
 </html>

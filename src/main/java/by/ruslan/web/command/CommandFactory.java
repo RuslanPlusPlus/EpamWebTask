@@ -9,11 +9,10 @@ import java.util.Optional;
 public class CommandFactory {
 
     static final Logger logger = LogManager.getLogger();
-    static final String PARAMETER = "command";
 
     public static Optional<Command> defineCommand(HttpServletRequest request){
         Command command;
-        String action = request.getParameter(PARAMETER);
+        String action = request.getParameter(RequestParameter.COMMAND);
         if (action == null || action.isBlank()){
             return Optional.empty();
         }

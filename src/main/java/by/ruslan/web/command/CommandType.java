@@ -85,6 +85,26 @@ public enum CommandType {
         {
             this.command = new ShowEventsBySportKindCommand(new EventServiceImpl(), new SportKindServiceImpl());
         }
+    },
+    TO_MAKE_BET_PAGE{
+        {
+            this.command = new ToMakeBetPageCommand(new EventServiceImpl());
+        }
+    },
+    TO_DRAW_BET_PAGE{
+        {
+            this.command = new ToDrawBetPageCommand();
+        }
+    },
+    TO_WIN_BET_PAGE{
+        {
+            this.command = new ToWinBetPageCommand(new EventServiceImpl());
+        }
+    },
+    TO_EXACT_SCORE_BET_PAGE{
+        {
+            this.command = new ToExactScoreBetPageCommand();
+        }
     };
     Command command;
 
