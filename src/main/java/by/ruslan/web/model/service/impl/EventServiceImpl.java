@@ -29,7 +29,7 @@ public class EventServiceImpl implements EventService {
         List<Event> events;
         try {
             events = eventDao.findAllActiveEvents();
-            logger.debug(events);
+            //logger.debug(events);
         } catch (DAOException e) {
             throw new ServiceException(e);
         }
@@ -41,7 +41,7 @@ public class EventServiceImpl implements EventService {
         List<Event> events;
         try {
             events = eventDao.findAllActiveEventsSortedByDate();
-            logger.debug(events);
+            //logger.debug(events);
         } catch (DAOException e) {
             throw new ServiceException(e);
         }
@@ -53,7 +53,7 @@ public class EventServiceImpl implements EventService {
         List<Event> events;
         try {
             events = eventDao.findAllActiveEventsBySportKind(kindId);
-            logger.debug(events);
+            //logger.debug(events);
         } catch (DAOException e) {
             throw new ServiceException(e);
         }
@@ -79,7 +79,7 @@ public class EventServiceImpl implements EventService {
                     logger.debug("Event " + eventId + " is ready to be added the result");
                 }
             }
-            logger.debug(eventOptional);
+            //logger.debug(eventOptional);
         } catch (DAOException e) {
             throw new ServiceException(e);
         }

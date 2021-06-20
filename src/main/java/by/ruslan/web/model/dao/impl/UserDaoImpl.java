@@ -20,6 +20,8 @@ public class UserDaoImpl implements UserDao {
     static final Logger logger = LogManager.getLogger();
     private static final String SQL_SELECT_ALL_USERS =
             "SELECT * FROM users";
+    private static final String SQL_FIND_USER_BY_ID =
+            "SELECT * FROM users WHERE user_id = ?";
     private static final String SQL_SELECT_USERS_BY_EMAIL =
             "SELECT user_id, username, email, password, balance, role FROM users WHERE email=?";
     private static final String SQL_ADD_USER =
@@ -51,6 +53,23 @@ public class UserDaoImpl implements UserDao {
         try (Connection connection = ConnectionPool.getInstance().getConnection();
              PreparedStatement statement = connection.prepareStatement(SQL_SELECT_USERS_BY_EMAIL)) {
             statement.setString(1, email);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                User user = buildUser(resultSet);
+                userOptional = Optional.of(user);
+            }
+        } catch (SQLException e) {
+            throw new DAOException(e);
+        }
+        return userOptional;
+    }
+
+    @Override
+    public Optional<User> findUserById(long userId) throws DAOException {
+        Optional<User> userOptional = Optional.empty();
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
+             PreparedStatement statement = connection.prepareStatement(SQL_FIND_USER_BY_ID)) {
+            statement.setLong(1, userId);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 User user = buildUser(resultSet);

@@ -29,8 +29,10 @@
                         <input type="hidden" name="command" value="sign_in" />
 
                         <c:if test="${login_error != null}">
-                            <fmt:message key="error.login.incorrectEmailOrPassword"/>
-                            <c:remove var="login_error" />
+                            <div class="alert-warning">
+                                <fmt:message key="error.login.incorrectEmailOrPassword"/>
+                                <c:remove var="login_error" />
+                            </div>
                         </c:if>
 
                         <div class="form-group row">

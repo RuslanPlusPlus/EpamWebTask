@@ -11,6 +11,8 @@ public final class RequestParameter {
     public static final String SPORT_KIND_ID = "sportKindId";
     public static final String ROLE = "role";
     public static final String COMMAND = "command";
+    public static final String MONEY = "money";
+    public static final String MEMBER_ID = "memberId";
 
     private RequestParameter(){}
 }

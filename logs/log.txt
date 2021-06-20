@@ -1,24 +1,22 @@
-2021-06-20 17:31:04 [http-nio-8080-exec-101] DEBUG by.ruslan.web.controller.MainServlet - post method
-2021-06-20 17:31:04 [http-nio-8080-exec-101] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.SignInCommand
-2021-06-20 17:31:04 [http-nio-8080-exec-101] DEBUG by.ruslan.web.command.impl.SignInCommand - User authorized
-2021-06-20 17:31:04 [http-nio-8080-exec-101] DEBUG by.ruslan.web.command.impl.SignInCommand - User role: ADMIN
-2021-06-20 17:31:04 [http-nio-8080-exec-101] DEBUG by.ruslan.web.controller.MainServlet - /index.jsp
-2021-06-20 17:31:04 [http-nio-8080-exec-98] DEBUG by.ruslan.web.controller.MainServlet - get method
-2021-06-20 17:31:04 [http-nio-8080-exec-98] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToMainPageCommand
-2021-06-20 17:31:04 [http-nio-8080-exec-98] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - [Event{eventId=2, sportKindId=1, eventName='Napoli - Liverpool', date=2021-07-05, time=10:10:00, status=ACTIVE, members=null, eventResult=null, readyToBet=false, readyToMakeResult=false}, Event{eventId=3, sportKindId=3, eventName='Azarenko - Halep', date=2021-07-06, time=18:15:00, status=ACTIVE, members=null, eventResult=null, readyToBet=false, readyToMakeResult=false}, Event{eventId=1, sportKindId=1, eventName='Barcelona - Real Madrid', date=2021-07-19, time=12:10:00, status=ACTIVE, members=null, eventResult=null, readyToBet=false, readyToMakeResult=false}]
-2021-06-20 17:31:04 [http-nio-8080-exec-98] DEBUG by.ruslan.web.controller.MainServlet - /pages/main.jsp
-2021-06-20 17:31:09 [http-nio-8080-exec-105] DEBUG by.ruslan.web.controller.MainServlet - get method
-2021-06-20 17:31:09 [http-nio-8080-exec-105] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToEventPageCommand
-2021-06-20 17:31:09 [http-nio-8080-exec-105] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Event 2 is ready to bet
-2021-06-20 17:31:09 [http-nio-8080-exec-105] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Optional[Event{eventId=2, sportKindId=1, eventName='Napoli - Liverpool', date=2021-07-05, time=10:10:00, status=ACTIVE, members=[EventMember{memberId=3, memberName='Napoli', kindId=1}, EventMember{memberId=4, memberName='Liverpool', kindId=1}], eventResult=null, readyToBet=true, readyToMakeResult=false}]
-2021-06-20 17:31:09 [http-nio-8080-exec-105] DEBUG by.ruslan.web.controller.MainServlet - /pages/event.jsp
-2021-06-20 17:31:10 [http-nio-8080-exec-106] DEBUG by.ruslan.web.controller.MainServlet - get method
-2021-06-20 17:31:10 [http-nio-8080-exec-106] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToMakeBetPageCommand
-2021-06-20 17:31:10 [http-nio-8080-exec-106] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Event 2 is ready to bet
-2021-06-20 17:31:10 [http-nio-8080-exec-106] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Optional[Event{eventId=2, sportKindId=1, eventName='Napoli - Liverpool', date=2021-07-05, time=10:10:00, status=ACTIVE, members=[EventMember{memberId=3, memberName='Napoli', kindId=1}, EventMember{memberId=4, memberName='Liverpool', kindId=1}], eventResult=null, readyToBet=true, readyToMakeResult=false}]
-2021-06-20 17:31:10 [http-nio-8080-exec-106] DEBUG by.ruslan.web.controller.MainServlet - /pages/makeBetPage.jsp
-2021-06-20 17:31:12 [http-nio-8080-exec-107] DEBUG by.ruslan.web.controller.MainServlet - get method
-2021-06-20 17:31:12 [http-nio-8080-exec-107] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToWinBetPageCommand
-2021-06-20 17:31:12 [http-nio-8080-exec-107] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Event 2 is ready to bet
-2021-06-20 17:31:12 [http-nio-8080-exec-107] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Optional[Event{eventId=2, sportKindId=1, eventName='Napoli - Liverpool', date=2021-07-05, time=10:10:00, status=ACTIVE, members=[EventMember{memberId=3, memberName='Napoli', kindId=1}, EventMember{memberId=4, memberName='Liverpool', kindId=1}], eventResult=null, readyToBet=true, readyToMakeResult=false}]
-2021-06-20 17:31:12 [http-nio-8080-exec-107] DEBUG by.ruslan.web.controller.MainServlet - /pages/winBet.jsp
+2021-06-21 01:51:33 [http-nio-8080-exec-220] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-21 01:51:33 [http-nio-8080-exec-220] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToMainPageCommand
+2021-06-21 01:51:33 [http-nio-8080-exec-220] DEBUG by.ruslan.web.controller.MainServlet - /pages/main.jsp
+2021-06-21 01:51:35 [http-nio-8080-exec-219] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-21 01:51:35 [http-nio-8080-exec-219] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToEventPageCommand
+2021-06-21 01:51:35 [http-nio-8080-exec-219] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Event 1 is ready to bet
+2021-06-21 01:51:35 [http-nio-8080-exec-219] DEBUG by.ruslan.web.controller.MainServlet - /pages/event.jsp
+2021-06-21 01:51:36 [http-nio-8080-exec-225] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-21 01:51:36 [http-nio-8080-exec-225] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToMakeBetPageCommand
+2021-06-21 01:51:36 [http-nio-8080-exec-225] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Event 1 is ready to bet
+2021-06-21 01:51:36 [http-nio-8080-exec-225] DEBUG by.ruslan.web.controller.MainServlet - /pages/makeBetPage.jsp
+2021-06-21 01:51:37 [http-nio-8080-exec-228] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-21 01:51:37 [http-nio-8080-exec-228] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToDrawBetPageCommand
+2021-06-21 01:51:37 [http-nio-8080-exec-228] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Event 1 is ready to bet
+2021-06-21 01:51:37 [http-nio-8080-exec-228] DEBUG by.ruslan.web.controller.MainServlet - /pages/drawBet.jsp
+2021-06-21 01:51:39 [http-nio-8080-exec-222] DEBUG by.ruslan.web.controller.MainServlet - post method
+2021-06-21 01:51:39 [http-nio-8080-exec-222] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.MakeDrawBetCommand
+2021-06-21 01:51:39 [http-nio-8080-exec-222] DEBUG by.ruslan.web.controller.MainServlet - /main-servlet?command=to_event_page
+2021-06-21 01:51:39 [http-nio-8080-exec-222] DEBUG by.ruslan.web.controller.MainServlet - post method
+2021-06-21 01:51:39 [http-nio-8080-exec-222] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToEventPageCommand
+2021-06-21 01:51:39 [http-nio-8080-exec-222] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Event 1 is ready to bet
+2021-06-21 01:51:39 [http-nio-8080-exec-222] DEBUG by.ruslan.web.controller.MainServlet - /pages/event.jsp

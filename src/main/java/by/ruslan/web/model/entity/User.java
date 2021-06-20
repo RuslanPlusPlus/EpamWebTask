@@ -1,6 +1,7 @@
 package by.ruslan.web.model.entity;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 public class User {
@@ -10,8 +11,8 @@ public class User {
     private String encodedPassword; //remove?
     private UserRole role;
     private BigDecimal balance;
-    private List<Bet> activeBets; //many to one
-    private List<Bet> completedBets; //many to one
+    private List<Bet> activeBets;
+    private List<Bet> completedBets;
 
     public User(){
     }
@@ -113,11 +114,15 @@ public class User {
         builder.append("User{")
                 .append("username=").append(username)
                 .append(", ")
+                .append("userId=").append(userId)
+                .append(", ")
                 .append("email=").append(email)
                 .append(", ")
                 .append("role=").append(role)
                 .append(", ")
                 .append("balance=").append(balance)
+                .append("Active bets=").append(activeBets)
+                .append("Completed bets bets=").append(completedBets)
                 .append("}");
         return builder.toString();
     }

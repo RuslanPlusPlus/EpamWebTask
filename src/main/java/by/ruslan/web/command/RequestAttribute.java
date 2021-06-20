@@ -3,6 +3,7 @@ package by.ruslan.web.command;
 public final class RequestAttribute {
 
     public static final String ERROR = "error";
+    public static final String SUCCESS = "success";
     public static final String LOGIN_ERROR = "login_error";
     public static final String USERS = "users";
     public static final String EVENTS = "events";

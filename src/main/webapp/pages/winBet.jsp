@@ -23,13 +23,19 @@
             <div class="form" style="width: 600px;">
                 <form class="form" method="post" action="main-servlet">
                     <div class="header-div">
-                        <p class="form-header"><fmt:message key="event.makeRate"/></p>
+                        <p class="form-header"><fmt:message key="bet.winBet"/></p>
                     </div>
 
-                    <!-- add success error mess -->
                     <input type="hidden" name="command" value="make_win_bet"/>
                     <input type="hidden" name="eventId" value="${requestScope.event.eventId}"/>
-                    <input type="hidden" name="userI" value="${sessionScope.user.userId}"/>
+                    <input type="hidden" name="userId" value="${sessionScope.user.userId}"/>
+
+                    <div class="event-block">
+                        <div class="event-header">
+                            <h5 class="event-name"><c:out value="${requestScope.event.eventName}" /></h5>
+                            <p class="event-sport_kind">${requestScope.event.sportKindName}</p>
+                        </div>
+                    </div>
 
                     <div class="input-group">
                         <label>Select winner</label>
@@ -46,14 +52,13 @@
                     </div>
 
                     <div>
-                        <button  class="btn btn-primary" type="submit">
-                            <fmt:message key="event.makeRate"/>
+                        <button  class="make-bet-link" type="submit">
+                            <fmt:message key="event.makeBet"/>
                         </button>
                     </div>
                 </form>
             </div>
         </div>
-
     </div>
 </div>
 </body>

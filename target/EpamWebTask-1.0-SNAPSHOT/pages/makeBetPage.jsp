@@ -32,17 +32,17 @@
                 <div class="col-2 m-2">
                     <div class="list-group">
                         <a href="${pageContext.request.contextPath}/main-servlet?command=to_draw_bet_page&eventId=${requestScope.event.eventId}"
-                           class="list-group-item list-group-item-action text-style active">
+                           class="make-bet-link">
                             <fmt:message key="bet.draw"/>
                         </a>
                         <br/>
                         <a href="${pageContext.request.contextPath}/main-servlet?command=to_win_bet_page&eventId=${requestScope.event.eventId}"
-                           class="list-group-item list-group-item-action text-style active">
+                           class="make-bet-link">
                             <fmt:message key="bet.win"/>
                         </a>
                         <br/>
                         <a href="${pageContext.request.contextPath}/main-servlet?command=to_exact_score_bet_page&eventId=${requestScope.event.eventId}"
-                           class="list-group-item list-group-item-action text-style active">
+                           class="make-bet-link">
                             <fmt:message key="bet.exactScore"/>
                         </a>
                         <br/>

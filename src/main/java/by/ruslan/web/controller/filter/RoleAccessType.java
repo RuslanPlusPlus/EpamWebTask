@@ -22,7 +22,12 @@ public enum RoleAccessType {
             CommandType.LOGOUT,
             CommandType.TO_EVENT_PAGE,
             CommandType.TO_MAKE_BET_PAGE,
-            CommandType.TO_WIN_BET_PAGE
+            CommandType.TO_WIN_BET_PAGE,
+            CommandType.TO_EXACT_SCORE_BET_PAGE,
+            CommandType.TO_DRAW_BET_PAGE,
+            CommandType.MAKE_WIN_BET,
+            CommandType.MAKE_DRAW_BET,
+            CommandType.MAKE_EXACT_SCORE_BET
 
     )),
     ADMIN(Set.of(
@@ -35,7 +40,27 @@ public enum RoleAccessType {
             CommandType.LOGOUT,
             CommandType.TO_EVENT_PAGE,
             CommandType.TO_MAKE_BET_PAGE,
-            CommandType.TO_WIN_BET_PAGE
+            CommandType.TO_WIN_BET_PAGE,
+            CommandType.TO_EXACT_SCORE_BET_PAGE,
+            CommandType.TO_DRAW_BET_PAGE,
+            CommandType.MAKE_WIN_BET,
+            CommandType.MAKE_DRAW_BET,
+            CommandType.MAKE_EXACT_SCORE_BET
+    )),
+    BOOKMAKER(Set.of(
+            CommandType.TO_MAIN_PAGE,
+            CommandType.TO_PERSONAL_PAGE,
+            CommandType.TO_ADD_EVENT_RESULT_PAGE,
+            CommandType.CHANGE_LOCALE,
+            CommandType.LOGOUT,
+            CommandType.TO_EVENT_PAGE,
+            CommandType.TO_MAKE_BET_PAGE,
+            CommandType.TO_WIN_BET_PAGE,
+            CommandType.TO_EXACT_SCORE_BET_PAGE,
+            CommandType.TO_DRAW_BET_PAGE,
+            CommandType.MAKE_WIN_BET,
+            CommandType.MAKE_DRAW_BET,
+            CommandType.MAKE_EXACT_SCORE_BET
     ));
 
     // TODO: 20.06.2021 BOOKMAKER commands

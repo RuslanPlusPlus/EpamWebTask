@@ -22,17 +22,30 @@
         <div class="center-part">
             <div class="event-block">
                 <div class="event-header">
-                    <div class="event-info">
+                    <div>
                         <h5 class="event-name"><c:out value="${requestScope.event.eventName}" /></h5>
                         <p class="event-sport_kind">${requestScope.event.sportKindName}</p>
                         <time><fmt:message key="event.startDate"/> ${requestScope.event.date} ${requestScope.event.time}</time>
+
+                        <c:if test="${not empty requestScope.error}">
+                            <div class="error-div">
+                                    ${requestScope.error}
+                            </div>
+                        </c:if>
+
+                        <c:if test="${not empty requestScope.success}">
+                            <div class="success-div">
+                                    ${requestScope.success}
+                            </div>
+                        </c:if>
+
                         <c:if test="${requestScope.event.status eq 'COMPLETED'}">
                             <div class="event-result">
                                 <p>${requestScope.event.eventResult.winnerName}(${requestScope.event.eventResult.winnerScore}) :
                                     (${requestScope.event.eventResult.loserScore}) ${requestScope.event.eventResult.loserName}</p>
                             </div>
                         </c:if>
-                        <c:if test="${sessionScope.role eq 'BOOKMAKER'}">
+                        <c:if test="${sessionScope.user.role eq 'BOOKMAKER'}">
                             <c:if test="${requestScope.event.readyToAddResult}">
                                 <div class="event-result">
                                     <a class="add-result-link"
@@ -51,9 +64,9 @@
                             </c:forEach>
                         </div>
                         <c:if test="${requestScope.event.readyToBet}">
-                            <a class="make-rate-link"
+                            <a class="make-bet-link"
                                href="<c:url value="main-servlet?command=to_make_bet_page&eventId=${requestScope.event.eventId}"/>">
-                                <fmt:message key="event.makeRate"/>
+                                <fmt:message key="event.makeBet"/>
                             </a>
                         </c:if>
                     </div>

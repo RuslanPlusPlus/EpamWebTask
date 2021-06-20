@@ -20,7 +20,9 @@
     <nav>
         <b><fmt:message key="sidebar.sportKinds" /></b>
         <c:forEach var="kind" items="${requestScope.sportKinds}">
-            <a href="<c:url value="main-servlet?command=show_events_by_sport_kind&sportKindId=${kind.kindId}" />" >${kind.kindName}</a>
+            <a class="make-bet-link" href="<c:url value="main-servlet?command=show_events_by_sport_kind&sportKindId=${kind.kindId}" />" >
+                    ${kind.kindName}
+            </a>
         </c:forEach>
     </nav>
 </div>

@@ -3,7 +3,6 @@ package by.ruslan.web.command;
 public final class PagePath {
     public static final String INDEX_JSP = "/index.jsp";
     public static final String MAIN_PAGE = "/pages/main.jsp";
-    //public static final String LOGIN_SERVLET_PATH = "main-servlet?command=to_login_page";
     public static final String SIGN_IN = "/pages/signin.jsp";
     public static final String SIGN_UP = "/pages/signup.jsp";
     public static final String USER_LIST = "/pages/user-list.jsp";
@@ -13,8 +12,8 @@ public final class PagePath {
     public static final String USERS_PAGE = "/pages/users.jsp";
     public static final String MAKE_BET_PAGE = "/pages/makeBetPage.jsp";
     public static final String WIN_BET_PAGE = "/pages/winBet.jsp";
-    public static final String DRAW_BET_PAGE = "/pages/drawPage.jsp";
-    public static final String EXACT_SCORE_BET_PAGE = "/pages/exactScore.jsp";
+    public static final String DRAW_BET_PAGE = "/pages/drawBet.jsp";
+    public static final String EXACT_SCORE_BET_PAGE = "/pages/exactScoreBet.jsp";
     public static final String ERROR_500 = "/pages/errors/error500.jsp";
     public static final String ERROR_404 = "/pages/errors/error404.jsp";
 

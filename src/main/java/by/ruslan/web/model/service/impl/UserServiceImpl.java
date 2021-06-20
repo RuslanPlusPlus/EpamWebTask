@@ -1,7 +1,10 @@
 package by.ruslan.web.model.service.impl;
 
+import by.ruslan.web.model.dao.BetDao;
 import by.ruslan.web.model.dao.UserDao;
+import by.ruslan.web.model.dao.impl.BetDaoImpl;
 import by.ruslan.web.model.dao.impl.UserDaoImpl;
+import by.ruslan.web.model.entity.Bet;
 import by.ruslan.web.model.entity.User;
 import by.ruslan.web.exception.DAOException;
 import by.ruslan.web.exception.ServiceException;
@@ -21,6 +24,7 @@ public class UserServiceImpl implements UserService {
 
     static final Logger logger = LogManager.getLogger();
     private final UserDao userDao = new UserDaoImpl();
+    private final BetDao betDao = new BetDaoImpl();
 
     @Override
     public List<User> findAll() throws ServiceException {
@@ -38,6 +42,22 @@ public class UserServiceImpl implements UserService {
         } catch (DAOException e) {
             throw new ServiceException(e);
         }
+    }
+
+    @Override
+    public Optional<User> findByUserId(long userId) throws ServiceException {
+        Optional<User> userOptional;
+        try {
+            userOptional = userDao.findUserById(userId);
+            if (userOptional.isPresent()){
+                List<Bet> activeBets = betDao.findActiveBetsForUser(userId);
+                User user = userOptional.get();
+                user.setActiveBets(activeBets);
+            }
+        } catch (DAOException e) {
+            throw new ServiceException(e);
+        }
+        return userOptional;
     }
 
     @Override
@@ -66,6 +86,8 @@ public class UserServiceImpl implements UserService {
                 userOptional = userDao.findUserByEmail(email);
                 if (userOptional.isPresent()) {
                     User user = userOptional.get();
+                    List<Bet> activeBets = betDao.findActiveBetsForUser(user.getUserId());
+                    user.setActiveBets(activeBets);
                     String userPassword = user.getEncodedPassword();
                     String enPassword = PasswordEncryptor.encrypt(password);
                     if (!userPassword.equals(enPassword)) {

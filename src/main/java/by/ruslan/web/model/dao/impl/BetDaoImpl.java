@@ -4,6 +4,7 @@ import by.ruslan.web.exception.DAOException;
 import by.ruslan.web.model.dao.BetColumn;
 import by.ruslan.web.model.dao.BetDao;
 import by.ruslan.web.model.dao.EventMemberColumn;
+import by.ruslan.web.model.dao.UsersColumn;
 import by.ruslan.web.model.entity.Bet;
 import by.ruslan.web.model.entity.EventMember;
 import by.ruslan.web.model.pool.ConnectionPool;
@@ -43,7 +44,7 @@ public class BetDaoImpl implements BetDao {
     private static final String SQL_FIND_BET_MONEY_FOR_EVENT =
             "SELECT money FROM bets WHERE event_id = ?";
     private static final String SQL_FIND_ACTIVE_BETS_FOR_USER =
-            "SELECT * FROM bets WHERE user_id = ? AND win_money IS NULL";
+            "SELECT * FROM bets JOIN users ON bets.user_id = users.user_id WHERE bets.user_id = ? AND win_money IS NULL";
     private static final String SQL_FIND_NOT_ACTIVE_BETS_FOR_USER =
             "SELECT * FROM bets WHERE user_id = ? AND win_money IS NOT NULL";
 
@@ -96,7 +97,7 @@ public class BetDaoImpl implements BetDao {
         }
         try(Connection connection = ConnectionPool.getInstance().getConnection();
             PreparedStatement statement = connection.prepareStatement(sqlRequest)){
-            statement.setLong(1, bet.getBetId());
+            statement.setString(1, bet.getType().getValue());
             statement.setBigDecimal(2, bet.getMoney());
             statement.setLong(3, bet.getUserId());
             statement.setLong(4, bet.getEventId());
@@ -157,6 +158,7 @@ public class BetDaoImpl implements BetDao {
                 bet.setMoney(resultSet.getBigDecimal(BetColumn.MONEY));
                 Bet.BetType type = Bet.BetType.valueOf(resultSet.getString(BetColumn.BET_TYPE));
                 bet.setType(type);
+                bet.setUserEmail(resultSet.getString(UsersColumn.EMAIL));
                 bets.add(bet);
             }
         } catch (SQLException e) {
