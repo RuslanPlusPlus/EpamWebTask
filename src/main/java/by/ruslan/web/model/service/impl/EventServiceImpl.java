@@ -4,10 +4,13 @@ import by.ruslan.web.exception.DAOException;
 import by.ruslan.web.exception.ServiceException;
 import by.ruslan.web.model.dao.EventDao;
 import by.ruslan.web.model.dao.EventMemberDao;
+import by.ruslan.web.model.dao.EventResultDao;
 import by.ruslan.web.model.dao.impl.EventDaoImpl;
 import by.ruslan.web.model.dao.impl.EventMemberDaoImpl;
+import by.ruslan.web.model.dao.impl.EventResultDaoImpl;
 import by.ruslan.web.model.entity.Event;
 import by.ruslan.web.model.entity.EventMember;
+import by.ruslan.web.model.entity.EventResult;
 import by.ruslan.web.model.service.EventService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -21,6 +24,7 @@ public class EventServiceImpl implements EventService {
     static final Logger logger = LogManager.getLogger();
     private final EventDao eventDao = new EventDaoImpl();
     private final EventMemberDao memberDao = new EventMemberDaoImpl();
+    private final EventResultDao eventResultDao = new EventResultDaoImpl();
 
     // TODO: 19.06.2021 pagination
 
@@ -68,6 +72,18 @@ public class EventServiceImpl implements EventService {
             if (eventOptional.isPresent()){
                 List<EventMember> members = memberDao.findEventMembersByEvent(eventId);
                 Event event = eventOptional.get();
+                Optional<EventResult> eventResultOptional = eventResultDao.findEventResultByEvent(eventId);
+
+                if (eventResultOptional.isPresent()){
+                    EventResult eventResult = eventResultOptional.get();
+                    Optional<EventMember> winner = memberDao.findEventMemberById(eventResult.getWinnerId());
+                    Optional<EventMember> loser = memberDao.findEventMemberById(eventResult.getLoserId());
+                    String winnerName = winner.get().getMemberName();
+                    String loserName = loser.get().getMemberName();
+                    event.setEventResult(eventResult);
+                    eventResult.setWinnerName(winnerName);
+                    eventResult.setLoserName(loserName);
+                }
                 event.setMembers(members);
                 long eventTime = event.getDate().getTime();
                 long currentTime = new Date().getTime();

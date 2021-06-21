@@ -19,7 +19,7 @@ import java.util.Optional;
 public class EventResultDaoImpl implements EventResultDao {
 
     private static final String SQL_ADD_EVENT_RESULT =
-            "INSERT INTO event_results (event_id, winner_id, loser_is, winner_score, loser_score) " +
+            "INSERT INTO event_results (event_id, winner_id, loser_id, winner_score, loser_score) " +
                     "VALUES (?, ?, ?, ?, ?) ";
     private static final String SQL_FIND_EVENT_RESULT_BY_EVENT =
             "SELECT * FROM event_results WHERE event_id = ? ";

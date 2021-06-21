@@ -8,6 +8,8 @@ import by.ruslan.web.model.dao.UsersColumn;
 import by.ruslan.web.model.entity.Bet;
 import by.ruslan.web.model.entity.EventMember;
 import by.ruslan.web.model.pool.ConnectionPool;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.math.BigDecimal;
 import java.sql.*;
@@ -16,6 +18,7 @@ import java.util.List;
 
 public class BetDaoImpl implements BetDao {
 
+    static final Logger logger = LogManager.getLogger();
     private enum SQL_ADD_REQUEST_TYPE{
         DRAW ("INSERT INTO bets (bet_type, money, user_id, event_id) " +
                 "VALUES (?, ?, ?, ?)"),
@@ -127,6 +130,7 @@ public class BetDaoImpl implements BetDao {
             ResultSet resultSet = statement.executeQuery();
             while(resultSet.next()){
                 Bet bet = new Bet();
+                bet.setBetId(resultSet.getLong(BetColumn.BET_ID));
                 bet.setEventId(resultSet.getLong(BetColumn.EVENT_ID));
                 bet.setUserId(resultSet.getLong(BetColumn.USER_ID));
                 bet.setMoney(resultSet.getBigDecimal(BetColumn.MONEY));
@@ -195,6 +199,7 @@ public class BetDaoImpl implements BetDao {
         try(Connection connection = ConnectionPool.getInstance().getConnection();
             PreparedStatement statement = connection.prepareStatement(SQL_SET_WIN_MONEY)){
             statement.setBigDecimal(1, bet.getWinMoney());
+            logger.debug(bet.getWinMoney());
             statement.setLong(2, bet.getBetId());
             result = statement.executeUpdate() > 0;
         } catch (SQLException e) {

@@ -20,20 +20,20 @@ public class EventDaoImpl implements EventDao {
 
     static final Logger logger = LogManager.getLogger();
     private static final String SQL_SELECT_ALL_EVENTS =
-            "SELECT * FROM events JOIN sport_kinds ON sport_kind_id = sport_kinds.kind_id ";
+            "SELECT * FROM events JOIN sport_kinds ON events.sport_kind_id = sport_kinds.kind_id ";
     private static final String SQL_FIND_EVENT_BY_ID =
-            "SELECT * FROM events JOIN sport_kinds ON sport_kind_id = sport_kinds.kind_id WHERE event_id = ?";
+            "SELECT * FROM events JOIN sport_kinds ON events.sport_kind_id = sport_kinds.kind_id WHERE event_id = ?";
     private static final String SQL_SELECT_ALL_ACTIVE_EVENTS =
-            "SELECT * FROM events JOIN sport_kinds ON sport_kind_id = sport_kinds.kind_id " +
-                    "WHERE event_status = 'ACTIVE' AND date > now()";
+            "SELECT * FROM events JOIN sport_kinds ON events.sport_kind_id = sport_kinds.kind_id " +
+                    "WHERE event_status = 'ACTIVE' OR date > now()";
     private static final String SQL_SELECT_ALL_COMPLETED_EVENTS =
-            "SELECT * FROM events JOIN sport_kinds ON sport_kind_id = sport_kinds.kind_id " +
-                    "WHERE event_status = 'COMPLETED' OR date < now()";
+            "SELECT * FROM events JOIN sport_kinds ON events.sport_kind_id = sport_kinds.kind_id " +
+                    "WHERE event_status = 'COMPLETED' AND date < now()";
     private static final String SQL_SELECT_ALL_ACTIVE_EVENTS_SORTED_BY_DATE =
-            "SELECT * FROM events JOIN sport_kinds ON sport_kind_id = sport_kinds.kind_id " +
-                    "WHERE event_status = 'ACTIVE' AND date > now() ORDER BY date";
+            "SELECT * FROM events JOIN sport_kinds ON events.sport_kind_id = sport_kinds.kind_id " +
+                    "WHERE event_status = 'ACTIVE' OR date > now() ORDER BY date";
     private static final String SQL_SELECT_ALL_ACTIVE_EVENTS_BY_SPORT_KIND_ID =
-            "SELECT * FROM events JOIN sport_kinds ON sport_kind_id = sport_kinds.kind_id " +
+            "SELECT * FROM events JOIN sport_kinds ON events.sport_kind_id = sport_kinds.kind_id " +
                     "WHERE (event_status = 'ACTIVE' OR date > now()) AND sport_kind_id = ?";
     private static final String SQL_ADD_EVENT =
             "INSERT INTO events (sport_kind_id, event_name, date, event_status) " +
@@ -101,11 +101,11 @@ public class EventDaoImpl implements EventDao {
     }
 
     @Override
-    public Optional<Event> findEventById(long event_id) throws DAOException {
+    public Optional<Event> findEventById(long eventId) throws DAOException {
         Optional<Event> eventOptional = Optional.empty();
         try(Connection connection = ConnectionPool.getInstance().getConnection();
             PreparedStatement statement = connection.prepareStatement(SQL_FIND_EVENT_BY_ID)) {
-            statement.setLong(1, event_id);
+            statement.setLong(1, eventId);
             ResultSet resultSet = statement.executeQuery();
             while(resultSet.next()){
                 Event event = buildEvent(resultSet);
@@ -124,7 +124,7 @@ public class EventDaoImpl implements EventDao {
             PreparedStatement statement = connection.prepareStatement(SQL_UPDATE_EVENT)){
             String eventName = event.getEventName();
             long sportKindId = event.getSportKindId();
-            Timestamp timestamp = new Timestamp(event.getDate().getTime());
+            Timestamp timestamp = new Timestamp(event.getTime().getTime() + event.getDate().getTime());
             String status = event.getStatus().getValue();
             statement.setLong(1, sportKindId);
             statement.setString(2, eventName);
@@ -132,6 +132,7 @@ public class EventDaoImpl implements EventDao {
             statement.setString(4, status);
             statement.setLong(5, event.getEventId());
             result = statement.executeUpdate() > 0;
+            logger.debug("EVVVVVENT UPDDDDAAAATE");
         } catch (SQLException e) {
             throw new DAOException();
         }

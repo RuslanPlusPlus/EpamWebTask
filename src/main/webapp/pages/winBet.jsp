@@ -38,7 +38,7 @@
                     </div>
 
                     <div class="input-group">
-                        <label>Select winner</label>
+                        <label><fmt:message key="bet.selectWinner"/> /label>
                         <select class="custom-select" id="memberId" name="memberId">
                             <c:forEach items="${requestScope.event.members}" var="member">
                                 <option value="${member.memberId}"> ${member.memberName} </option>

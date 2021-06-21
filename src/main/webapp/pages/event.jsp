@@ -63,6 +63,11 @@
                                 </ul>
                             </c:forEach>
                         </div>
+                        <c:if test="${requestScope.event.readyToAddResult}">
+                            <div class="info-div">
+                                <fmt:message key="event.resultIsNotSet"/>
+                            </div>
+                        </c:if>
                         <c:if test="${requestScope.event.readyToBet}">
                             <a class="make-bet-link"
                                href="<c:url value="main-servlet?command=to_make_bet_page&eventId=${requestScope.event.eventId}"/>">

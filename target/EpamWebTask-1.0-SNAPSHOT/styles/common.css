@@ -341,9 +341,23 @@ header nav a {
     background-color: #17a2b8;
 }
 
+.input-div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
 .error-div {
     border-radius: 3px;
     background: rgba(255, 0, 0, 0.5);
+    margin-bottom: 5px;
+    padding: 10px;
+    font-size: 0.8em;
+}
+
+.info-div {
+    border-radius: 3px;
+    background: rgba(74, 183, 229, 0.9);
     margin-bottom: 5px;
     padding: 10px;
     font-size: 0.8em;

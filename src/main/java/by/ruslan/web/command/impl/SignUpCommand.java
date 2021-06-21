@@ -37,8 +37,8 @@ public class SignUpCommand implements Command {
                 boolean isUserRegistered = userService.registerUser(user, password);
                 if (isUserRegistered){
                     logger.info("User email " + email + " successfully registered");
-                    router.setPath(PagePath.SIGN_IN);
-                    router.setType(Router.Type.FORWARD);
+                    router.setPath(PagePath.TO_LOGIN_PAGE);
+                    router.setType(Router.Type.REDIRECT);
                 }else {
                     request.setAttribute(RequestAttribute.ERROR_INCORRECT_DATA, "Invalid data entered! Try again");
                     router.setPath(PagePath.SIGN_UP);

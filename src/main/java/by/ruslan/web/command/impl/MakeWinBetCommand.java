@@ -64,6 +64,8 @@ public class MakeWinBetCommand implements Command {
             request.setAttribute(RequestAttribute.ERROR, e.getErrorMessage());
             router.setPath(PagePath.TO_EVENT_PAGE);
         }
+
+        // TODO: 21.06.2021 redirect 
         router.setPath(PagePath.TO_EVENT_PAGE);
         return router;
     }

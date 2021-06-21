@@ -16,6 +16,7 @@ public class ToEventPageCommand implements Command {
 
     private EventService eventService;
     static final Logger logger = LogManager.getLogger();
+    private static final String SUCCESS_MESSAGE = "The event result is successfully added!!!";
 
     public ToEventPageCommand(EventService eventService){
         this.eventService = eventService;
@@ -26,22 +27,29 @@ public class ToEventPageCommand implements Command {
         HttpSession session = request.getSession();
         Router router = new Router();
         String eventIdStr = request.getParameter(RequestParameter.EVENT_ID);
-        long eventId = Long.parseLong(eventIdStr);
-        try {
-            Optional<Event> event = eventService.findEventById(eventId);
-            if (event.isPresent()){
-                //List<EventMember> members = event.get().getMembers();
-                request.setAttribute(RequestAttribute.EVENT, event.get());
-            }else {
-                logger.error("Failed to find event by id");
+        if (eventIdStr != null){
+            long eventId = Long.parseLong(eventIdStr);
+            try {
+                Optional<Event> event = eventService.findEventById(eventId);
+                if (event.isPresent()){
+                    //List<EventMember> members = event.get().getMembers();
+                    request.setAttribute(RequestAttribute.EVENT, event.get());
+                    if (request.getParameter(RequestParameter.SUCCESS) != null){
+                        request.setAttribute(RequestAttribute.SUCCESS, SUCCESS_MESSAGE);
+                    }
+                }else {
+                    logger.error("Failed to find event by id");
+                }
+                router.setPath(PagePath.EVENT_PAGE);
+            } catch (ServiceException e) {
+                logger.error(e.getMessage());
+                router.setPath(PagePath.ERROR_500);
+                request.setAttribute(RequestAttribute.ERROR, e.getMessage());
             }
+        }else {
             router.setPath(PagePath.EVENT_PAGE);
-        } catch (ServiceException e) {
-            logger.error(e.getMessage());
-            router.setPath(PagePath.ERROR_500);
-            request.setAttribute(RequestAttribute.ERROR, e.getMessage());
         }
-        session.setAttribute(SessionAttribute.CURRENT_PAGE, PagePath.TO_EVENT_PAGE + "&eventId=" + eventIdStr);
+        session.setAttribute(SessionAttribute.CURRENT_PAGE, PagePath.TO_EVENT_PAGE);
         return router;
     }
 }

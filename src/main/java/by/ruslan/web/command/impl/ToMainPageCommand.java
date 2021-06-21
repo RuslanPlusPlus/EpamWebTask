@@ -1,7 +1,11 @@
 package by.ruslan.web.command.impl;
 
 import by.ruslan.web.command.*;
+import by.ruslan.web.exception.DAOException;
 import by.ruslan.web.exception.ServiceException;
+import by.ruslan.web.model.dao.BetDao;
+import by.ruslan.web.model.dao.impl.BetDaoImpl;
+import by.ruslan.web.model.entity.Bet;
 import by.ruslan.web.model.entity.Event;
 import by.ruslan.web.model.entity.SportKind;
 import by.ruslan.web.model.entity.UserRole;
@@ -14,6 +18,7 @@ import org.apache.logging.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.math.BigDecimal;
 import java.util.List;
 
 public class ToMainPageCommand implements Command {
@@ -48,6 +53,19 @@ public class ToMainPageCommand implements Command {
             request.setAttribute(RequestAttribute.ERROR, e.getMessage());
             router.setPath(PagePath.ERROR_500);
         }
+
+        /*BetDao betDao = new BetDaoImpl();
+        try {
+            List<Bet> bets = betDao.findBetsByEvent(3);
+            for (Bet bet: bets){
+                bet.setWinMoney(BigDecimal.valueOf(0.0));
+                betDao.setWinMoney(bet);
+                logger.debug("Bet id " + bet.getBetId());
+            }
+
+        } catch (DAOException e) {
+            e.printStackTrace();
+        }*/
         router = new Router(PagePath.MAIN_PAGE);
         return router;
     }

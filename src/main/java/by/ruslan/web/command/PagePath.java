@@ -14,6 +14,7 @@ public final class PagePath {
     public static final String WIN_BET_PAGE = "/pages/winBet.jsp";
     public static final String DRAW_BET_PAGE = "/pages/drawBet.jsp";
     public static final String EXACT_SCORE_BET_PAGE = "/pages/exactScoreBet.jsp";
+    public static final String ADD_EVENT_RESULT_PAGE = "/pages/addEventResult.jsp";
     public static final String ERROR_500 = "/pages/errors/error500.jsp";
     public static final String ERROR_404 = "/pages/errors/error404.jsp";
 
@@ -28,6 +29,7 @@ public final class PagePath {
     public static final String TO_WIN_BET_PAGE = "/main-servlet?command=to_win_bet_page";
     public static final String TO_DRAW_BET_PAGE = "/main-servlet?command=to_draw_bet_page";
     public static final String TO_EXACT_SCORE_BET_PAGE = "/main-servlet?command=to_exact_score_bet_page";
+    public static final String TO_ADD_EVENT_RESULT_PAGE = "/main-servlet?command=to_add_event_result_page";
 
     private PagePath(){}
 }

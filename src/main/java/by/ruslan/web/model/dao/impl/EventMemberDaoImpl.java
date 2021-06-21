@@ -17,15 +17,15 @@ public class EventMemberDaoImpl implements EventMemberDao {
 
     static final Logger logger = LogManager.getLogger();
     private static final String SQL_SELECT_ALL_EVENT_MEMBERS =
-            "SELECT * FROM event_members JOIN sport_kinds ON kind_id = sport_kinds.kind_id";
+            "SELECT * FROM event_members JOIN sport_kinds ON event_members.kind_id = sport_kinds.kind_id";
     private static final String SQL_FIND_EVENT_MEMBER_BY_ID =
-            "SELECT * FROM event_members JOIN sport_kinds ON kind_id = sport_kinds.kind_id " +
+            "SELECT * FROM event_members JOIN sport_kinds ON event_members.kind_id = sport_kinds.kind_id " +
                     "WHERE member_id = ?";
     private static final String SQL_FIND_EVENT_MEMBERS_BY_EVENT =
             "SELECT * FROM event_members JOIN event_link_eventmember ON event_members.member_id = event_link_eventmember.member_id " +
                     "WHERE event_link_eventmember.event_id = ?";
     private static final String SQL_FIND_EVENT_MEMBER_BY_SPORT_KIND_ID =
-            "SELECT * FROM event_members JOIN sport_kinds ON kind_id = sport_kinds.kind_id" +
+            "SELECT * FROM event_members JOIN sport_kinds ON event_members.kind_id = sport_kinds.kind_id" +
                     "WHERE sport_kind_id = ?";
     private static final String SQL_LINK_MEMBER_TO_EVENT =
             "INSERT INTO event_link_eventmember (event_id, member_id) " +

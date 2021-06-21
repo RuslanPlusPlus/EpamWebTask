@@ -13,6 +13,11 @@ public final class RequestParameter {
     public static final String COMMAND = "command";
     public static final String MONEY = "money";
     public static final String MEMBER_ID = "memberId";
+    public static final String WINNER_ID = "winnerId";
+    public static final String LOSER_ID = "loserId";
+    public static final String WINNER_SCORE = "winnerScore";
+    public static final String LOSER_SCORE = "loserScore";
+    public static final String SUCCESS = "success";
 
     private RequestParameter(){}
 }

@@ -1,10 +1,7 @@
 package by.ruslan.web.command;
 
 import by.ruslan.web.command.impl.*;
-import by.ruslan.web.model.service.impl.BetServiceImpl;
-import by.ruslan.web.model.service.impl.EventServiceImpl;
-import by.ruslan.web.model.service.impl.SportKindServiceImpl;
-import by.ruslan.web.model.service.impl.UserServiceImpl;
+import by.ruslan.web.model.service.impl.*;
 
 public enum CommandType {
     FIND_ALL_USERS{
@@ -55,6 +52,11 @@ public enum CommandType {
     MAKE_EXACT_SCORE_BET{
         {
             this.command = new MakeExactScoreBetCommand(new BetServiceImpl(), new UserServiceImpl(), new EventServiceImpl());
+        }
+    },
+    ADD_EVENT_RESULT{
+        {
+            this.command = new AddEventResultCommand(new EventResultServiceImpl());
         }
     },
     TO_REGISTER_PAGE {
@@ -124,7 +126,7 @@ public enum CommandType {
     },
     TO_ADD_EVENT_RESULT_PAGE{
         {
-            this.command = new ToAddEventResultPageCommand();
+            this.command = new ToAddEventResultPageCommand(new EventServiceImpl());
         }
     };
     Command command;

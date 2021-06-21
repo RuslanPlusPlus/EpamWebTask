@@ -49,6 +49,7 @@ public class ControllerSecurityFilter implements Filter {
         allowedCommands = switch (role) {
             case CLIENT -> RoleAccessType.CLIENT.getAllowedCommands();
             case ADMIN -> RoleAccessType.ADMIN.getAllowedCommands();
+            case BOOKMAKER -> RoleAccessType.BOOKMAKER.getAllowedCommands();
             default -> RoleAccessType.GUEST.getAllowedCommands();
         };
 
