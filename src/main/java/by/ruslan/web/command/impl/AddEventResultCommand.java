@@ -18,6 +18,7 @@ public class AddEventResultCommand implements Command {
 
     static final Logger logger = LogManager.getLogger();
     private final EventResultService eventResultService;
+    private static final String SUCCESS_MESSAGE = "The event result is successfully added!!!";
 
     public AddEventResultCommand(EventResultService eventResultService){
         this.eventResultService = eventResultService;
@@ -49,7 +50,6 @@ public class AddEventResultCommand implements Command {
 
         try {
             eventResultService.add(eventResult);
-            //request.setAttribute(RequestAttribute.SUCCESS, SUCCESS_MESSAGE);
         } catch (ServiceException e) {
             logger.error(e.getMessage());
             router.setPath(PagePath.ERROR_500);
@@ -61,8 +61,7 @@ public class AddEventResultCommand implements Command {
         }
 
         router.setType(Router.Type.REDIRECT);
-        router.setPath(PagePath.TO_EVENT_PAGE + "&eventId=" + eventIdStr +
-                "&success=" + '1');
+        router.setPath(PagePath.TO_EVENT_PAGE + "&eventId=" + eventIdStr + "&success=" + SUCCESS_MESSAGE);
         return router;
     }
 }

@@ -98,8 +98,8 @@ public class MakeExactScoreBetCommand implements Command {
             router.setPath(PagePath.TO_EVENT_PAGE);
         }
 
-        // TODO: 21.06.2021 redirect
-        router.setPath(PagePath.TO_EVENT_PAGE);
+        router.setType(Router.Type.REDIRECT);
+        router.setPath(PagePath.TO_EVENT_PAGE + "&eventId=" + eventIdStr + "&success=" + SUCCESS_MESSAGE);
         return router;
     }
 }

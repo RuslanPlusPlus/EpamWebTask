@@ -60,7 +60,9 @@ public class MakeDrawBetCommand implements Command {
             request.setAttribute(RequestAttribute.ERROR, e.getErrorMessage());
             router.setPath(PagePath.TO_EVENT_PAGE);
         }
-        router.setPath(PagePath.TO_EVENT_PAGE);
+
+        router.setType(Router.Type.REDIRECT);
+        router.setPath(PagePath.TO_EVENT_PAGE + "&eventId=" + eventIdStr + "&success=" + SUCCESS_MESSAGE);
         return router;
     }
 }

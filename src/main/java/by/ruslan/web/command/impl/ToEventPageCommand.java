@@ -16,7 +16,6 @@ public class ToEventPageCommand implements Command {
 
     private EventService eventService;
     static final Logger logger = LogManager.getLogger();
-    private static final String SUCCESS_MESSAGE = "The event result is successfully added!!!";
 
     public ToEventPageCommand(EventService eventService){
         this.eventService = eventService;
@@ -35,7 +34,7 @@ public class ToEventPageCommand implements Command {
                     //List<EventMember> members = event.get().getMembers();
                     request.setAttribute(RequestAttribute.EVENT, event.get());
                     if (request.getParameter(RequestParameter.SUCCESS) != null){
-                        request.setAttribute(RequestAttribute.SUCCESS, SUCCESS_MESSAGE);
+                        request.setAttribute(RequestAttribute.SUCCESS, request.getParameter(RequestParameter.SUCCESS));
                     }
                 }else {
                     logger.error("Failed to find event by id");
