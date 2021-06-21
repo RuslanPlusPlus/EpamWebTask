@@ -30,6 +30,7 @@ public class MakeWinBetCommand implements Command {
     public Router execute(HttpServletRequest request) {
         //HttpSession session = request.getSession();
         Router router = new Router();
+        String param = new String();
 
         Bet.BetType betType = Bet.BetType.WIN;
         String moneyStr = request.getParameter(RequestParameter.MONEY);
@@ -53,7 +54,7 @@ public class MakeWinBetCommand implements Command {
             User user = userService.findByUserId(userId).get();
             boolean success = betService.makeRate(bet, user);
             if (success){
-                request.setAttribute(RequestAttribute.SUCCESS, SUCCESS_MESSAGE);
+                param += "&success=" + SUCCESS_MESSAGE;
             }
         } catch (ServiceException e) {
             logger.error(e.getMessage());
@@ -63,10 +64,12 @@ public class MakeWinBetCommand implements Command {
             logger.error(e.getErrorMessage());
             request.setAttribute(RequestAttribute.ERROR, e.getErrorMessage());
             router.setPath(PagePath.TO_EVENT_PAGE);
+            param += "&error=" + e.getErrorMessage();
         }
 
         router.setType(Router.Type.REDIRECT);
-        router.setPath(PagePath.TO_EVENT_PAGE + "&eventId=" + eventIdStr + "&success=" + SUCCESS_MESSAGE);
+        param += "&eventId=" + eventIdStr;
+        router.setPath(PagePath.TO_EVENT_PAGE + param);
         return router;
     }
 }

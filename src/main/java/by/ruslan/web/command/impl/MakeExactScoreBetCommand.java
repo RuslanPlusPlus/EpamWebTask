@@ -34,12 +34,12 @@ public class MakeExactScoreBetCommand implements Command {
     @Override
     public Router execute(HttpServletRequest request) {
         Router router = new Router();
+        String param = new String();
 
         Bet.BetType betType = Bet.BetType.EXACT_SCORE;
         String moneyStr = request.getParameter(RequestParameter.MONEY);
         String eventIdStr = request.getParameter(RequestParameter.EVENT_ID);
         String userIdStr = request.getParameter(RequestParameter.USER_ID);
-        //String memberIdStr = request.getParameter(RequestParameter.MEMBER_ID);
         BigDecimal money = BigDecimal.valueOf(Double.parseDouble(moneyStr));
         long eventId = Long.parseLong(eventIdStr);
         long userId = Long.parseLong(userIdStr);
@@ -48,7 +48,6 @@ public class MakeExactScoreBetCommand implements Command {
         long member2Id = 0;
         int member1Score = 0;
         int member2Score = 0;
-        //long memberId = Long.parseLong(memberIdStr);
         try {
             Event event = eventService.findEventById(eventId).get();
             List<EventMember> members = event.getMembers();
@@ -86,7 +85,7 @@ public class MakeExactScoreBetCommand implements Command {
             User user = userService.findByUserId(userId).get();
             boolean success = betService.makeRate(bet, user);
             if (success){
-                request.setAttribute(RequestAttribute.SUCCESS, SUCCESS_MESSAGE);
+                param += "&success=" + SUCCESS_MESSAGE;
             }
         } catch (ServiceException e) {
             logger.error(e.getMessage());
@@ -96,10 +95,12 @@ public class MakeExactScoreBetCommand implements Command {
             logger.error(e.getErrorMessage());
             request.setAttribute(RequestAttribute.ERROR, e.getErrorMessage());
             router.setPath(PagePath.TO_EVENT_PAGE);
+            param += "&error=" + e.getErrorMessage();
         }
 
         router.setType(Router.Type.REDIRECT);
-        router.setPath(PagePath.TO_EVENT_PAGE + "&eventId=" + eventIdStr + "&success=" + SUCCESS_MESSAGE);
+        param += "&eventId=" + eventIdStr;
+        router.setPath(PagePath.TO_EVENT_PAGE + param);
         return router;
     }
 }

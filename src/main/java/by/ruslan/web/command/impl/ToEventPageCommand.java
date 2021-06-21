@@ -14,8 +14,8 @@ import java.util.Optional;
 
 public class ToEventPageCommand implements Command {
 
-    private EventService eventService;
     static final Logger logger = LogManager.getLogger();
+    private EventService eventService;
 
     public ToEventPageCommand(EventService eventService){
         this.eventService = eventService;
@@ -35,6 +35,9 @@ public class ToEventPageCommand implements Command {
                     request.setAttribute(RequestAttribute.EVENT, event.get());
                     if (request.getParameter(RequestParameter.SUCCESS) != null){
                         request.setAttribute(RequestAttribute.SUCCESS, request.getParameter(RequestParameter.SUCCESS));
+                    }
+                    if (request.getParameter(RequestParameter.ERROR) != null){
+                        request.setAttribute(RequestAttribute.ERROR, request.getParameter(RequestParameter.ERROR));
                     }
                 }else {
                     logger.error("Failed to find event by id");

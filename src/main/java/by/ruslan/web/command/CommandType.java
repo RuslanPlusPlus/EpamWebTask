@@ -76,7 +76,7 @@ public enum CommandType {
     },
     TO_PERSONAL_PAGE{
         {
-            this.command = new ToPersonalPageCommand();
+            this.command = new ToPersonalPageCommand(new EventServiceImpl());
         }
     },
     TO_ADMIN_PAGE{

@@ -32,13 +32,15 @@
 
                     <div class="event-block">
                         <div class="event-header">
-                            <h5 class="event-name"><c:out value="${requestScope.event.eventName}" /></h5>
-                            <p class="event-sport_kind">${requestScope.event.sportKindName}</p>
+                            <div>
+                                <h5 class="event-name"><c:out value="${requestScope.event.eventName}" /></h5>
+                                <p class="event-sport_kind">${requestScope.event.sportKindName}</p>
+                            </div>
                         </div>
                     </div>
 
                     <div class="input-group">
-                        <label><fmt:message key="bet.selectWinner"/> /label>
+                        <label><fmt:message key="bet.selectWinner"/> </label>
                         <select class="custom-select" id="memberId" name="memberId">
                             <c:forEach items="${requestScope.event.members}" var="member">
                                 <option value="${member.memberId}"> ${member.memberName} </option>

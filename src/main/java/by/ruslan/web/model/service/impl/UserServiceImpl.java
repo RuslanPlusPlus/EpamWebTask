@@ -51,8 +51,10 @@ public class UserServiceImpl implements UserService {
             userOptional = userDao.findUserById(userId);
             if (userOptional.isPresent()){
                 List<Bet> activeBets = betDao.findActiveBetsForUser(userId);
+                List<Bet> completedBets = betDao.findCompletedBetsForUser(userId);
                 User user = userOptional.get();
                 user.setActiveBets(activeBets);
+                user.setCompletedBets(completedBets);
             }
         } catch (DAOException e) {
             throw new ServiceException(e);
@@ -87,7 +89,9 @@ public class UserServiceImpl implements UserService {
                 if (userOptional.isPresent()) {
                     User user = userOptional.get();
                     List<Bet> activeBets = betDao.findActiveBetsForUser(user.getUserId());
+                    List<Bet> completedBets = betDao.findCompletedBetsForUser(user.getUserId());
                     user.setActiveBets(activeBets);
+                    user.setCompletedBets(completedBets);
                     String userPassword = user.getEncodedPassword();
                     String enPassword = PasswordEncryptor.encrypt(password);
                     if (!userPassword.equals(enPassword)) {

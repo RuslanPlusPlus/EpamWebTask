@@ -3,10 +3,8 @@ package by.ruslan.web.model.dao.impl;
 import by.ruslan.web.exception.DAOException;
 import by.ruslan.web.model.dao.BetColumn;
 import by.ruslan.web.model.dao.BetDao;
-import by.ruslan.web.model.dao.EventMemberColumn;
 import by.ruslan.web.model.dao.UsersColumn;
 import by.ruslan.web.model.entity.Bet;
-import by.ruslan.web.model.entity.EventMember;
 import by.ruslan.web.model.pool.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -48,8 +46,8 @@ public class BetDaoImpl implements BetDao {
             "SELECT money FROM bets WHERE event_id = ?";
     private static final String SQL_FIND_ACTIVE_BETS_FOR_USER =
             "SELECT * FROM bets JOIN users ON bets.user_id = users.user_id WHERE bets.user_id = ? AND win_money IS NULL";
-    private static final String SQL_FIND_NOT_ACTIVE_BETS_FOR_USER =
-            "SELECT * FROM bets WHERE user_id = ? AND win_money IS NOT NULL";
+    private static final String SQL_FIND_COMPLETED_BETS_FOR_USER =
+            "SELECT * FROM bets JOIN users ON bets.user_id = users.user_id WHERE bets.user_id = ? AND win_money IS NOT NULL";
 
     @Override
     public List<Bet> findAll() throws DAOException {
@@ -157,6 +155,7 @@ public class BetDaoImpl implements BetDao {
             ResultSet resultSet = statement.executeQuery();
             while(resultSet.next()){
                 Bet bet = new Bet();
+                bet.setBetId(resultSet.getLong(BetColumn.BET_ID));
                 bet.setEventId(resultSet.getLong(BetColumn.EVENT_ID));
                 bet.setUserId(resultSet.getLong(BetColumn.USER_ID));
                 bet.setMoney(resultSet.getBigDecimal(BetColumn.MONEY));
@@ -172,19 +171,22 @@ public class BetDaoImpl implements BetDao {
     }
 
     @Override
-    public List<Bet> findNotActiveBetsForUser(long userId) throws DAOException {
+    public List<Bet> findCompletedBetsForUser(long userId) throws DAOException {
         List<Bet> bets = new ArrayList<>();
         try(Connection connection = ConnectionPool.getInstance().getConnection();
-            PreparedStatement statement = connection.prepareStatement(SQL_FIND_ACTIVE_BETS_FOR_USER)) {
+            PreparedStatement statement = connection.prepareStatement(SQL_FIND_COMPLETED_BETS_FOR_USER)) {
             statement.setLong(1, userId);
             ResultSet resultSet = statement.executeQuery();
             while(resultSet.next()){
                 Bet bet = new Bet();
+                bet.setBetId(resultSet.getLong(BetColumn.BET_ID));
                 bet.setEventId(resultSet.getLong(BetColumn.EVENT_ID));
                 bet.setUserId(resultSet.getLong(BetColumn.USER_ID));
                 bet.setMoney(resultSet.getBigDecimal(BetColumn.MONEY));
                 bet.setWinMoney(resultSet.getBigDecimal(BetColumn.WIN_MONEY));
                 Bet.BetType type = Bet.BetType.valueOf(resultSet.getString(BetColumn.BET_TYPE));
+                bet.setType(type);
+                bet.setUserEmail(resultSet.getString(UsersColumn.EMAIL));
                 bets.add(bet);
             }
         } catch (SQLException e) {
@@ -208,9 +210,9 @@ public class BetDaoImpl implements BetDao {
         return result;
     }
 
-    @Override
+    /*@Override
     public BigDecimal findBetMoneyForEvent(long eventId) throws DAOException {
         return null;
-    }
+    }*/
 
 }

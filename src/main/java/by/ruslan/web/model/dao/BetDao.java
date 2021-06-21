@@ -10,8 +10,8 @@ public interface BetDao extends BaseDao<Bet>{
     boolean add(Bet bet) throws DAOException;
     List<Bet> findBetsByEvent(long eventId) throws DAOException;
     List<Bet> findActiveBetsForUser(long userId) throws DAOException;
-    List<Bet> findNotActiveBetsForUser(long userId) throws DAOException;
+    List<Bet> findCompletedBetsForUser(long userId) throws DAOException;
     boolean setWinMoney(Bet bet) throws DAOException;
-    BigDecimal findBetMoneyForEvent(long eventId) throws DAOException;
+    //BigDecimal findBetMoneyForEvent(long eventId) throws DAOException;
 
 }

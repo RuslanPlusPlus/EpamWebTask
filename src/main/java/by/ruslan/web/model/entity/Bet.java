@@ -23,8 +23,9 @@ public class Bet {
     private BigDecimal money;
     private BigDecimal winMoney;
     private String userEmail;
-    private long eventId; //one to many
-    private long userId; //one to many
+    private long eventId;
+    private long userId;
+    private String eventName;
     private long member1Id;
     private long member2Id;
     private int member1Score;
@@ -119,6 +120,14 @@ public class Bet {
 
     public void setMember2Score(int member2Score) {
         this.member2Score = member2Score;
+    }
+
+    public String getEventName() {
+        return eventName;
+    }
+
+    public void setEventName(String eventName) {
+        this.eventName = eventName;
     }
 
     @Override

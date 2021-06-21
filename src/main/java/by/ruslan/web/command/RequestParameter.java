@@ -18,6 +18,7 @@ public final class RequestParameter {
     public static final String WINNER_SCORE = "winnerScore";
     public static final String LOSER_SCORE = "loserScore";
     public static final String SUCCESS = "success";
+    public static final String ERROR = "error";
 
     private RequestParameter(){}
 }
