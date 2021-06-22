@@ -23,6 +23,8 @@ public final class RequestParameter {
     public static final String DATETIME = "datetime";
     public static final String MEMBER1_ID = "member1Id";
     public static final String MEMBER2_ID = "member2Id";
+    public static final String SPORT_KIND_NAME = "kindName";
+    public static final String MEMBER_NAME= "memberName";
 
     private RequestParameter(){}
 }

@@ -31,7 +31,7 @@
 
                     <div class="input-div">
                         <label><fmt:message key="event.eventName" /></label>
-                        <input type="text" name="eventName" />
+                        <input required type="text" name="eventName" />
                     </div>
 
                     <div class="input-div">
@@ -45,7 +45,7 @@
 
                     <div class="input-div">
                         <label><fmt:message key="event.dateAndTime" /></label>
-                        <input type="datetime-local" id="datetime" name="datetime"/>
+                        <input required type="datetime-local" id="datetime" name="datetime"/>
                     </div>
 
 

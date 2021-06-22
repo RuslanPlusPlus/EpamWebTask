@@ -52,9 +52,10 @@ public class AddEventCommand implements Command {
             logger.error(e.getMessage());
             request.setAttribute(RequestAttribute.ERROR, e.getMessage());
             router.setPath(PagePath.ERROR_500);
+            return router;
         } catch (EventException e) {
             logger.error(e.getErrorMessage());
-            request.setAttribute(RequestAttribute.ERROR, e.getErrorMessage());
+            //request.setAttribute(RequestAttribute.ERROR, e.getErrorMessage());
             router.setPath(PagePath.TO_BOOKMAKER_PAGE);
             param += "&error=" + e.getErrorMessage();
         }

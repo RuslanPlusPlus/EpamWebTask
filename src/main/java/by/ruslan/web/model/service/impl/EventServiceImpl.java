@@ -123,13 +123,13 @@ public class EventServiceImpl implements EventService {
                 eventException.setErrorMessage(ERROR_MEMBER_NOT_FROM_KIND);
                 throw eventException;
             }
-            // TODO: 22.06.2021 validation
+            // TODO: 22.06.2021 field validation
             Event event = new Event();
             event.setEventName(eventName);
             java.sql.Date date = new java.sql.Date(timestamp.getTime());
             Time time = new Time(timestamp.getTime());
-            logger.debug(date);
-            logger.debug(time);
+            //logger.debug(date);
+            //logger.debug(time);
             event.setStatus(Event.EventStatus.ACTIVE);
             event.setDate(date);
             event.setTime(time);

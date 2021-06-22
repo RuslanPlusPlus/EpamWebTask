@@ -38,9 +38,24 @@
                 <div class="row">
                     <div class="col-2 m-2">
                         <div class="list-group">
-                            <a href="${pageContext.request.contextPath}/main-servlet?command=to_add_event_page"
+                            <a href="${contextPath}/main-servlet?command=to_add_event_page"
                                class="make-bet-link">
                                 <fmt:message key="bookmaker.addEvent"/>
+                            </a>
+                            <br/>
+                            <a href="${contextPath}/main-servlet?command=to_add_sport_kind_page"
+                               class="make-bet-link">
+                                <fmt:message key="bookmaker.addSportKind"/>
+                            </a>
+                            <br/>
+                            <a href="${contextPath}/main-servlet?command=to_add_member_page"
+                               class="make-bet-link">
+                                <fmt:message key="bookmaker.addMember"/>
+                            </a>
+                            <br/>
+                            <a href="${contextPath}/main-servlet?command=to_finished_events_page"
+                               class="make-bet-link">
+                                <fmt:message key="bookmaker.addResult"/>
                             </a>
                             <br/>
                         </div>

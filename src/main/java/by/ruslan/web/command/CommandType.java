@@ -64,6 +64,16 @@ public enum CommandType {
             this.command = new AddEventCommand(new EventServiceImpl());
         }
     },
+    ADD_SPORT_KIND{
+        {
+            this.command = new AddSportKindCommand(new SportKindServiceImpl());
+        }
+    },
+    ADD_MEMBER{
+        {
+            this.command = new AddMemberCommand(new EventMemberServiceImpl());
+        }
+    },
     TO_REGISTER_PAGE {
         {
             this.command = new ToRegisterPageCommand();
@@ -137,6 +147,21 @@ public enum CommandType {
     TO_ADD_EVENT_RESULT_PAGE{
         {
             this.command = new ToAddEventResultPageCommand(new EventServiceImpl());
+        }
+    },
+    TO_ADD_SPORT_KIND_PAGE{
+        {
+            this.command = new ToAddSportKindPageCommand();
+        }
+    },
+    TO_ADD_MEMBER_PAGE{
+        {
+            this.command = new ToAddMemberPageCommand(new SportKindServiceImpl());
+        }
+    },
+    TO_FINISHED_EVENTS_PAGE{
+        {
+            this.command = new ToFinishedEventsPageCommand(new EventServiceImpl());
         }
     };
     Command command;

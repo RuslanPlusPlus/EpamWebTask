@@ -1,26 +1,60 @@
-2021-06-22 04:02:23 [http-nio-8080-exec-702] DEBUG by.ruslan.web.controller.MainServlet - get method
-2021-06-22 04:02:23 [http-nio-8080-exec-702] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToMainPageCommand
-2021-06-22 04:02:23 [http-nio-8080-exec-702] DEBUG by.ruslan.web.controller.MainServlet - /pages/main.jsp
-2021-06-22 04:02:24 [http-nio-8080-exec-703] DEBUG by.ruslan.web.controller.MainServlet - get method
-2021-06-22 04:02:24 [http-nio-8080-exec-703] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToEventPageCommand
-2021-06-22 04:02:24 [http-nio-8080-exec-703] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Event 10 is ready to bet
-2021-06-22 04:02:25 [http-nio-8080-exec-703] DEBUG by.ruslan.web.controller.MainServlet - /pages/event.jsp
-2021-06-22 04:02:27 [http-nio-8080-exec-704] DEBUG by.ruslan.web.controller.MainServlet - get method
-2021-06-22 04:02:27 [http-nio-8080-exec-704] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToMakeBetPageCommand
-2021-06-22 04:02:27 [http-nio-8080-exec-704] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Event 10 is ready to bet
-2021-06-22 04:02:27 [http-nio-8080-exec-704] DEBUG by.ruslan.web.controller.MainServlet - /pages/makeBetPage.jsp
-2021-06-22 04:02:29 [http-nio-8080-exec-705] DEBUG by.ruslan.web.controller.MainServlet - get method
-2021-06-22 04:02:29 [http-nio-8080-exec-705] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToWinBetPageCommand
-2021-06-22 04:02:29 [http-nio-8080-exec-705] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Event 10 is ready to bet
-2021-06-22 04:02:29 [http-nio-8080-exec-705] DEBUG by.ruslan.web.controller.MainServlet - /pages/winBet.jsp
-2021-06-22 04:02:32 [http-nio-8080-exec-708] DEBUG by.ruslan.web.controller.MainServlet - post method
-2021-06-22 04:02:32 [http-nio-8080-exec-708] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.MakeWinBetCommand
-2021-06-22 04:02:32 [http-nio-8080-exec-708] ERROR by.ruslan.web.command.impl.MakeWinBetCommand - User has not enough money to make such bet
-2021-06-22 04:02:32 [http-nio-8080-exec-708] DEBUG by.ruslan.web.controller.MainServlet - /main-servlet?command=to_event_page&error=User has not enough money to make such bet&eventId=10
-2021-06-22 04:02:32 [http-nio-8080-exec-706] DEBUG by.ruslan.web.controller.MainServlet - get method
-2021-06-22 04:02:32 [http-nio-8080-exec-706] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToEventPageCommand
-2021-06-22 04:02:32 [http-nio-8080-exec-706] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Event 10 is ready to bet
-2021-06-22 04:02:32 [http-nio-8080-exec-706] DEBUG by.ruslan.web.controller.MainServlet - /pages/event.jsp
-2021-06-22 04:02:35 [http-nio-8080-exec-709] DEBUG by.ruslan.web.controller.MainServlet - get method
-2021-06-22 04:02:35 [http-nio-8080-exec-709] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToBookmakerPageCommand
-2021-06-22 04:02:35 [http-nio-8080-exec-709] DEBUG by.ruslan.web.controller.MainServlet - /pages/bookmakerPage.jsp
+2021-06-22 19:42:00 [http-nio-8080-exec-152] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-22 19:42:00 [http-nio-8080-exec-152] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ChangeLocaleCommand
+2021-06-22 19:42:00 [http-nio-8080-exec-152] DEBUG by.ruslan.web.command.impl.ChangeLocaleCommand - Current page: /main-servlet?command=to_bookmaker_page
+2021-06-22 19:42:00 [http-nio-8080-exec-152] DEBUG by.ruslan.web.controller.MainServlet - /main-servlet?command=to_bookmaker_page
+2021-06-22 19:42:00 [http-nio-8080-exec-146] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-22 19:42:00 [http-nio-8080-exec-146] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToBookmakerPageCommand
+2021-06-22 19:42:00 [http-nio-8080-exec-146] DEBUG by.ruslan.web.controller.MainServlet - /pages/bookmakerPage.jsp
+2021-06-22 19:42:08 [http-nio-8080-exec-153] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-22 19:42:08 [http-nio-8080-exec-153] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToFinishedEventsPageCommand
+2021-06-22 19:42:08 [http-nio-8080-exec-153] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Event 10 is ready to be added the result
+2021-06-22 19:42:08 [http-nio-8080-exec-153] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Event 11 is ready to bet
+2021-06-22 19:42:08 [http-nio-8080-exec-153] DEBUG by.ruslan.web.controller.MainServlet - /pages/finishedEvents.jsp
+2021-06-22 19:42:11 [http-nio-8080-exec-154] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-22 19:42:11 [http-nio-8080-exec-154] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ChangeLocaleCommand
+2021-06-22 19:42:11 [http-nio-8080-exec-154] DEBUG by.ruslan.web.command.impl.ChangeLocaleCommand - Current page: /main-servlet?command=to_finished_events_page
+2021-06-22 19:42:11 [http-nio-8080-exec-154] DEBUG by.ruslan.web.controller.MainServlet - /main-servlet?command=to_finished_events_page
+2021-06-22 19:42:11 [http-nio-8080-exec-148] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-22 19:42:11 [http-nio-8080-exec-148] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToFinishedEventsPageCommand
+2021-06-22 19:42:11 [http-nio-8080-exec-148] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Event 10 is ready to be added the result
+2021-06-22 19:42:11 [http-nio-8080-exec-148] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Event 11 is ready to bet
+2021-06-22 19:42:11 [http-nio-8080-exec-148] DEBUG by.ruslan.web.controller.MainServlet - /pages/finishedEvents.jsp
+2021-06-22 19:42:12 [http-nio-8080-exec-149] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-22 19:42:12 [http-nio-8080-exec-149] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ChangeLocaleCommand
+2021-06-22 19:42:12 [http-nio-8080-exec-149] DEBUG by.ruslan.web.command.impl.ChangeLocaleCommand - Current page: /main-servlet?command=to_finished_events_page
+2021-06-22 19:42:12 [http-nio-8080-exec-149] DEBUG by.ruslan.web.controller.MainServlet - /main-servlet?command=to_finished_events_page
+2021-06-22 19:42:12 [http-nio-8080-exec-150] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-22 19:42:12 [http-nio-8080-exec-150] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToFinishedEventsPageCommand
+2021-06-22 19:42:12 [http-nio-8080-exec-150] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Event 10 is ready to be added the result
+2021-06-22 19:42:12 [http-nio-8080-exec-150] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Event 11 is ready to bet
+2021-06-22 19:42:12 [http-nio-8080-exec-150] DEBUG by.ruslan.web.controller.MainServlet - /pages/finishedEvents.jsp
+2021-06-22 19:42:13 [http-nio-8080-exec-155] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-22 19:42:13 [http-nio-8080-exec-155] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ChangeLocaleCommand
+2021-06-22 19:42:13 [http-nio-8080-exec-155] DEBUG by.ruslan.web.command.impl.ChangeLocaleCommand - Current page: /main-servlet?command=to_finished_events_page
+2021-06-22 19:42:13 [http-nio-8080-exec-155] DEBUG by.ruslan.web.controller.MainServlet - /main-servlet?command=to_finished_events_page
+2021-06-22 19:42:13 [http-nio-8080-exec-151] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-22 19:42:13 [http-nio-8080-exec-151] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToFinishedEventsPageCommand
+2021-06-22 19:42:13 [http-nio-8080-exec-151] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Event 10 is ready to be added the result
+2021-06-22 19:42:13 [http-nio-8080-exec-151] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Event 11 is ready to bet
+2021-06-22 19:42:13 [http-nio-8080-exec-151] DEBUG by.ruslan.web.controller.MainServlet - /pages/finishedEvents.jsp
+2021-06-22 19:42:17 [http-nio-8080-exec-156] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-22 19:42:17 [http-nio-8080-exec-156] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToAddEventResultPageCommand
+2021-06-22 19:42:17 [http-nio-8080-exec-156] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Event 10 is ready to be added the result
+2021-06-22 19:42:17 [http-nio-8080-exec-156] DEBUG by.ruslan.web.controller.MainServlet - /pages/addEventResult.jsp
+2021-06-22 19:42:42 [http-nio-8080-exec-153] DEBUG by.ruslan.web.controller.MainServlet - post method
+2021-06-22 19:42:42 [http-nio-8080-exec-153] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.AddEventResultCommand
+2021-06-22 19:42:42 [http-nio-8080-exec-153] DEBUG by.ruslan.web.command.impl.AddEventResultCommand - EventResult{eventId=10, winnerId=1, loserId=3, winnerScore=2, loserScore=1}
+2021-06-22 19:42:42 [http-nio-8080-exec-153] DEBUG by.ruslan.web.controller.MainServlet - /main-servlet?command=to_event_page&success=The event result is successfully added!!!&eventId=10
+2021-06-22 19:42:42 [http-nio-8080-exec-154] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-22 19:42:42 [http-nio-8080-exec-154] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToEventPageCommand
+2021-06-22 19:42:42 [http-nio-8080-exec-154] DEBUG by.ruslan.web.controller.MainServlet - /pages/event.jsp
+2021-06-22 19:42:52 [http-nio-8080-exec-148] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-22 19:42:52 [http-nio-8080-exec-148] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToMainPageCommand
+2021-06-22 19:42:52 [http-nio-8080-exec-148] DEBUG by.ruslan.web.controller.MainServlet - /pages/main.jsp
+2021-06-22 19:42:55 [http-nio-8080-exec-149] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-22 19:42:55 [http-nio-8080-exec-149] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToBookmakerPageCommand
+2021-06-22 19:42:55 [http-nio-8080-exec-149] DEBUG by.ruslan.web.controller.MainServlet - /pages/bookmakerPage.jsp
+2021-06-22 19:42:57 [http-nio-8080-exec-150] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-22 19:42:57 [http-nio-8080-exec-150] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToFinishedEventsPageCommand
+2021-06-22 19:42:57 [http-nio-8080-exec-150] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Event 11 is ready to bet
+2021-06-22 19:42:57 [http-nio-8080-exec-150] DEBUG by.ruslan.web.controller.MainServlet - /pages/finishedEvents.jsp

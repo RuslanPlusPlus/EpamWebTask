@@ -56,7 +56,7 @@
                             <c:forEach items="${requestScope.event.members}" var="member">
                                 <option value="${member.memberId}"> ${member.memberName} </option>
                             </c:forEach>
-                            <input name="winnerScore" type="number" placeholder="Winner score"/>
+                            <input required name="winnerScore" type="number" placeholder="Winner score"/>
                         </select>
                     </div>
 
@@ -67,7 +67,7 @@
                                     <option value="${member.memberId}"> ${member.memberName} </option>
                                 </c:forEach>
                             </select>
-                            <input name="loserScore" type="number" placeholder="Loser score"/>
+                            <input required name="loserScore" type="number" placeholder="Loser score"/>
                     </div>
 
                     <div>

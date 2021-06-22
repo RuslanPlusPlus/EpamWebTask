@@ -27,6 +27,7 @@ public class AddEventResultCommand implements Command {
     @Override
     public Router execute(HttpServletRequest request) {
         Router router = new Router();
+        String param = new String();
 
         EventResult eventResult = new EventResult();
         String eventIdStr = request.getParameter(RequestParameter.EVENT_ID);
@@ -38,7 +39,7 @@ public class AddEventResultCommand implements Command {
         long eventId = Long.parseLong(eventIdStr);
         long winnerId = Long.parseLong(winnerIdStr);
         long loserId = Long.parseLong(loserIdStr);
-        // TODO: 21.06.2021 validation
+        // TODO: 21.06.2021 field validation
         int winnerScore = Integer.parseInt(winnerScoreStr);
         int loserScore = Integer.parseInt(loserScoreStr);
         eventResult.setEventId(eventId);
@@ -50,18 +51,22 @@ public class AddEventResultCommand implements Command {
 
         try {
             eventResultService.add(eventResult);
+            param += "&success=" + SUCCESS_MESSAGE;
         } catch (ServiceException e) {
             logger.error(e.getMessage());
             router.setPath(PagePath.ERROR_500);
             request.setAttribute(RequestAttribute.ERROR, e.getMessage());
+            return router;
         } catch (EventResultException e) {
             logger.error(e.getErrorMessage());
-            request.setAttribute(RequestAttribute.ERROR, e.getErrorMessage());
+            //request.setAttribute(RequestAttribute.ERROR, e.getErrorMessage());
             router.setPath(PagePath.TO_EVENT_PAGE);
+            param += "&error=" + e.getErrorMessage();
         }
 
         router.setType(Router.Type.REDIRECT);
-        router.setPath(PagePath.TO_EVENT_PAGE + "&eventId=" + eventIdStr + "&success=" + SUCCESS_MESSAGE);
+        param += "&eventId=" + eventIdStr;
+        router.setPath(PagePath.TO_EVENT_PAGE + param);
         return router;
     }
 }

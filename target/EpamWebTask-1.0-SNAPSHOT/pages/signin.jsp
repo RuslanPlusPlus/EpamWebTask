@@ -40,7 +40,7 @@
                                 <fmt:message key="email"/>
                             </label>
                             <div class="col-sm-7">
-                                <input type="email" name="email" id="email" class="form-control"
+                                <input required type="email" name="email" id="email" class="form-control"
                                        placeholder="Enter email">
                             </div>
                         </div>
@@ -50,7 +50,7 @@
                                 <fmt:message key="password"/>
                             </label>
                             <div class="col-sm-7">
-                                <input type="password" name="password" id="password" class="form-control"
+                                <input required type="password" name="password" id="password" class="form-control"
                                        placeholder="Enter password">
                             </div>
                         </div>

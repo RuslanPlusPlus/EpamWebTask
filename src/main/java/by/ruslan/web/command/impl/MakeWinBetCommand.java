@@ -60,9 +60,10 @@ public class MakeWinBetCommand implements Command {
             logger.error(e.getMessage());
             router.setPath(PagePath.ERROR_500);
             request.setAttribute(RequestAttribute.ERROR, e.getMessage());
+            return router;
         } catch (BetException e) {
             logger.error(e.getErrorMessage());
-            request.setAttribute(RequestAttribute.ERROR, e.getErrorMessage());
+            //request.setAttribute(RequestAttribute.ERROR, e.getErrorMessage());
             router.setPath(PagePath.TO_EVENT_PAGE);
             param += "&error=" + e.getErrorMessage();
         }

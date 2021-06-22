@@ -26,7 +26,7 @@
                 <div class="card-body">
                     <form name="registerForm" method="post" action="main-servlet">
 
-                        <c:if test="${not empty errorIncorrectData}">
+                        <c:if test="${not empty requestScope.errorIncorrectData}">
                             <div class="alert-warning">
                                 <fmt:message key="error.register.incorrectData"/>
                             </div>
@@ -41,11 +41,11 @@
                             </label>
                             <div class="col-sm-7">
                                 <input type="text" name="username" id="username" class="form-control"
-                                       placeholder="Enter username">
+                                       placeholder="Enter username" required>
                             </div>
                         </div>
 
-                        <c:if test="${not empty errorEmailExists}">
+                        <c:if test="${not empty requestScope.errorEmailExists}">
                             <div class="alert-warning">
                                 <fmt:message key="error.register.emailExists"/>
                             </div>
@@ -57,7 +57,7 @@
                                 <fmt:message key="email"/>
                             </label>
                             <div class="col-sm-7">
-                                <input type="email" name="email" id="email" class="form-control"
+                                <input required type="email" name="email" id="email" class="form-control"
                                        placeholder="Enter email">
                             </div>
                         </div>
@@ -67,7 +67,7 @@
                                 <fmt:message key="password"/>
                             </label>
                             <div class="col-sm-7">
-                                <input type="password" name="password" id="password" class="form-control"
+                                <input required type="password" name="password" id="password" class="form-control"
                                        placeholder="Enter password">
                             </div>
                         </div>

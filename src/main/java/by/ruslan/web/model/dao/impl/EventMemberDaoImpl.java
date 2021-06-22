@@ -28,8 +28,8 @@ public class EventMemberDaoImpl implements EventMemberDao {
                     " JOIN event_link_eventmember ON event_members.member_id = event_link_eventmember.member_id " +
                     "WHERE event_link_eventmember.event_id = ?";
     private static final String SQL_FIND_EVENT_MEMBER_BY_SPORT_KIND_ID =
-            "SELECT * FROM event_members JOIN sport_kinds ON event_members.kind_id = sport_kinds.kind_id" +
-                    "WHERE sport_kind_id = ?";
+            "SELECT * FROM event_members JOIN sport_kinds ON event_members.kind_id = sport_kinds.kind_id " +
+                    "WHERE event_members.kind_id = ?";
     private static final String SQL_LINK_MEMBER_TO_EVENT =
             "INSERT INTO event_link_eventmember (event_id, member_id) " +
                     "VALUES (?, ?)";
@@ -89,8 +89,8 @@ public class EventMemberDaoImpl implements EventMemberDao {
             PreparedStatement statement = connection.prepareStatement(SQL_ADD_EVENT_MEMBER)){
             long kindId = eventMember.getKindId();
             String memberName = eventMember.getMemberName();
-            statement.setLong(1, kindId);
-            statement.setString(2, memberName);
+            statement.setString(1, memberName);
+            statement.setLong(2, kindId);
             result = statement.executeUpdate() > 0;
 
         } catch (SQLException e) {

@@ -50,7 +50,7 @@
 
                     <div class="input-group">
                         <label><fmt:message key="bet.betValue" /></label>
-                        <input placeholder="XXX.XX" type="text" name="money" pattern="[0-9]{1,3}\.[0-9]{1,2}"/>
+                        <input required placeholder="XXX.XX" type="text" name="money" pattern="[0-9]{1,3}\.[0-9]{1,2}"/>
                     </div>
 
                     <div>

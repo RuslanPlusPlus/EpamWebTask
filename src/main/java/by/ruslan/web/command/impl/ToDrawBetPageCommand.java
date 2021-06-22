@@ -25,6 +25,9 @@ public class ToDrawBetPageCommand implements Command {
         String eventIdStr = request.getParameter(RequestParameter.EVENT_ID);
         try {
             RequestEditor.addEventToRequest(request, eventService, PagePath.TO_DRAW_BET_PAGE);
+            if (request.getParameter(RequestParameter.SUCCESS) != null){
+                request.setAttribute(RequestAttribute.SUCCESS, request.getParameter(RequestParameter.SUCCESS));
+            }
         } catch (ServiceException e) {
             logger.error(e.getMessage());
             router.setPath(PagePath.ERROR_500);

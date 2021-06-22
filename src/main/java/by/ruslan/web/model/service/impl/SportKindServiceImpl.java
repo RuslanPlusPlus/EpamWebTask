@@ -2,6 +2,7 @@ package by.ruslan.web.model.service.impl;
 
 import by.ruslan.web.exception.DAOException;
 import by.ruslan.web.exception.ServiceException;
+import by.ruslan.web.exception.SportKindException;
 import by.ruslan.web.model.dao.SportKindDao;
 import by.ruslan.web.model.dao.impl.SportKindDaoImpl;
 import by.ruslan.web.model.entity.SportKind;
@@ -16,11 +17,25 @@ public class SportKindServiceImpl implements SportKindService {
 
     static final Logger logger = LogManager.getLogger();
     private final SportKindDao sportKindDao = new SportKindDaoImpl();
+    private final String ERROR_MESSAGE_SPORT_KIND_EXISTS = "Such sportKind already exists!";
+
 
     @Override
-    public boolean add(SportKind sportKind) throws ServiceException {
+    public boolean add(String kindName) throws ServiceException, SportKindException {
         boolean result;
+        SportKindException sportKindException = new SportKindException();
         try {
+            /// TODO: 22.06.2021 field validation
+            kindName = kindName.toLowerCase();
+            List<SportKind> sportKinds = sportKindDao.findAll();
+            for (SportKind sportKind: sportKinds){
+                if (sportKind.getKindName().equals(kindName)){
+                    sportKindException.setErrorMessage(ERROR_MESSAGE_SPORT_KIND_EXISTS);
+                    throw sportKindException;
+                }
+            }
+            SportKind sportKind = new SportKind();
+            sportKind.setKindName(kindName);
             result = sportKindDao.add(sportKind);
         } catch (DAOException e) {
             throw new ServiceException(e);
