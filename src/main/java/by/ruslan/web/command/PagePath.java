@@ -8,13 +8,14 @@ public final class PagePath {
     public static final String USER_LIST = "/pages/user-list.jsp";
     public static final String ADMIN_PAGE = "/pages/admin.jsp";
     public static final String EVENT_PAGE = "/pages/event.jsp";
-    public static final String BOOKMAKER_PAGE = "/pages/bookmaker.jsp";
+    public static final String BOOKMAKER_PAGE = "/pages/bookmakerPage.jsp";
     public static final String USERS_PAGE = "/pages/users.jsp";
     public static final String MAKE_BET_PAGE = "/pages/makeBetPage.jsp";
     public static final String WIN_BET_PAGE = "/pages/winBet.jsp";
     public static final String DRAW_BET_PAGE = "/pages/drawBet.jsp";
     public static final String EXACT_SCORE_BET_PAGE = "/pages/exactScoreBet.jsp";
     public static final String ADD_EVENT_RESULT_PAGE = "/pages/addEventResult.jsp";
+    public static final String ADD_EVENT_PAGE = "/pages/addEventPage.jsp";
     public static final String PERSONAL_PAGE = "/pages/personalPage.jsp";
     public static final String ERROR_500 = "/pages/errors/error500.jsp";
     public static final String ERROR_404 = "/pages/errors/error404.jsp";
@@ -32,6 +33,8 @@ public final class PagePath {
     public static final String TO_EXACT_SCORE_BET_PAGE = "/main-servlet?command=to_exact_score_bet_page";
     public static final String TO_ADD_EVENT_RESULT_PAGE = "/main-servlet?command=to_add_event_result_page";
     public static final String TO_PERSONAL_PAGE = "/main-servlet?command=to_personal_page";
+    public static final String TO_BOOKMAKER_PAGE = "/main-servlet?command=to_bookmaker_page";
+    public static final String TO_ADD_EVENT_PAGE = "/main-servlet?command=to_add_event_page";
 
     private PagePath(){}
 }

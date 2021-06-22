@@ -19,6 +19,10 @@ public final class RequestParameter {
     public static final String LOSER_SCORE = "loserScore";
     public static final String SUCCESS = "success";
     public static final String ERROR = "error";
+    public static final String EVENT_NAME = "eventName";
+    public static final String DATETIME = "datetime";
+    public static final String MEMBER1_ID = "member1Id";
+    public static final String MEMBER2_ID = "member2Id";
 
     private RequestParameter(){}
 }

@@ -3,7 +3,9 @@ package by.ruslan.web.model.dao.impl;
 import by.ruslan.web.exception.DAOException;
 import by.ruslan.web.model.dao.EventMemberColumn;
 import by.ruslan.web.model.dao.EventMemberDao;
+import by.ruslan.web.model.dao.SportKindColumn;
 import by.ruslan.web.model.entity.EventMember;
+import by.ruslan.web.model.entity.SportKind;
 import by.ruslan.web.model.pool.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -22,7 +24,8 @@ public class EventMemberDaoImpl implements EventMemberDao {
             "SELECT * FROM event_members JOIN sport_kinds ON event_members.kind_id = sport_kinds.kind_id " +
                     "WHERE member_id = ?";
     private static final String SQL_FIND_EVENT_MEMBERS_BY_EVENT =
-            "SELECT * FROM event_members JOIN event_link_eventmember ON event_members.member_id = event_link_eventmember.member_id " +
+            "SELECT * FROM event_members JOIN sport_kinds ON event_members.kind_id = sport_kinds.kind_id" +
+                    " JOIN event_link_eventmember ON event_members.member_id = event_link_eventmember.member_id " +
                     "WHERE event_link_eventmember.event_id = ?";
     private static final String SQL_FIND_EVENT_MEMBER_BY_SPORT_KIND_ID =
             "SELECT * FROM event_members JOIN sport_kinds ON event_members.kind_id = sport_kinds.kind_id" +
@@ -114,23 +117,23 @@ public class EventMemberDaoImpl implements EventMemberDao {
         return result;
     }
 
-    @Override
-    public boolean linkEventMembersToEvent(List<EventMember> members, long eventId) throws DAOException {
-        boolean result = true;
+    private void link(EventMember member, long eventId) throws DAOException {
         try(Connection connection = ConnectionPool.getInstance().getConnection();
-            PreparedStatement statement = connection.prepareStatement(SQL_LINK_MEMBER_TO_EVENT)){
-            for (EventMember member: members){
-                long memberId = member.getMemberId();
-                statement.setLong(1, eventId);
-                statement.setLong(2, memberId);
-                if (statement.executeUpdate() < 1){
-                    result = false;
-                }
-            }
+        PreparedStatement statement = connection.prepareStatement(SQL_LINK_MEMBER_TO_EVENT)){
+            long memberId = member.getMemberId();
+            statement.setLong(1, eventId);
+            statement.setLong(2, memberId);
+            statement.executeUpdate();
         } catch (SQLException e) {
             throw new DAOException(e);
         }
-        return result;
+    }
+
+    @Override
+    public void linkEventMembersToEvent(List<EventMember> members, long eventId) throws DAOException {
+        for (EventMember eventMember: members){
+            link(eventMember, eventId);
+        }
     }
 
     private List<EventMember> executeSqlRequestWithId(String request, long id) throws DAOException{
@@ -153,10 +156,12 @@ public class EventMemberDaoImpl implements EventMemberDao {
         long memberId = resultSet.getLong(EventMemberColumn.MEMBER_ID);
         long kindId = resultSet.getLong(EventMemberColumn.KIND_ID);
         String memberName = resultSet.getString(EventMemberColumn.MEMBER_NAME);
+        String kindName = resultSet.getString(SportKindColumn.KIND_NAME);
         EventMember eventMember = new EventMember();
         eventMember.setMemberId(memberId);
         eventMember.setMemberName(memberName);
         eventMember.setKindId(kindId);
+        eventMember.setKindName(kindName);
         return eventMember;
     }
 }

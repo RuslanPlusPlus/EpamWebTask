@@ -47,25 +47,32 @@ public class EventDaoImpl implements EventDao {
     }
 
     @Override
-    public boolean add(Event event) throws DAOException {
+    public Event add(Event event) throws DAOException {
         boolean result;
         try(Connection connection = ConnectionPool.getInstance().getConnection();
-            PreparedStatement statement = connection.prepareStatement(SQL_ADD_EVENT)){
+            PreparedStatement statement = connection.prepareStatement(SQL_ADD_EVENT, Statement.RETURN_GENERATED_KEYS)){
             long sport_kind_id = event.getSportKindId();
             String eventName = event.getEventName();
-            Timestamp date = new Timestamp(event.getDate().getTime());
+            Date date = event.getDate();
+            Time time = event.getTime();
+            String dateStr = String.valueOf(date);
+            String timeStr = String.valueOf(time);
+            Timestamp timestamp = Timestamp.valueOf(dateStr + " " + timeStr);
             //status is set in service
             String status = event.getStatus().getValue();
             statement.setLong(1, sport_kind_id);
             statement.setString(2, eventName);
-            statement.setTimestamp(3, date);
+            statement.setTimestamp(3, timestamp);
             statement.setString(4, status);
             result = statement.executeUpdate() > 0;
+            ResultSet resultSet = statement.getGeneratedKeys();
+            resultSet.next();
+            event.setEventId(resultSet.getInt(1));
 
         } catch (SQLException e) {
             throw new DAOException(e);
         }
-        return result;
+        return event;
     }
 
     @Override
@@ -124,7 +131,11 @@ public class EventDaoImpl implements EventDao {
             PreparedStatement statement = connection.prepareStatement(SQL_UPDATE_EVENT)){
             String eventName = event.getEventName();
             long sportKindId = event.getSportKindId();
-            Timestamp timestamp = new Timestamp(event.getTime().getTime() + event.getDate().getTime());
+            Date date = event.getDate();
+            Time time = event.getTime();
+            String dateStr = String.valueOf(date);
+            String timeStr = String.valueOf(time);
+            Timestamp timestamp = Timestamp.valueOf(dateStr + " " + timeStr);
             String status = event.getStatus().getValue();
             statement.setLong(1, sportKindId);
             statement.setString(2, eventName);
@@ -132,7 +143,6 @@ public class EventDaoImpl implements EventDao {
             statement.setString(4, status);
             statement.setLong(5, event.getEventId());
             result = statement.executeUpdate() > 0;
-            logger.debug("EVVVVVENT UPDDDDAAAATE");
         } catch (SQLException e) {
             throw new DAOException();
         }

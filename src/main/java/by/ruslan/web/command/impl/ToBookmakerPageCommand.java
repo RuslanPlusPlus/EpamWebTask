@@ -1,13 +1,24 @@
 package by.ruslan.web.command.impl;
 
-import by.ruslan.web.command.Command;
-import by.ruslan.web.command.Router;
+import by.ruslan.web.command.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 public class ToBookmakerPageCommand implements Command {
+
     @Override
     public Router execute(HttpServletRequest request) {
-        return null;
+        HttpSession session = request.getSession();
+        Router router = new Router();
+        if (request.getParameter(RequestParameter.SUCCESS) != null){
+            request.setAttribute(RequestAttribute.SUCCESS, request.getParameter(RequestParameter.SUCCESS));
+        }
+        if (request.getParameter(RequestParameter.ERROR) != null){
+            request.setAttribute(RequestAttribute.ERROR, request.getParameter(RequestParameter.ERROR));
+        }
+        session.setAttribute(SessionAttribute.CURRENT_PAGE, PagePath.TO_BOOKMAKER_PAGE);
+        router.setPath(PagePath.BOOKMAKER_PAGE);
+        return router;
     }
 }

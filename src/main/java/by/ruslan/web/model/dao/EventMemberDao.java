@@ -12,5 +12,5 @@ public interface EventMemberDao extends BaseDao<EventMember>{
     List<EventMember> findEventMembersBySportKind(long kindId) throws DAOException;
     boolean add(EventMember eventMember) throws DAOException;
     boolean updateEventMember(EventMember eventMember) throws DAOException;
-    boolean linkEventMembersToEvent(List<EventMember> members, long eventId) throws DAOException;
+    void linkEventMembersToEvent(List<EventMember> members, long eventId) throws DAOException;
 }

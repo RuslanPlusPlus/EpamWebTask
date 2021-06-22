@@ -4,6 +4,7 @@ public class EventMember {
     private long memberId;
     private String memberName;
     private long kindId;
+    private String kindName;
 
     public EventMember(){
     }
@@ -30,6 +31,14 @@ public class EventMember {
 
     public void setKindId(long kindId) {
         this.kindId = kindId;
+    }
+
+    public String getKindName() {
+        return kindName;
+    }
+
+    public void setKindName(String kindName) {
+        this.kindName = kindName;
     }
 
     @Override

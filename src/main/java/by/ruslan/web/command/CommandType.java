@@ -59,9 +59,19 @@ public enum CommandType {
             this.command = new AddEventResultCommand(new EventResultServiceImpl());
         }
     },
+    ADD_EVENT{
+        {
+            this.command = new AddEventCommand(new EventServiceImpl());
+        }
+    },
     TO_REGISTER_PAGE {
         {
             this.command = new ToRegisterPageCommand();
+        }
+    },
+    TO_ADD_EVENT_PAGE{
+        {
+            this.command = new ToAddEventPageCommand(new SportKindServiceImpl(), new EventMemberServiceImpl());
         }
     },
     TO_LOGIN_PAGE{

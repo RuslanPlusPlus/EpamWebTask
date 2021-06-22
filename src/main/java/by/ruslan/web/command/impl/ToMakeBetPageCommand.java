@@ -4,6 +4,7 @@ import by.ruslan.web.command.*;
 import by.ruslan.web.exception.ServiceException;
 import by.ruslan.web.model.entity.Event;
 import by.ruslan.web.model.service.EventService;
+import by.ruslan.web.model.service.SportKindService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -14,7 +15,7 @@ import java.util.Optional;
 public class ToMakeBetPageCommand implements Command {
 
     static final Logger logger = LogManager.getLogger();
-    private EventService eventService;
+    private final EventService eventService;
 
     public ToMakeBetPageCommand(EventService eventService) {
         this.eventService = eventService;

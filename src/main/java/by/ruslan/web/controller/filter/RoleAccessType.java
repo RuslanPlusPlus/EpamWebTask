@@ -52,8 +52,11 @@ public enum RoleAccessType {
     BOOKMAKER(Set.of(
             CommandType.TO_MAIN_PAGE,
             CommandType.TO_PERSONAL_PAGE,
+            CommandType.TO_BOOKMAKER_PAGE,
             CommandType.TO_ADD_EVENT_RESULT_PAGE,
+            CommandType.TO_ADD_EVENT_PAGE,
             CommandType.ADD_EVENT_RESULT,
+            CommandType.ADD_EVENT,
             CommandType.CHANGE_LOCALE,
             CommandType.LOGOUT,
             CommandType.TO_EVENT_PAGE,

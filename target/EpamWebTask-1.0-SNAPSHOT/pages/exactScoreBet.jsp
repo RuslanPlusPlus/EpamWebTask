@@ -32,8 +32,11 @@
 
                     <div class="event-block">
                         <div class="event-header">
-                            <h5 class="event-name"><c:out value="${requestScope.event.eventName}" /></h5>
-                            <p class="event-sport_kind">${requestScope.event.sportKindName}</p>
+                            <div>
+                                <h5 class="event-name"><c:out value="${requestScope.event.eventName}" /></h5>
+                                <p class="event-sport_kind">${requestScope.event.sportKindName}</p>
+                            </div>
+
                         </div>
                     </div>
 
@@ -53,8 +56,8 @@
                     </div>
 
                     <div>
-                        <button  class="btn btn-primary" type="submit">
-                            <fmt:message key="event.makeRate"/>
+                        <button  class="make-bet-link" type="submit">
+                            <fmt:message key="event.makeBet"/>
                         </button>
                     </div>
                 </form>

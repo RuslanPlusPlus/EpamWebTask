@@ -9,4 +9,13 @@ public class DataValidator {
         }
         return true;
     }
+
+    public static boolean isValidDouble(String number){
+        try {
+            Double.parseDouble(number);
+        }catch (NumberFormatException e){
+            return false;
+        }
+        return true;
+    }
 }
