@@ -1,17 +1,10 @@
-2021-06-23 21:21:10 [http-nio-8080-exec-319] DEBUG by.ruslan.web.controller.MainServlet - post method
-2021-06-23 21:21:10 [http-nio-8080-exec-319] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.AddEventResultCommand
-2021-06-23 21:21:10 [http-nio-8080-exec-319] DEBUG by.ruslan.web.model.service.impl.EventResultServiceImpl - 2
-2021-06-23 21:21:10 [http-nio-8080-exec-319] DEBUG by.ruslan.web.model.service.impl.EventResultServiceImpl - 1
-2021-06-23 21:21:10 [http-nio-8080-exec-319] DEBUG by.ruslan.web.model.service.impl.EventResultServiceImpl - 4
-2021-06-23 21:21:10 [http-nio-8080-exec-319] DEBUG by.ruslan.web.model.service.impl.EventResultServiceImpl - 0
-2021-06-23 21:21:10 [http-nio-8080-exec-319] DEBUG by.ruslan.web.model.service.impl.EventResultServiceImpl - 2
-2021-06-23 21:21:10 [http-nio-8080-exec-319] DEBUG by.ruslan.web.model.service.impl.EventResultServiceImpl - 0
-2021-06-23 21:21:10 [http-nio-8080-exec-319] DEBUG by.ruslan.web.model.service.impl.EventResultServiceImpl - 0
-2021-06-23 21:21:10 [http-nio-8080-exec-319] DEBUG by.ruslan.web.model.service.impl.EventResultServiceImpl - 0
-2021-06-23 21:21:10 [http-nio-8080-exec-319] DEBUG by.ruslan.web.model.service.impl.EventResultServiceImpl - [Bet{betId=20, type=EXACT_SCORE, money=50.00, winMoney=0.0, userEmail='null', eventId=16, userId=16, member1Id=2, member2Id=0, member1Score=0, member2Score=0}]
-2021-06-23 21:21:10 [http-nio-8080-exec-319] DEBUG by.ruslan.web.model.dao.impl.BetDaoImpl - 0.0
-2021-06-23 21:21:10 [http-nio-8080-exec-319] DEBUG by.ruslan.web.model.service.impl.EventResultServiceImpl - 20.23
-2021-06-23 21:21:10 [http-nio-8080-exec-319] DEBUG by.ruslan.web.controller.MainServlet - /main-servlet?command=to_event_page&success=The event result is successfully added!!!&eventId=16
-2021-06-23 21:21:10 [http-nio-8080-exec-316] DEBUG by.ruslan.web.controller.MainServlet - get method
-2021-06-23 21:21:10 [http-nio-8080-exec-316] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToEventPageCommand
-2021-06-23 21:21:10 [http-nio-8080-exec-316] DEBUG by.ruslan.web.controller.MainServlet - /pages/event.jsp
+2021-06-23 22:02:04 [http-nio-8080-exec-335] DEBUG by.ruslan.web.controller.MainServlet - post method
+2021-06-23 22:02:04 [http-nio-8080-exec-335] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.AddEventResultCommand
+2021-06-23 22:02:04 [http-nio-8080-exec-335] DEBUG by.ruslan.web.model.service.impl.EventResultServiceImpl - 2 varik
+2021-06-23 22:02:04 [http-nio-8080-exec-335] DEBUG by.ruslan.web.model.service.impl.EventResultServiceImpl - [Bet{betId=21, type=EXACT_SCORE, money=50.00, winMoney=175.0, userEmail='null', eventId=17, userId=16, member1Id=1, member2Id=4, member1Score=1, member2Score=3}]
+2021-06-23 22:02:04 [http-nio-8080-exec-335] DEBUG by.ruslan.web.model.dao.impl.BetDaoImpl - 175.0
+2021-06-23 22:02:04 [http-nio-8080-exec-335] DEBUG by.ruslan.web.model.service.impl.EventResultServiceImpl - 20.23
+2021-06-23 22:02:04 [http-nio-8080-exec-335] DEBUG by.ruslan.web.controller.MainServlet - /main-servlet?command=to_event_page&success=The event result is successfully added!!!&eventId=17
+2021-06-23 22:02:04 [http-nio-8080-exec-341] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-23 22:02:04 [http-nio-8080-exec-341] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToEventPageCommand
+2021-06-23 22:02:05 [http-nio-8080-exec-341] DEBUG by.ruslan.web.controller.MainServlet - /pages/event.jsp
