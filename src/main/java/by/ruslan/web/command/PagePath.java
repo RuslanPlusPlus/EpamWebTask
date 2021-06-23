@@ -20,6 +20,7 @@ public final class PagePath {
     public static final String ADD_MEMBER_PAGE = "/pages/addMemberPage.jsp";
     public static final String PERSONAL_PAGE = "/pages/personalPage.jsp";
     public static final String FINISHED_EVENTS_PAGE = "/pages/finishedEvents.jsp";
+    public static final String TOP_UP_BALANCE_PAGE = "/pages/topUpBalance.jsp";
     public static final String ERROR_500 = "/pages/errors/error500.jsp";
     public static final String ERROR_404 = "/pages/errors/error404.jsp";
 
@@ -41,6 +42,7 @@ public final class PagePath {
     public static final String TO_ADD_SPORT_KIND_PAGE = "/main-servlet?command=to_add_sport_kind_page";
     public static final String TO_ADD_MEMBER_PAGE = "/main-servlet?command=to_add_member_page";
     public static final String TO_FINISHED_EVENTS_PAGE = "/main-servlet?command=to_finished_events_page";
+    public static final String TO_TOP_UP_BALANCE_PAGE = "/main-servlet?command=to_top_up_balance_page";
 
     private PagePath(){}
 }

@@ -17,6 +17,8 @@ public enum RoleAccessType {
     )),
     CLIENT(Set.of(
             CommandType.TO_MAIN_PAGE,
+            CommandType.TO_TOP_UP_BALANCE_PAGE,
+            CommandType.TOP_UP_BALANCE,
             CommandType.TO_PERSONAL_PAGE,
             CommandType.CHANGE_LOCALE,
             CommandType.LOGOUT,
@@ -33,6 +35,8 @@ public enum RoleAccessType {
     )),
     ADMIN(Set.of(
             CommandType.TO_MAIN_PAGE,
+            CommandType.TO_TOP_UP_BALANCE_PAGE,
+            CommandType.TOP_UP_BALANCE,
             CommandType.TO_ADMIN_PAGE,
             CommandType.TO_PERSONAL_PAGE,
             CommandType.TO_USERS_PAGE,
@@ -51,6 +55,8 @@ public enum RoleAccessType {
     )),
     BOOKMAKER(Set.of(
             CommandType.TO_MAIN_PAGE,
+            CommandType.TO_TOP_UP_BALANCE_PAGE,
+            CommandType.TOP_UP_BALANCE,
             CommandType.TO_PERSONAL_PAGE,
             CommandType.TO_BOOKMAKER_PAGE,
             CommandType.TO_FINISHED_EVENTS_PAGE,
@@ -74,8 +80,6 @@ public enum RoleAccessType {
             CommandType.MAKE_EXACT_SCORE_BET,
             CommandType.SHOW_EVENTS_BY_SPORT_KIND
     ));
-
-    // TODO: 20.06.2021 BOOKMAKER commands
 
     RoleAccessType(Set<CommandType> allowedCommands){
         this.allowedCommands = allowedCommands;

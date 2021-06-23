@@ -16,6 +16,7 @@ public final class RequestAttribute {
     public static final String ERROR_INCORRECT_DATA = "errorIncorrectData";
     public static final String ERROR_UPDATE_USER = "errorUpdateUser";
     public static final String NO_FINISHED_EVENTS = "noFinishedEvents";
+    public static final String ERROR_TOP_UP_BALANCE = "errorTopUpBalance";
 
     private RequestAttribute(){}
 }

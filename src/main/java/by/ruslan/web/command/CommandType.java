@@ -74,6 +74,11 @@ public enum CommandType {
             this.command = new AddMemberCommand(new EventMemberServiceImpl());
         }
     },
+    TOP_UP_BALANCE{
+        {
+            this.command = new TopUpBalanceCommand(new MoneyAccountServiceImpl());
+        }
+    },
     TO_REGISTER_PAGE {
         {
             this.command = new ToRegisterPageCommand();
@@ -162,6 +167,11 @@ public enum CommandType {
     TO_FINISHED_EVENTS_PAGE{
         {
             this.command = new ToFinishedEventsPageCommand(new EventServiceImpl());
+        }
+    },
+    TO_TOP_UP_BALANCE_PAGE{
+        {
+            this.command = new ToTopUpBalancePageCommand();
         }
     };
     Command command;

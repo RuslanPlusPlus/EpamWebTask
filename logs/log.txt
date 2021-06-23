@@ -1,60 +1,56 @@
-2021-06-22 19:42:00 [http-nio-8080-exec-152] DEBUG by.ruslan.web.controller.MainServlet - get method
-2021-06-22 19:42:00 [http-nio-8080-exec-152] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ChangeLocaleCommand
-2021-06-22 19:42:00 [http-nio-8080-exec-152] DEBUG by.ruslan.web.command.impl.ChangeLocaleCommand - Current page: /main-servlet?command=to_bookmaker_page
-2021-06-22 19:42:00 [http-nio-8080-exec-152] DEBUG by.ruslan.web.controller.MainServlet - /main-servlet?command=to_bookmaker_page
-2021-06-22 19:42:00 [http-nio-8080-exec-146] DEBUG by.ruslan.web.controller.MainServlet - get method
-2021-06-22 19:42:00 [http-nio-8080-exec-146] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToBookmakerPageCommand
-2021-06-22 19:42:00 [http-nio-8080-exec-146] DEBUG by.ruslan.web.controller.MainServlet - /pages/bookmakerPage.jsp
-2021-06-22 19:42:08 [http-nio-8080-exec-153] DEBUG by.ruslan.web.controller.MainServlet - get method
-2021-06-22 19:42:08 [http-nio-8080-exec-153] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToFinishedEventsPageCommand
-2021-06-22 19:42:08 [http-nio-8080-exec-153] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Event 10 is ready to be added the result
-2021-06-22 19:42:08 [http-nio-8080-exec-153] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Event 11 is ready to bet
-2021-06-22 19:42:08 [http-nio-8080-exec-153] DEBUG by.ruslan.web.controller.MainServlet - /pages/finishedEvents.jsp
-2021-06-22 19:42:11 [http-nio-8080-exec-154] DEBUG by.ruslan.web.controller.MainServlet - get method
-2021-06-22 19:42:11 [http-nio-8080-exec-154] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ChangeLocaleCommand
-2021-06-22 19:42:11 [http-nio-8080-exec-154] DEBUG by.ruslan.web.command.impl.ChangeLocaleCommand - Current page: /main-servlet?command=to_finished_events_page
-2021-06-22 19:42:11 [http-nio-8080-exec-154] DEBUG by.ruslan.web.controller.MainServlet - /main-servlet?command=to_finished_events_page
-2021-06-22 19:42:11 [http-nio-8080-exec-148] DEBUG by.ruslan.web.controller.MainServlet - get method
-2021-06-22 19:42:11 [http-nio-8080-exec-148] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToFinishedEventsPageCommand
-2021-06-22 19:42:11 [http-nio-8080-exec-148] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Event 10 is ready to be added the result
-2021-06-22 19:42:11 [http-nio-8080-exec-148] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Event 11 is ready to bet
-2021-06-22 19:42:11 [http-nio-8080-exec-148] DEBUG by.ruslan.web.controller.MainServlet - /pages/finishedEvents.jsp
-2021-06-22 19:42:12 [http-nio-8080-exec-149] DEBUG by.ruslan.web.controller.MainServlet - get method
-2021-06-22 19:42:12 [http-nio-8080-exec-149] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ChangeLocaleCommand
-2021-06-22 19:42:12 [http-nio-8080-exec-149] DEBUG by.ruslan.web.command.impl.ChangeLocaleCommand - Current page: /main-servlet?command=to_finished_events_page
-2021-06-22 19:42:12 [http-nio-8080-exec-149] DEBUG by.ruslan.web.controller.MainServlet - /main-servlet?command=to_finished_events_page
-2021-06-22 19:42:12 [http-nio-8080-exec-150] DEBUG by.ruslan.web.controller.MainServlet - get method
-2021-06-22 19:42:12 [http-nio-8080-exec-150] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToFinishedEventsPageCommand
-2021-06-22 19:42:12 [http-nio-8080-exec-150] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Event 10 is ready to be added the result
-2021-06-22 19:42:12 [http-nio-8080-exec-150] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Event 11 is ready to bet
-2021-06-22 19:42:12 [http-nio-8080-exec-150] DEBUG by.ruslan.web.controller.MainServlet - /pages/finishedEvents.jsp
-2021-06-22 19:42:13 [http-nio-8080-exec-155] DEBUG by.ruslan.web.controller.MainServlet - get method
-2021-06-22 19:42:13 [http-nio-8080-exec-155] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ChangeLocaleCommand
-2021-06-22 19:42:13 [http-nio-8080-exec-155] DEBUG by.ruslan.web.command.impl.ChangeLocaleCommand - Current page: /main-servlet?command=to_finished_events_page
-2021-06-22 19:42:13 [http-nio-8080-exec-155] DEBUG by.ruslan.web.controller.MainServlet - /main-servlet?command=to_finished_events_page
-2021-06-22 19:42:13 [http-nio-8080-exec-151] DEBUG by.ruslan.web.controller.MainServlet - get method
-2021-06-22 19:42:13 [http-nio-8080-exec-151] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToFinishedEventsPageCommand
-2021-06-22 19:42:13 [http-nio-8080-exec-151] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Event 10 is ready to be added the result
-2021-06-22 19:42:13 [http-nio-8080-exec-151] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Event 11 is ready to bet
-2021-06-22 19:42:13 [http-nio-8080-exec-151] DEBUG by.ruslan.web.controller.MainServlet - /pages/finishedEvents.jsp
-2021-06-22 19:42:17 [http-nio-8080-exec-156] DEBUG by.ruslan.web.controller.MainServlet - get method
-2021-06-22 19:42:17 [http-nio-8080-exec-156] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToAddEventResultPageCommand
-2021-06-22 19:42:17 [http-nio-8080-exec-156] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Event 10 is ready to be added the result
-2021-06-22 19:42:17 [http-nio-8080-exec-156] DEBUG by.ruslan.web.controller.MainServlet - /pages/addEventResult.jsp
-2021-06-22 19:42:42 [http-nio-8080-exec-153] DEBUG by.ruslan.web.controller.MainServlet - post method
-2021-06-22 19:42:42 [http-nio-8080-exec-153] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.AddEventResultCommand
-2021-06-22 19:42:42 [http-nio-8080-exec-153] DEBUG by.ruslan.web.command.impl.AddEventResultCommand - EventResult{eventId=10, winnerId=1, loserId=3, winnerScore=2, loserScore=1}
-2021-06-22 19:42:42 [http-nio-8080-exec-153] DEBUG by.ruslan.web.controller.MainServlet - /main-servlet?command=to_event_page&success=The event result is successfully added!!!&eventId=10
-2021-06-22 19:42:42 [http-nio-8080-exec-154] DEBUG by.ruslan.web.controller.MainServlet - get method
-2021-06-22 19:42:42 [http-nio-8080-exec-154] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToEventPageCommand
-2021-06-22 19:42:42 [http-nio-8080-exec-154] DEBUG by.ruslan.web.controller.MainServlet - /pages/event.jsp
-2021-06-22 19:42:52 [http-nio-8080-exec-148] DEBUG by.ruslan.web.controller.MainServlet - get method
-2021-06-22 19:42:52 [http-nio-8080-exec-148] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToMainPageCommand
-2021-06-22 19:42:52 [http-nio-8080-exec-148] DEBUG by.ruslan.web.controller.MainServlet - /pages/main.jsp
-2021-06-22 19:42:55 [http-nio-8080-exec-149] DEBUG by.ruslan.web.controller.MainServlet - get method
-2021-06-22 19:42:55 [http-nio-8080-exec-149] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToBookmakerPageCommand
-2021-06-22 19:42:55 [http-nio-8080-exec-149] DEBUG by.ruslan.web.controller.MainServlet - /pages/bookmakerPage.jsp
-2021-06-22 19:42:57 [http-nio-8080-exec-150] DEBUG by.ruslan.web.controller.MainServlet - get method
-2021-06-22 19:42:57 [http-nio-8080-exec-150] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToFinishedEventsPageCommand
-2021-06-22 19:42:57 [http-nio-8080-exec-150] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Event 11 is ready to bet
-2021-06-22 19:42:57 [http-nio-8080-exec-150] DEBUG by.ruslan.web.controller.MainServlet - /pages/finishedEvents.jsp
+2021-06-23 03:31:12 [http-nio-8080-exec-285] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-23 03:31:12 [http-nio-8080-exec-285] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ChangeLocaleCommand
+2021-06-23 03:31:12 [http-nio-8080-exec-285] DEBUG by.ruslan.web.command.impl.ChangeLocaleCommand - Current page: /main-servlet?command=to_top_up_balance_page
+2021-06-23 03:31:12 [http-nio-8080-exec-285] DEBUG by.ruslan.web.controller.MainServlet - /main-servlet?command=to_top_up_balance_page
+2021-06-23 03:31:12 [http-nio-8080-exec-281] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-23 03:31:12 [http-nio-8080-exec-281] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToTopUpBalancePageCommand
+2021-06-23 03:31:12 [http-nio-8080-exec-281] DEBUG by.ruslan.web.controller.MainServlet - /pages/topUpBalance.jsp
+2021-06-23 03:31:13 [http-nio-8080-exec-274] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-23 03:31:13 [http-nio-8080-exec-274] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ChangeLocaleCommand
+2021-06-23 03:31:13 [http-nio-8080-exec-274] DEBUG by.ruslan.web.command.impl.ChangeLocaleCommand - Current page: /main-servlet?command=to_top_up_balance_page
+2021-06-23 03:31:13 [http-nio-8080-exec-274] DEBUG by.ruslan.web.controller.MainServlet - /main-servlet?command=to_top_up_balance_page
+2021-06-23 03:31:13 [http-nio-8080-exec-286] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-23 03:31:13 [http-nio-8080-exec-286] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToTopUpBalancePageCommand
+2021-06-23 03:31:13 [http-nio-8080-exec-286] DEBUG by.ruslan.web.controller.MainServlet - /pages/topUpBalance.jsp
+2021-06-23 03:31:14 [http-nio-8080-exec-278] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-23 03:31:14 [http-nio-8080-exec-278] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ChangeLocaleCommand
+2021-06-23 03:31:14 [http-nio-8080-exec-278] DEBUG by.ruslan.web.command.impl.ChangeLocaleCommand - Current page: /main-servlet?command=to_top_up_balance_page
+2021-06-23 03:31:14 [http-nio-8080-exec-278] DEBUG by.ruslan.web.controller.MainServlet - /main-servlet?command=to_top_up_balance_page
+2021-06-23 03:31:14 [http-nio-8080-exec-287] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-23 03:31:14 [http-nio-8080-exec-287] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToTopUpBalancePageCommand
+2021-06-23 03:31:14 [http-nio-8080-exec-287] DEBUG by.ruslan.web.controller.MainServlet - /pages/topUpBalance.jsp
+2021-06-23 03:31:15 [http-nio-8080-exec-280] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-23 03:31:15 [http-nio-8080-exec-280] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ChangeLocaleCommand
+2021-06-23 03:31:15 [http-nio-8080-exec-280] DEBUG by.ruslan.web.command.impl.ChangeLocaleCommand - Current page: /main-servlet?command=to_top_up_balance_page
+2021-06-23 03:31:15 [http-nio-8080-exec-280] DEBUG by.ruslan.web.controller.MainServlet - /main-servlet?command=to_top_up_balance_page
+2021-06-23 03:31:15 [http-nio-8080-exec-288] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-23 03:31:15 [http-nio-8080-exec-288] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToTopUpBalancePageCommand
+2021-06-23 03:31:15 [http-nio-8080-exec-288] DEBUG by.ruslan.web.controller.MainServlet - /pages/topUpBalance.jsp
+2021-06-23 03:31:15 [http-nio-8080-exec-289] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-23 03:31:15 [http-nio-8080-exec-289] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ChangeLocaleCommand
+2021-06-23 03:31:15 [http-nio-8080-exec-289] DEBUG by.ruslan.web.command.impl.ChangeLocaleCommand - Current page: /main-servlet?command=to_top_up_balance_page
+2021-06-23 03:31:15 [http-nio-8080-exec-289] DEBUG by.ruslan.web.controller.MainServlet - /main-servlet?command=to_top_up_balance_page
+2021-06-23 03:31:15 [http-nio-8080-exec-290] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-23 03:31:15 [http-nio-8080-exec-290] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToTopUpBalancePageCommand
+2021-06-23 03:31:15 [http-nio-8080-exec-290] DEBUG by.ruslan.web.controller.MainServlet - /pages/topUpBalance.jsp
+2021-06-23 03:31:16 [http-nio-8080-exec-285] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-23 03:31:16 [http-nio-8080-exec-285] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ChangeLocaleCommand
+2021-06-23 03:31:16 [http-nio-8080-exec-285] DEBUG by.ruslan.web.command.impl.ChangeLocaleCommand - Current page: /main-servlet?command=to_top_up_balance_page
+2021-06-23 03:31:16 [http-nio-8080-exec-285] DEBUG by.ruslan.web.controller.MainServlet - /main-servlet?command=to_top_up_balance_page
+2021-06-23 03:31:16 [http-nio-8080-exec-291] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-23 03:31:16 [http-nio-8080-exec-291] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToTopUpBalancePageCommand
+2021-06-23 03:31:16 [http-nio-8080-exec-291] DEBUG by.ruslan.web.controller.MainServlet - /pages/topUpBalance.jsp
+2021-06-23 03:31:17 [http-nio-8080-exec-292] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-23 03:31:17 [http-nio-8080-exec-292] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ChangeLocaleCommand
+2021-06-23 03:31:17 [http-nio-8080-exec-292] DEBUG by.ruslan.web.command.impl.ChangeLocaleCommand - Current page: /main-servlet?command=to_top_up_balance_page
+2021-06-23 03:31:17 [http-nio-8080-exec-292] DEBUG by.ruslan.web.controller.MainServlet - /main-servlet?command=to_top_up_balance_page
+2021-06-23 03:31:17 [http-nio-8080-exec-286] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-23 03:31:17 [http-nio-8080-exec-286] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToTopUpBalancePageCommand
+2021-06-23 03:31:17 [http-nio-8080-exec-286] DEBUG by.ruslan.web.controller.MainServlet - /pages/topUpBalance.jsp
+2021-06-23 03:31:20 [http-nio-8080-exec-278] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-23 03:31:20 [http-nio-8080-exec-278] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ChangeLocaleCommand
+2021-06-23 03:31:20 [http-nio-8080-exec-278] DEBUG by.ruslan.web.command.impl.ChangeLocaleCommand - Current page: /main-servlet?command=to_top_up_balance_page
+2021-06-23 03:31:20 [http-nio-8080-exec-278] DEBUG by.ruslan.web.controller.MainServlet - /main-servlet?command=to_top_up_balance_page
+2021-06-23 03:31:20 [http-nio-8080-exec-287] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-06-23 03:31:20 [http-nio-8080-exec-287] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToTopUpBalancePageCommand
+2021-06-23 03:31:20 [http-nio-8080-exec-287] DEBUG by.ruslan.web.controller.MainServlet - /pages/topUpBalance.jsp

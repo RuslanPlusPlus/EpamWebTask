@@ -28,7 +28,7 @@
                     <form name="loginForm" method="post" action="main-servlet">
                         <input type="hidden" name="command" value="sign_in" />
 
-                        <c:if test="${login_error != null}">
+                        <c:if test="${requestScope.login_error != null}">
                             <div class="alert-warning">
                                 <fmt:message key="error.login.incorrectEmailOrPassword"/>
                                 <c:remove var="login_error" />

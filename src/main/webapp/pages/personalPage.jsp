@@ -20,8 +20,20 @@
 <body>
 <div class="container">
     <c:import url="fragments/header.jsp"/>
+
     <div class="main">
         <div class="center-part">
+            <c:if test="${not empty requestScope.error}">
+                <div class="error-div">
+                        ${requestScope.error}
+                </div>
+            </c:if>
+
+            <c:if test="${not empty requestScope.success}">
+                <div class="success-div">
+                        ${requestScope.success}
+                </div>
+            </c:if>
             <div class="personal-page-div">
                 <div class="personal-page-header">
                     <div class="id-info-div">

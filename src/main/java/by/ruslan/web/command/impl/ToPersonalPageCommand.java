@@ -48,6 +48,13 @@ public class ToPersonalPageCommand implements Command {
             request.setAttribute(RequestAttribute.ERROR, e.getMessage());
         }
 
+        if (request.getParameter(RequestParameter.SUCCESS) != null){
+            request.setAttribute(RequestAttribute.SUCCESS, request.getParameter(RequestParameter.SUCCESS));
+        }
+        if (request.getParameter(RequestParameter.ERROR) != null){
+            request.setAttribute(RequestAttribute.ERROR, request.getParameter(RequestParameter.ERROR));
+        }
+
         router.setPath(PagePath.PERSONAL_PAGE);
         session.setAttribute(SessionAttribute.CURRENT_PAGE, PagePath.TO_PERSONAL_PAGE);
         return router;
