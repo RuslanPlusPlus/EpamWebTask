@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="ctg" uri="customtags" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <fmt:setLocale value="${sessionScope.currentLocale}"/>
 <fmt:setBundle basename="pagecontent"/>
@@ -21,14 +22,19 @@
     <div class="main">
         <!-- left menu -->
         <div class="center-part">
+            <c:if test="${not empty requestScope.error}">
+                <div class="error-div">
+                        ${requestScope.error}
+                </div>
+            </c:if>
 
+            <c:if test="${not empty requestScope.success}">
+                <div class="success-div">
+                        ${requestScope.success}
+                </div>
+            </c:if>
             <table class="table table-striped">
-                <c:if test="${not empty errorUpdateUser}">
-                    <div class="alert-warning">
-                        <fmt:message key="error.admin.updateUser"/>
-                    </div>
-                    <c:remove var="errorEmailExists" />
-                </c:if>
+
                 <thead>
                 <tr>
                     <th scope="col"><fmt:message key="username"/></th>
@@ -77,6 +83,7 @@
 
         </div>
     </div>
+    <ctg:footer/>
 </div>
 </body>
 </html>

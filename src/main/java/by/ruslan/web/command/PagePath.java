@@ -5,7 +5,6 @@ public final class PagePath {
     public static final String MAIN_PAGE = "/pages/main.jsp";
     public static final String SIGN_IN = "/pages/signin.jsp";
     public static final String SIGN_UP = "/pages/signup.jsp";
-    public static final String USER_LIST = "/pages/user-list.jsp";
     public static final String ADMIN_PAGE = "/pages/admin.jsp";
     public static final String EVENT_PAGE = "/pages/event.jsp";
     public static final String BOOKMAKER_PAGE = "/pages/bookmakerPage.jsp";

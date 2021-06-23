@@ -7,6 +7,7 @@ import by.ruslan.web.model.entity.Bet;
 import by.ruslan.web.model.entity.User;
 import by.ruslan.web.model.service.BetService;
 import by.ruslan.web.model.service.UserService;
+import by.ruslan.web.validator.ParamValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -20,6 +21,7 @@ public class MakeWinBetCommand implements Command {
     private final BetService betService;
     private final UserService userService;
     private static final String SUCCESS_MESSAGE = "The bet is successfully made!!!";
+    private static final String ERROR_INCORRECT_MONEY_FORMAT = "Money incorrect format!!!";
 
     public MakeWinBetCommand(BetService betService, UserService userService){
         this.userService = userService;
@@ -31,12 +33,22 @@ public class MakeWinBetCommand implements Command {
         //HttpSession session = request.getSession();
         Router router = new Router();
         String param = new String();
+        request.getSession().setAttribute(SessionAttribute.INPUT_INCORRECT_FORMAT, null);
 
         Bet.BetType betType = Bet.BetType.WIN;
         String moneyStr = request.getParameter(RequestParameter.MONEY);
         String eventIdStr = request.getParameter(RequestParameter.EVENT_ID);
         String userIdStr = request.getParameter(RequestParameter.USER_ID);
         String memberIdStr = request.getParameter(RequestParameter.MEMBER_ID);
+
+        if (!ParamValidator.isMoneyAmountValid(moneyStr)){
+            request.getSession().setAttribute(SessionAttribute.INPUT_INCORRECT_FORMAT, ERROR_INCORRECT_MONEY_FORMAT);
+            router.setType(Router.Type.REDIRECT);
+            //request.setAttribute(RequestAttribute.INPUT_INCORRECT_FORMAT, ERROR_INCORRECT_MONEY_FORMAT);
+            router.setPath(PagePath.TO_WIN_BET_PAGE);
+            return router;
+        }
+
         BigDecimal money = BigDecimal.valueOf(Double.parseDouble(moneyStr));
         long eventId = Long.parseLong(eventIdStr);
         long userId = Long.parseLong(userIdStr);
@@ -48,7 +60,6 @@ public class MakeWinBetCommand implements Command {
         bet.setMoney(money);
         bet.setUserId(userId);
         bet.setEventId(eventId);
-        //logger.debug(bet);
 
         try {
             User user = userService.findByUserId(userId).get();
@@ -63,7 +74,6 @@ public class MakeWinBetCommand implements Command {
             return router;
         } catch (BetException e) {
             logger.error(e.getErrorMessage());
-            //request.setAttribute(RequestAttribute.ERROR, e.getErrorMessage());
             router.setPath(PagePath.TO_EVENT_PAGE);
             param += "&error=" + e.getErrorMessage();
         }

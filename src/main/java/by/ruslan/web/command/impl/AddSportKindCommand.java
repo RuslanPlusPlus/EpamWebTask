@@ -4,6 +4,8 @@ import by.ruslan.web.command.*;
 import by.ruslan.web.exception.ServiceException;
 import by.ruslan.web.exception.SportKindException;
 import by.ruslan.web.model.service.SportKindService;
+import by.ruslan.web.util.XssProtector;
+import by.ruslan.web.validator.ParamValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -14,6 +16,7 @@ public class AddSportKindCommand implements Command {
     static final Logger logger = LogManager.getLogger();
     private final SportKindService sportKindService;
     private static final String SUCCESS_MESSAGE = "The sport kind is successfully added!!!";
+    private static final String ERROR_INCORRECT_NAME_FORMAT = "Kind name format incorrect!!!";
 
     public AddSportKindCommand(SportKindService sportKindService){
         this.sportKindService = sportKindService;
@@ -23,7 +26,16 @@ public class AddSportKindCommand implements Command {
     public Router execute(HttpServletRequest request) {
         Router router = new Router();
         String param = new String();
+        request.getSession().setAttribute(SessionAttribute.INPUT_INCORRECT_FORMAT, null);
         String kindName = request.getParameter(RequestParameter.SPORT_KIND_NAME);
+
+        if (!ParamValidator.isNameValid(kindName)){
+            request.getSession().setAttribute(SessionAttribute.INPUT_INCORRECT_FORMAT, ERROR_INCORRECT_NAME_FORMAT);
+            router.setType(Router.Type.REDIRECT);
+            router.setPath(PagePath.TO_ADD_SPORT_KIND_PAGE);
+            return router;
+        }
+        kindName = XssProtector.filterXss(kindName);
 
         try {
             boolean success = sportKindService.add(kindName);

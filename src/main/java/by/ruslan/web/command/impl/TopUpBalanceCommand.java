@@ -5,6 +5,7 @@ import by.ruslan.web.exception.ServiceException;
 import by.ruslan.web.model.entity.MoneyAccount;
 import by.ruslan.web.model.entity.User;
 import by.ruslan.web.model.service.MoneyAccountService;
+import by.ruslan.web.validator.CardValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -60,7 +61,6 @@ public class TopUpBalanceCommand implements Command {
             router.setPath(PagePath.ERROR_500);
             return router;
         }
-
 
         router.setType(Router.Type.REDIRECT);
         router.setPath(PagePath.TO_PERSONAL_PAGE + param);

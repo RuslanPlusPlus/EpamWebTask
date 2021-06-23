@@ -6,7 +6,9 @@ import by.ruslan.web.model.entity.Bet;
 import by.ruslan.web.model.entity.Event;
 import by.ruslan.web.model.entity.User;
 import by.ruslan.web.model.service.EventService;
+import by.ruslan.web.model.service.UserService;
 import by.ruslan.web.model.service.impl.EventServiceImpl;
+import by.ruslan.web.model.service.impl.UserServiceImpl;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -20,20 +22,25 @@ public class ToPersonalPageCommand implements Command {
 
     static final Logger logger = LogManager.getLogger();
     private EventService eventService;
+    private UserService userService;
 
-    public ToPersonalPageCommand(EventService eventService){
+    public ToPersonalPageCommand(EventService eventService, UserService userService){
         this.eventService = eventService;
+        this.userService = userService;
     }
 
     @Override
     public Router execute(HttpServletRequest request) {
         HttpSession session = request.getSession();
         Router router = new Router();
-
         User user = (User) request.getSession().getAttribute(SessionAttribute.USER);
-        List<Bet> activeBets = user.getActiveBets();
-        List<Bet> completedBets = user.getCompletedBets();
+
         try {
+            Optional<User> optionalUser = userService.findByUserId(user.getUserId());
+            User updatedUser = optionalUser.get();
+            session.setAttribute(SessionAttribute.USER, updatedUser);
+            List<Bet> activeBets = updatedUser.getActiveBets();
+            List<Bet> completedBets = updatedUser.getCompletedBets();
             for (Bet activeBet: activeBets){
                 Optional<Event> eventOptional = eventService.findEventById(activeBet.getEventId());
                 activeBet.setEventName(eventOptional.get().getEventName());

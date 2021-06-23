@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="ctg" uri="customtags" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <fmt:setLocale value="${sessionScope.currentLocale}"/>
 <fmt:setBundle basename="pagecontent"/>
@@ -22,6 +23,13 @@
         <div class="center-part">
             <div class="form" style="width: 600px;">
                 <form class="form" method="post" action="main-servlet">
+
+                    <c:if test="${not empty sessionScope.inputIncorrectFormat}">
+                        <div class="error-div">
+                                ${sessionScope.inputIncorrectFormat}
+                        </div>
+                    </c:if>
+
                     <div class="header-div">
                         <p class="form-header"><fmt:message key="bet.winBet"/></p>
                     </div>
@@ -62,6 +70,7 @@
             </div>
         </div>
     </div>
+    <ctg:footer/>
 </div>
 </body>
 </html>

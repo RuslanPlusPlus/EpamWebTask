@@ -17,7 +17,6 @@
         <name>user-info</name>
         <tag-class>by.ruslan.web.tag.UserInfoTag</tag-class>
         <body-content>scriptless</body-content>
-
     </tag>
 
     <!-- Invoke 'Generate' action to add tags or functions -->

@@ -7,6 +7,7 @@ import by.ruslan.web.model.entity.Bet;
 import by.ruslan.web.model.entity.User;
 import by.ruslan.web.model.service.BetService;
 import by.ruslan.web.model.service.UserService;
+import by.ruslan.web.validator.ParamValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -19,6 +20,7 @@ public class MakeDrawBetCommand implements Command {
     private final BetService betService;
     private final UserService userService;
     private static final String SUCCESS_MESSAGE = "The bet is successfully made!!!";
+    private static final String ERROR_INCORRECT_MONEY_FORMAT = "Money incorrect format!!!";
 
     public MakeDrawBetCommand(BetService betService, UserService userService){
         this.betService = betService;
@@ -30,11 +32,21 @@ public class MakeDrawBetCommand implements Command {
         //HttpSession session = request.getSession();
         Router router = new Router();
         String param = new String();
+        request.getSession().setAttribute(SessionAttribute.INPUT_INCORRECT_FORMAT, null);
 
         Bet.BetType betType = Bet.BetType.DRAW;
         String moneyStr = request.getParameter(RequestParameter.MONEY);
         String eventIdStr = request.getParameter(RequestParameter.EVENT_ID);
         String userIdStr = request.getParameter(RequestParameter.USER_ID);
+
+        if (!ParamValidator.isMoneyAmountValid(moneyStr)){
+            request.getSession().setAttribute(SessionAttribute.INPUT_INCORRECT_FORMAT, ERROR_INCORRECT_MONEY_FORMAT);
+            router.setType(Router.Type.REDIRECT);
+            //request.setAttribute(RequestAttribute.INPUT_INCORRECT_FORMAT, ERROR_INCORRECT_MONEY_FORMAT);
+            router.setPath(PagePath.TO_DRAW_BET_PAGE);
+            return router;
+        }
+
         BigDecimal money = BigDecimal.valueOf(Double.parseDouble(moneyStr));
         long eventId = Long.parseLong(eventIdStr);
         long userId = Long.parseLong(userIdStr);

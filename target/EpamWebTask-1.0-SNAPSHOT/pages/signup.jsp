@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="ctg" uri="customtags" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <fmt:setLocale value="${sessionScope.currentLocale}"/>
 <fmt:setBundle basename="pagecontent"/>
@@ -41,7 +42,7 @@
                             </label>
                             <div class="col-sm-7">
                                 <input type="text" name="username" id="username" class="form-control"
-                                       placeholder="Enter username" required>
+                                       placeholder="Enter username(at least 3 symbols)" pattern="^(?=.{1,40}$)[\w][\w -]*[\w]" required>
                             </div>
                         </div>
 
@@ -68,7 +69,7 @@
                             </label>
                             <div class="col-sm-7">
                                 <input required type="password" name="password" id="password" class="form-control"
-                                       placeholder="Enter password">
+                                       placeholder="Enter password(at least 4 symbols)" pattern="\w{4,40}">
                             </div>
                         </div>
 
@@ -83,7 +84,7 @@
             </div>
         </div>
     </div>
+    <ctg:footer/>
 </div>
-
 </body>
 </html>

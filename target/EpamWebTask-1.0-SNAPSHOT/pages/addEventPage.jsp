@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="ctg" uri="customtags" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <fmt:setLocale value="${sessionScope.currentLocale}"/>
 <fmt:setBundle basename="pagecontent"/>
@@ -23,6 +24,12 @@
             <div class="form" style="width: 600px;">
                 <form class="form" method="post" action="main-servlet" >
 
+                    <c:if test="${not empty sessionScope.inputIncorrectFormat}">
+                        <div class="error-div">
+                                ${sessionScope.inputIncorrectFormat}
+                        </div>
+                    </c:if>
+
                     <input type="hidden" name="command" value="add_event"/>
 
                     <div class="header-div">
@@ -31,7 +38,7 @@
 
                     <div class="input-div">
                         <label><fmt:message key="event.eventName" /></label>
-                        <input required type="text" name="eventName" />
+                        <input required type="text" name="eventName" pattern="^(?=.{1,40}$)[\w][\w -]*[\w]"/>
                     </div>
 
                     <div class="input-div">
@@ -72,7 +79,7 @@
         </div>
 
     </div>
-
+    <ctg:footer/>
 </div>
 </body>
 </html>

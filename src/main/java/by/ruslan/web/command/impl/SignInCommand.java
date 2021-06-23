@@ -13,7 +13,7 @@ import java.util.Optional;
 
 public class SignInCommand implements Command {
 
-    private static final String ERROR_MESSAGE = "incorrect login or password";
+    private static final String ERROR_MESSAGE = "Incorrect login or password";
     static final Logger logger = LogManager.getLogger();
     private final UserService userService;
 

@@ -84,12 +84,14 @@ public class EventResultServiceImpl implements EventResultService {
                 }
             }
         }
+        logger.debug(bets);
         for (Bet bet: bets){
             betDao.setWinMoney(bet);
             Optional<User> optionalUser = userDao.findUserById(bet.getUserId());
             if (optionalUser.isPresent()){
                 User user = optionalUser.get();
                 double balance = user.getBalance().doubleValue();
+                logger.debug(balance);
                 balance += bet.getWinMoney().doubleValue();
                 user.setBalance(BigDecimal.valueOf(balance));
                 userDao.update(user);
@@ -105,14 +107,24 @@ public class EventResultServiceImpl implements EventResultService {
                 return eventResult.getWinnerId() == bet.getMember1Id();
             }
             case EXACT_SCORE -> {
+                /*logger.debug(eventResult.getWinnerId());
+                logger.debug(eventResult.getWinnerScore());
+                logger.debug(eventResult.getLoserId());
+                logger.debug(eventResult.getLoserScore());
+                logger.debug(bet.getMember1Id());
+                logger.debug(bet.getMember2Id());
+                logger.debug(bet.getMember1Score());
+                logger.debug(bet.getMember2Score());*/
                 if (eventResult.getWinnerId() == bet.getMember1Id()){
                     if (eventResult.getWinnerScore() == bet.getMember1Score() &&
                             eventResult.getLoserScore() == bet.getMember2Score()){
+                        logger.debug("1 varik");
                         return true;
                     }
                 }else {
                     if (eventResult.getWinnerScore() == bet.getMember2Score() &&
-                            eventResult.getLoserScore() == bet.getMember1Id()){
+                            eventResult.getLoserScore() == bet.getMember1Score()){
+                        logger.debug("2 varik");
                         return true;
                     }
                 }

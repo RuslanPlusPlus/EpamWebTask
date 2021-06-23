@@ -4,16 +4,6 @@ import by.ruslan.web.command.impl.*;
 import by.ruslan.web.model.service.impl.*;
 
 public enum CommandType {
-    FIND_ALL_USERS{
-        {
-            this.command = new FindAllUsersCommand(new UserServiceImpl());
-        }
-    },
-    FIND_USER_BY_EMAIL{
-        {
-            this.command = new FindByEmailCommand(new UserServiceImpl());
-        }
-    },
     SIGN_IN{
         {
             this.command = new SignInCommand(new UserServiceImpl());
@@ -101,7 +91,7 @@ public enum CommandType {
     },
     TO_PERSONAL_PAGE{
         {
-            this.command = new ToPersonalPageCommand(new EventServiceImpl());
+            this.command = new ToPersonalPageCommand(new EventServiceImpl(), new UserServiceImpl());
         }
     },
     TO_ADMIN_PAGE{

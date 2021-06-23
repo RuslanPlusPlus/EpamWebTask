@@ -96,7 +96,7 @@
             </div>
         </div>
     </div>
-    <!-- footer -->
+    <ctg:footer/>
 </div>
 </body>
 </html>

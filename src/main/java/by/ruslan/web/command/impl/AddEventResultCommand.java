@@ -7,6 +7,8 @@ import by.ruslan.web.model.entity.EventResult;
 import by.ruslan.web.model.service.BetService;
 import by.ruslan.web.model.service.EventResultService;
 import by.ruslan.web.model.service.UserService;
+import by.ruslan.web.util.XssProtector;
+import by.ruslan.web.validator.ParamValidator;
 import com.google.protobuf.ServiceException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -19,6 +21,7 @@ public class AddEventResultCommand implements Command {
     static final Logger logger = LogManager.getLogger();
     private final EventResultService eventResultService;
     private static final String SUCCESS_MESSAGE = "The event result is successfully added!!!";
+    private static final String ERROR_INCORRECT_SCORE_FORMAT = "Score incorrect format!!!";
 
     public AddEventResultCommand(EventResultService eventResultService){
         this.eventResultService = eventResultService;
@@ -28,6 +31,7 @@ public class AddEventResultCommand implements Command {
     public Router execute(HttpServletRequest request) {
         Router router = new Router();
         String param = new String();
+        request.getSession().setAttribute(SessionAttribute.INPUT_INCORRECT_FORMAT, null);
 
         EventResult eventResult = new EventResult();
         String eventIdStr = request.getParameter(RequestParameter.EVENT_ID);
@@ -36,10 +40,18 @@ public class AddEventResultCommand implements Command {
         String winnerScoreStr = request.getParameter(RequestParameter.WINNER_SCORE);
         String loserScoreStr = request.getParameter(RequestParameter.LOSER_SCORE);
 
+        if (!ParamValidator.isScoreValid(winnerScoreStr) || !ParamValidator.isScoreValid(loserScoreStr)){
+            request.getSession().setAttribute(SessionAttribute.INPUT_INCORRECT_FORMAT, ERROR_INCORRECT_SCORE_FORMAT);
+            router.setType(Router.Type.REDIRECT);
+            router.setPath(PagePath.TO_ADD_EVENT_RESULT_PAGE + "&eventId=" + eventIdStr);
+            return router;
+        }
+        winnerScoreStr = XssProtector.filterXss(winnerScoreStr);
+        loserScoreStr = XssProtector.filterXss(loserScoreStr);
+
         long eventId = Long.parseLong(eventIdStr);
         long winnerId = Long.parseLong(winnerIdStr);
         long loserId = Long.parseLong(loserIdStr);
-        // TODO: 21.06.2021 field validation
         int winnerScore = Integer.parseInt(winnerScoreStr);
         int loserScore = Integer.parseInt(loserScoreStr);
         eventResult.setEventId(eventId);
@@ -47,7 +59,6 @@ public class AddEventResultCommand implements Command {
         eventResult.setLoserId(loserId);
         eventResult.setWinnerScore(winnerScore);
         eventResult.setLoserScore(loserScore);
-        logger.debug(eventResult);
 
         try {
             eventResultService.add(eventResult);
@@ -59,7 +70,6 @@ public class AddEventResultCommand implements Command {
             return router;
         } catch (EventResultException e) {
             logger.error(e.getErrorMessage());
-            //request.setAttribute(RequestAttribute.ERROR, e.getErrorMessage());
             router.setPath(PagePath.TO_EVENT_PAGE);
             param += "&error=" + e.getErrorMessage();
         }

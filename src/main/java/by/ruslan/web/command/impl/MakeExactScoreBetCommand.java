@@ -10,6 +10,7 @@ import by.ruslan.web.model.entity.User;
 import by.ruslan.web.model.service.BetService;
 import by.ruslan.web.model.service.EventService;
 import by.ruslan.web.model.service.UserService;
+import by.ruslan.web.validator.ParamValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -24,6 +25,8 @@ public class MakeExactScoreBetCommand implements Command {
     private final UserService userService;
     private final EventService eventService;
     private static final String SUCCESS_MESSAGE = "The bet is successfully made!!!";
+    private static final String ERROR_INCORRECT_MONEY_FORMAT = "Money incorrect format!!!";
+    private static final String ERROR_INCORRECT_SCORE_FORMAT = "Score incorrect format!!!";
 
     public MakeExactScoreBetCommand(BetService betService, UserService userService, EventService eventService){
         this.betService = betService;
@@ -35,11 +38,20 @@ public class MakeExactScoreBetCommand implements Command {
     public Router execute(HttpServletRequest request) {
         Router router = new Router();
         String param = new String();
-
+        request.getSession().setAttribute(SessionAttribute.INPUT_INCORRECT_FORMAT, null);
         Bet.BetType betType = Bet.BetType.EXACT_SCORE;
         String moneyStr = request.getParameter(RequestParameter.MONEY);
         String eventIdStr = request.getParameter(RequestParameter.EVENT_ID);
         String userIdStr = request.getParameter(RequestParameter.USER_ID);
+
+        if (!ParamValidator.isMoneyAmountValid(moneyStr)){
+            request.getSession().setAttribute(SessionAttribute.INPUT_INCORRECT_FORMAT, ERROR_INCORRECT_MONEY_FORMAT);
+            router.setType(Router.Type.REDIRECT);
+            //request.setAttribute(RequestAttribute.INPUT_INCORRECT_FORMAT, ERROR_INCORRECT_MONEY_FORMAT);
+            router.setPath(PagePath.TO_EXACT_SCORE_BET_PAGE);
+            return router;
+        }
+
         BigDecimal money = BigDecimal.valueOf(Double.parseDouble(moneyStr));
         long eventId = Long.parseLong(eventIdStr);
         long userId = Long.parseLong(userIdStr);
@@ -54,6 +66,13 @@ public class MakeExactScoreBetCommand implements Command {
             for (EventMember member: members){
                 String paramName = String.valueOf(member.getMemberId());
                 String memberScoreStr = request.getParameter(paramName);
+                if (!ParamValidator.isScoreValid(memberScoreStr)){
+                    request.getSession().setAttribute(SessionAttribute.INPUT_INCORRECT_FORMAT, ERROR_INCORRECT_SCORE_FORMAT);
+                    router.setType(Router.Type.REDIRECT);
+                    //request.setAttribute(RequestAttribute.INPUT_INCORRECT_FORMAT, ERROR_INCORRECT_SCORE_FORMAT);
+                    router.setPath(PagePath.TO_EXACT_SCORE_BET_PAGE);
+                    return router;
+                }
                 int memberScore = Integer.parseInt(memberScoreStr);
                 if (counter == 0){
                     member1Id = member.getMemberId();

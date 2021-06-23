@@ -134,8 +134,8 @@ public class BetDaoImpl implements BetDao {
                 bet.setMoney(resultSet.getBigDecimal(BetColumn.MONEY));
                 bet.setMember1Id(resultSet.getLong(BetColumn.EVENT_MEMBER1_ID));
                 bet.setMember2Id(resultSet.getLong(BetColumn.EVENT_MEMBER2_ID));
-                bet.setMember2Id(resultSet.getInt(BetColumn.EVENT_MEMBER1_SCORE));
-                bet.setMember2Id(resultSet.getInt(BetColumn.EVENT_MEMBER2_SCORE));
+                bet.setMember1Score(resultSet.getInt(BetColumn.EVENT_MEMBER1_SCORE));
+                bet.setMember2Score(resultSet.getInt(BetColumn.EVENT_MEMBER2_SCORE));
                 Bet.BetType type = Bet.BetType.valueOf(resultSet.getString(BetColumn.BET_TYPE));
                 bet.setType(type);
                 bets.add(bet);

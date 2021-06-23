@@ -8,4 +8,5 @@ public final class SessionAttribute {
     public final static String ROLE = "role";
     public final static String ENGLISH = "en";
     public final static String RUSSIAN = "ru";
+    public final static String INPUT_INCORRECT_FORMAT = "inputIncorrectFormat";
 }

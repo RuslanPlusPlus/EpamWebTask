@@ -1,6 +1,6 @@
 package by.ruslan.web.validator;
 
-public class DataValidator {
+public class NumberValidator {
     public static boolean isValidInteger(String number){
         try {
             Integer.parseInt(number);

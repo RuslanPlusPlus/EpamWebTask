@@ -15,8 +15,9 @@ import java.util.Optional;
 public class ChangeRoleCommand implements Command {
 
     static final Logger logger = LogManager.getLogger();
-    private UserService userService;
-    private static final String ERROR_MESSAGE = "Failed to update user";
+    private final UserService userService;
+    private static final String ERROR_MESSAGE = "Failed to update user!";
+    private static final String SUCCESS_MESSAGE = "User is successfully updated!";
 
     public ChangeRoleCommand(UserService userService){
         this.userService = userService;
@@ -25,6 +26,7 @@ public class ChangeRoleCommand implements Command {
     @Override
     public Router execute(HttpServletRequest request) {
         Router router = new Router();
+        String param = new String();
         String email = request.getParameter(RequestParameter.EMAIL);
         String roleStr = request.getParameter(RequestParameter.ROLE);
         logger.debug("New role:" + roleStr);
@@ -32,15 +34,15 @@ public class ChangeRoleCommand implements Command {
         try {
             Optional<User> optionalUser = userService.findByEmail(email);
             User user = optionalUser.get();
-            logger.debug(user);
-            List<User> users = userService.findAll();
             user.setRole(role);
             boolean userUpdate = userService.updateUser(user);
             if (!userUpdate){
                 request.setAttribute(RequestAttribute.ERROR_UPDATE_USER, ERROR_MESSAGE);
+                param += "&error=" + ERROR_MESSAGE;
             }
-            request.setAttribute(RequestAttribute.USERS, users);
-            router.setPath(PagePath.USERS_PAGE);
+            router.setType(Router.Type.REDIRECT);
+            param += "&success=" + SUCCESS_MESSAGE;
+            router.setPath(PagePath.TO_USERS_PAGE + param);
         } catch (ServiceException e) {
             logger.error(e.getMessage());
             request.setAttribute(RequestAttribute.ERROR, e.getMessage());

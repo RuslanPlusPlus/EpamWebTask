@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="ctg" uri="customtags" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <fmt:setLocale value="${sessionScope.currentLocale}"/>
 <fmt:setBundle basename="pagecontent"/>
@@ -38,6 +39,12 @@
                         </div>
                     </div>
 
+                    <c:if test="${not empty sessionScope.inputIncorrectFormat}">
+                        <div class="error-div">
+                                ${sessionScope.inputIncorrectFormat}
+                        </div>
+                    </c:if>
+
                     <c:if test="${not empty requestScope.error}">
                         <div class="error-div">
                                 ${requestScope.error}
@@ -56,7 +63,8 @@
                             <c:forEach items="${requestScope.event.members}" var="member">
                                 <option value="${member.memberId}"> ${member.memberName} </option>
                             </c:forEach>
-                            <input required name="winnerScore" type="number" placeholder="Winner score"/>
+                            <input required name="winnerScore" type="number"
+                                   placeholder="Winner score" pattern="^\d{1,4}$"/>
                         </select>
                     </div>
 
@@ -67,7 +75,8 @@
                                     <option value="${member.memberId}"> ${member.memberName} </option>
                                 </c:forEach>
                             </select>
-                            <input required name="loserScore" type="number" placeholder="Loser score"/>
+                            <input required name="loserScore" type="number"
+                                   placeholder="Loser score" pattern="^\d{1,4}$"/>
                     </div>
 
                     <div>
@@ -79,7 +88,7 @@
             </div>
         </div>
     </div>
-    <!--footer-->
+    <ctg:footer/>
 </div>
 </body>
 </html>

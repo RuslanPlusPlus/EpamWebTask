@@ -14,7 +14,7 @@ import java.util.List;
 public class ToUsersPageCommand implements Command {
 
     static final Logger logger = LogManager.getLogger();
-    private UserService userService;
+    private final UserService userService;
 
     public ToUsersPageCommand(UserService userService){
         this.userService = userService;
@@ -27,7 +27,12 @@ public class ToUsersPageCommand implements Command {
         HttpSession session = request.getSession();
         try {
             users = userService.findAll();
-            logger.debug(users);
+            if (request.getParameter(RequestParameter.SUCCESS) != null){
+                request.setAttribute(RequestAttribute.SUCCESS, request.getParameter(RequestParameter.SUCCESS));
+            }
+            if (request.getParameter(RequestParameter.ERROR) != null){
+                request.setAttribute(RequestAttribute.ERROR, request.getParameter(RequestParameter.ERROR));
+            }
             request.setAttribute(RequestAttribute.USERS, users);
             session.setAttribute(SessionAttribute.CURRENT_PAGE, PagePath.TO_USERS_PAGE);
             router.setPath(PagePath.USERS_PAGE);
