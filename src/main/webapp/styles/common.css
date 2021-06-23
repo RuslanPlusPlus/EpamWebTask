@@ -383,3 +383,17 @@ header nav a {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+        /*FOOTER*/
+footer {
+    width: 1000px;
+    background-color: #17a2b8;
+    color: #ffd132;
+    border-radius: 0 0 3px 3px;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer p {
+    margin: 10px;
+}

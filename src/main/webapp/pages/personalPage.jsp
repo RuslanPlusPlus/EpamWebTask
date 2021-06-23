@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="ctg" uri="customtags" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <c:set var="user" value="${sessionScope.user}" />
 <fmt:setLocale value="${sessionScope.currentLocale}"/>
@@ -37,9 +38,7 @@
             <div class="personal-page-div">
                 <div class="personal-page-header">
                     <div class="id-info-div">
-                        <h3>${user.username}</h3>
-                        <p class="label">${user.email}</p>
-                        <p class="label">${user.role}</p>
+                        <ctg:user-info/>
                     </div>
                     <div class="balance-div">
                         <div class="balance-h4-div">
