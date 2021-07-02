@@ -35,8 +35,6 @@ public class MainServlet extends HttpServlet {
             Router router = command.execute(request);
             String page = router.getPath();
             logger.debug(page);
-            //HttpSession session = request.getSession();
-            //session.setAttribute(SessionAttribute.CURRENT_PAGE, page);
             switch (router.getType()){
                 case FORWARD -> {
                     request.getRequestDispatcher(page).forward(request, response);

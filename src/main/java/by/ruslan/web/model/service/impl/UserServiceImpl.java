@@ -67,7 +67,7 @@ public class UserServiceImpl implements UserService {
         boolean isAdded = false;
         try {
             if (UserValidator.isEmailValid(user.getEmail()) &&
-                UserValidator.isNameValid(user.getUsername()) &&
+                UserValidator.isUsernameValid(user.getUsername()) &&
                 UserValidator.isPasswordValid(password)) {
                 String encryptedPassword = PasswordEncryptor.encrypt(password);
                 user.setRole(UserRole.CLIENT);

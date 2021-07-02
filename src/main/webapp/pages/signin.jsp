@@ -52,7 +52,7 @@
                             </label>
                             <div class="col-sm-7">
                                 <input required type="password" name="password" id="password" class="form-control"
-                                       placeholder="Enter password" pattern="\w{4,40}">
+                                       placeholder="Enter password" pattern="\w{4,12}">
                             </div>
                         </div>
 

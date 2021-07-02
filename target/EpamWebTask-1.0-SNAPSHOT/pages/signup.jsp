@@ -42,7 +42,7 @@
                             </label>
                             <div class="col-sm-7">
                                 <input type="text" name="username" id="username" class="form-control"
-                                       placeholder="Enter username(at least 3 symbols)" pattern="^(?=.{1,40}$)[\w][\w -]*[\w]" required>
+                                       placeholder="Enter username(at least 3 symbols)" pattern="^(?=.{1,40}$)[a-zA-Z]+[\w][\w -]*[\w]" required>
                             </div>
                         </div>
 
@@ -69,7 +69,7 @@
                             </label>
                             <div class="col-sm-7">
                                 <input required type="password" name="password" id="password" class="form-control"
-                                       placeholder="Enter password(at least 4 symbols)" pattern="\w{4,40}">
+                                       placeholder="Enter password(from 4 to 12 symbols)" pattern="\w{4,12}">
                             </div>
                         </div>
 

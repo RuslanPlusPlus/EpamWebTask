@@ -7,23 +7,23 @@ public class ParamValidator {
 
     public static boolean isNameValid(String name){
         boolean isValid = true;
-        if (name.isBlank() || !name.matches(NAME_REGEX)){
+        if (name == null || name.isBlank() || !name.matches(NAME_REGEX)){
             isValid = false;
         }
         return isValid;
     }
 
-    public static boolean isMoneyAmountValid(String name){
+    public static boolean isMoneyAmountValid(String money){
         boolean isValid = true;
-        if (name.isBlank() || !name.matches(MONEY_AMOUNT_REGEX)){
+        if (money == null || money.isBlank() || !money.matches(MONEY_AMOUNT_REGEX)){
             isValid = false;
         }
         return isValid;
     }
 
-    public static boolean isScoreValid(String name){
+    public static boolean isScoreValid(String score){
         boolean isValid = true;
-        if (name.isBlank() || !name.matches(SCORE_REGEX)){
+        if (score == null || score.isBlank() || !score.matches(SCORE_REGEX)){
             isValid = false;
         }
         return isValid;
