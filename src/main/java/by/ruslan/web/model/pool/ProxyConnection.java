@@ -5,6 +5,14 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.Executor;
 
+/**
+ * The {@code ConnectionFactory} class represents wrapper for connection,
+ * changed the realization of method close of class Connection,
+ * added method reallyClose
+ *
+ * @author Ruslan Nedvedskiy
+ * @see Connection
+ */
 public class ProxyConnection implements Connection {
 
     private Connection connection;
@@ -53,11 +61,17 @@ public class ProxyConnection implements Connection {
         connection.rollback();
     }
 
+
     @Override
     public void close() throws SQLException {
         ConnectionPool.getInstance().releaseConnection(this);
     }
 
+    /**
+     * Close a connection to the database
+     *
+     * @throws SQLException throws SQLException
+     */
     void reallyClose() throws SQLException {
         connection.close();
     }

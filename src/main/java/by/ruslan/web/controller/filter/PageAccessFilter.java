@@ -7,6 +7,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * The {@code PageAccessFilter} class is responsible for
+ * preventing direct access to jsp pages.
+ *
+ * @author Ruslan Nedvedskiy
+ */
+
 @WebFilter(urlPatterns = {"/pages/*"},
             initParams = {@WebInitParam(name = "HOME_PATH", value = "/index.jsp")
 })

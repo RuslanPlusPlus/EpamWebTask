@@ -14,6 +14,14 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * The {@code ToWinBetPageCommand} class is responsible for redirecting
+ * to win bet page.
+ *
+ * @author Ruslan Nedvedskiy
+ * @see Command
+ */
+
 public class ToWinBetPageCommand implements Command {
 
     static final Logger logger = LogManager.getLogger();

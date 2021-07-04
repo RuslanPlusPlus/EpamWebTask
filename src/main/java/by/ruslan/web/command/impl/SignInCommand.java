@@ -11,6 +11,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.Optional;
 
+/**
+ * The {@code SignInCommand} class is responsible for user login.
+ *
+ * @author Ruslan Nedvedskiy
+ * @see Command
+ */
+
 public class SignInCommand implements Command {
 
     private static final String ERROR_MESSAGE = "Incorrect login or password";

@@ -11,6 +11,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
+/**
+ * The {@code ToAddMemberPageCommand} class is responsible for redirecting
+ * to add member page.
+ *
+ * @author Ruslan Nedvedskiy
+ * @see Command
+ */
+
 public class ToAddMemberPageCommand implements Command {
 
     static final Logger logger = LogManager.getLogger();

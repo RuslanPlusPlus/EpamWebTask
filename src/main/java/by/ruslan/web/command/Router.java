@@ -1,6 +1,19 @@
 package by.ruslan.web.command;
 
+/**
+ * The {@code Router} class represents page router.
+ *
+ * @author Ruslan Nedvedskiy
+ */
+
 public class Router {
+
+    /**
+     * The {@code Type} enum represents page redirect type.
+     *
+     * @author Ruslan Nedvedskiy
+     */
+
     public enum Type{
         FORWARD,
         REDIRECT;

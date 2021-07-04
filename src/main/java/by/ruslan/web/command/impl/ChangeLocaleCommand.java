@@ -9,6 +9,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
+/**
+ * The {@code ChangeLocaleCommand} class is responsible for changing locale.
+ *
+ * @author Ruslan Nedvedskiy
+ * @see Command
+ */
+
 public class ChangeLocaleCommand implements Command {
 
     static final Logger logger = LogManager.getLogger();

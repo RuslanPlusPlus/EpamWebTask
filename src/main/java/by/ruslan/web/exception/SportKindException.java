@@ -1,5 +1,11 @@
 package by.ruslan.web.exception;
 
+/**
+ * The {@code SportKindException} class represents sport kind exception.
+ *
+ * @author Ruslan Nedvedskiy
+ */
+
 public class SportKindException extends Exception{
     private String errorMessage;
 

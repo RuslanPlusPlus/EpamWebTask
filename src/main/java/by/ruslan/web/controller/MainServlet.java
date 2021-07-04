@@ -11,6 +11,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 
+/**
+ * The {@code MainServlet} class represents main controller
+ * Manages requests and responses
+ *
+ * @author Ruslan Nedvedskiy
+ */
+
 @WebServlet(name = "MainServlet", value = "/main-servlet")
 public class MainServlet extends HttpServlet {
 

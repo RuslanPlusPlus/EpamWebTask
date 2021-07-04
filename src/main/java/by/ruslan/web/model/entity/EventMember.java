@@ -1,5 +1,10 @@
 package by.ruslan.web.model.entity;
 
+/**
+ * The {@code EventMember} class describes the EventMember entity
+ *
+ * @author Ruslan Nedvedskiy
+ */
 public class EventMember {
     private long memberId;
     private String memberName;

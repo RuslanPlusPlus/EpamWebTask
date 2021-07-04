@@ -13,6 +13,13 @@ import javax.servlet.http.HttpServletRequest;
 import java.math.BigDecimal;
 import java.util.Optional;
 
+/**
+ * The {@code TopUpBalanceCommand} class is responsible for topping up user balance
+ *
+ * @author Ruslan Nedvedskiy
+ * @see Command
+ */
+
 public class TopUpBalanceCommand implements Command {
 
     static final Logger logger = LogManager.getLogger();

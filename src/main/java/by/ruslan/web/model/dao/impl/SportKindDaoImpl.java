@@ -1,6 +1,7 @@
 package by.ruslan.web.model.dao.impl;
 
 import by.ruslan.web.exception.DAOException;
+import by.ruslan.web.model.dao.MoneyAccountDao;
 import by.ruslan.web.model.dao.SportKindColumn;
 import by.ruslan.web.model.dao.SportKindDao;
 import by.ruslan.web.model.entity.SportKind;
@@ -14,6 +15,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * The {@code SportKindDaoImpl} class represents sport kind dao implementation
+ *
+ * @author Ruslan Nedvedskiy
+ * @see SportKindDao
+ */
 public class SportKindDaoImpl implements SportKindDao {
 
     private static final String SQL_FIND_ALL_SPORT_KINDS =

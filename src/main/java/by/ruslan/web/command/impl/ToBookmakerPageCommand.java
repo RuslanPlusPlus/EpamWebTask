@@ -5,6 +5,14 @@ import by.ruslan.web.command.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+/**
+ * The {@code ToBookmakerPageCommand} class is responsible for redirecting
+ * to bookmaker page.
+ *
+ * @author Ruslan Nedvedskiy
+ * @see Command
+ */
+
 public class ToBookmakerPageCommand implements Command {
 
     @Override

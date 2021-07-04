@@ -3,6 +3,13 @@ package by.ruslan.web.command;
 import by.ruslan.web.command.impl.*;
 import by.ruslan.web.model.service.impl.*;
 
+/**
+ * The {@code CommandType} enum represents command type
+ * Describes all command types
+ *
+ * @author Ruslan Nedvedskiy
+ */
+
 public enum CommandType {
     SIGN_IN{
         {

@@ -14,6 +14,13 @@ import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import java.math.BigDecimal;
 
+/**
+ * The {@code MakeDrawBetCommand} class is responsible for making draw bet.
+ *
+ * @author Ruslan Nedvedskiy
+ * @see Command
+ */
+
 public class MakeDrawBetCommand implements Command {
 
     static final Logger logger = LogManager.getLogger();

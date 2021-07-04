@@ -1,5 +1,11 @@
 package by.ruslan.web.exception;
 
+/**
+ * The {@code EventResultException} class represents event result exception.
+ *
+ * @author Ruslan Nedvedskiy
+ */
+
 public class EventResultException extends Exception{
     private String errorMessage;
 

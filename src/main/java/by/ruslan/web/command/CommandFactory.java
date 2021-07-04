@@ -6,9 +6,22 @@ import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Optional;
 
+/**
+ * The {@code CommandFactory} class represents command provider.
+ *
+ * @author Ruslan Nedvedskiy
+ */
+
 public class CommandFactory {
 
     static final Logger logger = LogManager.getLogger();
+
+    /**
+     * Define command by input type of request
+     *
+     * @param request request
+     * @return the optional of created command
+     */
 
     public static Optional<Command> defineCommand(HttpServletRequest request){
         Command command;

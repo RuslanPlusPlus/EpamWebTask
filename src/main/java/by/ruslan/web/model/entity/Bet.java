@@ -3,13 +3,24 @@ package by.ruslan.web.model.entity;
 import java.math.BigDecimal;
 import java.sql.Date;
 
+/**
+ * The {@code Bet} class describes the Bet entity
+ *
+ * @author Ruslan Nedvedskiy
+ */
 public class Bet {
-    public static enum BetType{
-        DRAW("DRAW"), WIN("WIN"), /*LOSS("LOSS"),*/ EXACT_SCORE("EXACT_SCORE");
+
+    /**
+     * The {@code BetType} enum represents possible bet types
+     *
+     * @author Ruslan Nedvedskiy
+     */
+    public enum BetType{
+        DRAW("DRAW"), WIN("WIN"), EXACT_SCORE("EXACT_SCORE");
 
         private String value;
 
-        private BetType(String value){
+        BetType(String value){
             this.value = value;
         }
 

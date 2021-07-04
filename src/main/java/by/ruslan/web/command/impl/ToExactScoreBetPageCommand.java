@@ -12,6 +12,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.Optional;
 
+/**
+ * The {@code ToExactScoreBetPageCommand} class is responsible for redirecting
+ * to exact score bet page.
+ *
+ * @author Ruslan Nedvedskiy
+ * @see Command
+ */
+
 public class ToExactScoreBetPageCommand implements Command {
 
     static final Logger logger = LogManager.getLogger();

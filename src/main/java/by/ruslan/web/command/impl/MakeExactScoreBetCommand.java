@@ -18,6 +18,13 @@ import javax.servlet.http.HttpServletRequest;
 import java.math.BigDecimal;
 import java.util.List;
 
+/**
+ * The {@code MakeExactScoreBetCommand} class is responsible for making exact score bet.
+ *
+ * @author Ruslan Nedvedskiy
+ * @see Command
+ */
+
 public class MakeExactScoreBetCommand implements Command {
 
     static final Logger logger = LogManager.getLogger();

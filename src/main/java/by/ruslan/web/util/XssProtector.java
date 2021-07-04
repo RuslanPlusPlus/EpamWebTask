@@ -1,6 +1,12 @@
 package by.ruslan.web.util;
 import java.util.Map;
 
+/**
+ * The {@code XssProtector} class is responsible for
+ * filtering xss attack expressions
+ *
+ * @author Ruslan Nedvedskiy
+ */
 public class XssProtector {
     private static final String SCRIPT_RIGHT_TAG= ">";
     private static final String SCRIPT_LEFT_TAG = "<";

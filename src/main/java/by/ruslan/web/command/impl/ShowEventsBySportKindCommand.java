@@ -13,6 +13,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
+/**
+ * The {@code ShowEventsBySportKindCommand} class is responsible for showing
+ * events filtered by kind of sport.
+ *
+ * @author Ruslan Nedvedskiy
+ * @see Command
+ */
+
 public class ShowEventsBySportKindCommand implements Command {
 
     static final Logger logger = LogManager.getLogger();

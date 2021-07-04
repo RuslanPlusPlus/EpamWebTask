@@ -1,5 +1,11 @@
 package by.ruslan.web.exception;
 
+/**
+ * The {@code EventException} class represents event exception.
+ *
+ * @author Ruslan Nedvedskiy
+ */
+
 public class EventException extends Exception{
 
     private String errorMessage;

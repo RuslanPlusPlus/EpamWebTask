@@ -13,6 +13,12 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * The {@code RequestEditor} class is responsible for
+ * adding Entity object to request attributes
+ *
+ * @author Ruslan Nedvedskiy
+ */
 public class RequestEditor {
 
     public static void addSportKindsToRequest(HttpServletRequest request, SportKindService sportKindService) throws ServiceException {

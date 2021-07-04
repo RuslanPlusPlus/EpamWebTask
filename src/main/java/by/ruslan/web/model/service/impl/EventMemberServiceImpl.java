@@ -9,11 +9,18 @@ import by.ruslan.web.model.dao.impl.EventDaoImpl;
 import by.ruslan.web.model.dao.impl.EventMemberDaoImpl;
 import by.ruslan.web.model.entity.EventMember;
 import by.ruslan.web.model.service.EventMemberService;;
+import by.ruslan.web.model.service.EventResultService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 
+/**
+ * The {@code EventMemberServiceImpl} class represents event member service implementation
+ *
+ * @author Ruslan Nedvedskiy
+ * @see EventMemberService
+ */
 public class EventMemberServiceImpl implements EventMemberService {
 
     static final Logger logger = LogManager.getLogger();

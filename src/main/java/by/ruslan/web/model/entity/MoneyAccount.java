@@ -2,6 +2,11 @@ package by.ruslan.web.model.entity;
 
 import java.math.BigDecimal;
 
+/**
+ * The {@code MoneyAccount} class describes the MoneyAccount entity
+ *
+ * @author Ruslan Nedvedskiy
+ */
 public class MoneyAccount {
 
     private long accountId;

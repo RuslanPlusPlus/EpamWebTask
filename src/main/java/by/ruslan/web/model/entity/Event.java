@@ -4,9 +4,19 @@ import java.sql.Date;
 import java.sql.Time;
 import java.util.List;
 
+/**
+ * The {@code Event} class describes the Event entity
+ *
+ * @author Ruslan Nedvedskiy
+ */
 public class Event {
 
-    public static enum EventStatus{
+    /**
+     * The {@code EventStatus} enum represents possible event types
+     *
+     * @author Ruslan Nedvedskiy
+     */
+    public enum EventStatus{
         ACTIVE("ACTIVE"), COMPLETED("COMPLETED");
 
         private String value;

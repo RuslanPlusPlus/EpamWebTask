@@ -4,6 +4,11 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The {@code User} class describes the User entity
+ *
+ * @author Ruslan Nedvedskiy
+ */
 public class User {
     private long userId;
     private String email;

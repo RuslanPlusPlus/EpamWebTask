@@ -1,8 +1,20 @@
-2021-06-30 19:16:11 [http-nio-8080-exec-1] DEBUG by.ruslan.web.controller.MainServlet - get method
-2021-06-30 19:16:11 [http-nio-8080-exec-1] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToEventPageCommand
-2021-06-30 19:16:12 [http-nio-8080-exec-1] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Event 18 is ready to bet
-2021-06-30 19:16:12 [http-nio-8080-exec-1] DEBUG by.ruslan.web.controller.MainServlet - /pages/event.jsp
-2021-06-30 19:16:19 [http-nio-8080-exec-3] DEBUG by.ruslan.web.controller.MainServlet - get method
-2021-06-30 19:16:19 [http-nio-8080-exec-3] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToMakeBetPageCommand
-2021-06-30 19:16:19 [http-nio-8080-exec-3] DEBUG by.ruslan.web.model.service.impl.EventServiceImpl - Event 18 is ready to bet
-2021-06-30 19:16:19 [http-nio-8080-exec-3] DEBUG by.ruslan.web.controller.MainServlet - /pages/makeBetPage.jsp
+2021-07-02 23:03:35 [http-nio-8080-exec-24] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-07-02 23:03:35 [http-nio-8080-exec-24] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToLoginPageCommand
+2021-07-02 23:03:35 [http-nio-8080-exec-24] DEBUG by.ruslan.web.controller.MainServlet - /pages/signin.jsp
+2021-07-02 23:03:38 [http-nio-8080-exec-27] DEBUG by.ruslan.web.controller.MainServlet - post method
+2021-07-02 23:03:38 [http-nio-8080-exec-27] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.SignInCommand
+2021-07-02 23:03:38 [http-nio-8080-exec-27] DEBUG by.ruslan.web.command.impl.SignInCommand - User authorized
+2021-07-02 23:03:38 [http-nio-8080-exec-27] DEBUG by.ruslan.web.command.impl.SignInCommand - Optional[User{username=Ruslan, userId=2, email=ruslanned2001@gmail.com, role=ADMIN, balance=0.00Active bets=[]Completed bets bets=[]}]
+2021-07-02 23:03:38 [http-nio-8080-exec-27] DEBUG by.ruslan.web.controller.MainServlet - /index.jsp
+2021-07-02 23:03:38 [http-nio-8080-exec-28] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-07-02 23:03:38 [http-nio-8080-exec-28] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToMainPageCommand
+2021-07-02 23:03:38 [http-nio-8080-exec-28] DEBUG by.ruslan.web.controller.MainServlet - /pages/main.jsp
+2021-07-02 23:03:40 [http-nio-8080-exec-25] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-07-02 23:03:40 [http-nio-8080-exec-25] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToAdminPageCommand
+2021-07-02 23:03:40 [http-nio-8080-exec-25] DEBUG by.ruslan.web.controller.MainServlet - /pages/admin.jsp
+2021-07-02 23:03:40 [http-nio-8080-exec-22] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-07-02 23:03:40 [http-nio-8080-exec-22] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToAdminPageCommand
+2021-07-02 23:03:40 [http-nio-8080-exec-22] DEBUG by.ruslan.web.controller.MainServlet - /pages/admin.jsp
+2021-07-02 23:03:41 [http-nio-8080-exec-24] DEBUG by.ruslan.web.controller.MainServlet - get method
+2021-07-02 23:03:41 [http-nio-8080-exec-24] DEBUG by.ruslan.web.command.CommandFactory - Command class: class by.ruslan.web.command.impl.ToUsersPageCommand
+2021-07-02 23:03:41 [http-nio-8080-exec-24] DEBUG by.ruslan.web.controller.MainServlet - /pages/users.jsp

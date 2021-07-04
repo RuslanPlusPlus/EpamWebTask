@@ -1,5 +1,10 @@
 package by.ruslan.web.model.dao;
 
+/**
+ * The {@code BetColumn} class contains all column names of corresponding database bet table.
+ *
+ * @author Ruslan Nedvedskiy
+ */
 public final class BetColumn {
     public static final String BET_ID = "bet_id";
     public static final String BET_TYPE = "bet_type";

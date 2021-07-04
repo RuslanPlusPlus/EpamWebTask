@@ -16,6 +16,7 @@ import by.ruslan.web.model.entity.Event;
 import by.ruslan.web.model.entity.EventResult;
 import by.ruslan.web.model.entity.User;
 import by.ruslan.web.model.service.EventResultService;
+import by.ruslan.web.model.service.EventService;
 import com.google.protobuf.ServiceException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -25,6 +26,12 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+/**
+ * The {@code EventResultServiceImpl} class represents event result service implementation
+ *
+ * @author Ruslan Nedvedskiy
+ * @see EventResultService
+ */
 public class EventResultServiceImpl implements EventResultService {
     static final Logger logger = LogManager.getLogger();
     private static final double DRAW_COEF = 1.5;

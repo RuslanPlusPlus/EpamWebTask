@@ -1,5 +1,10 @@
 package by.ruslan.web.model.dao;
 
+/**
+ * The {@code EventResultColumn} class contains all column names of corresponding database evenResult table.
+ *
+ * @author Ruslan Nedvedskiy
+ */
 public final class EventResultColumn {
     public static final String EVENT_ID = "event_id";
     public static final String WINNER_ID = "winner_id";

@@ -1,5 +1,11 @@
 package by.ruslan.web.exception;
 
+/**
+ * The {@code BetException} class represents bet exception.
+ *
+ * @author Ruslan Nedvedskiy
+ */
+
 public class BetException extends Exception{
 
     private String errorMessage;

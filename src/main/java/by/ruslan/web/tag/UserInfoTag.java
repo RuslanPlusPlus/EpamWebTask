@@ -10,6 +10,12 @@ import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.TagSupport;
 import java.io.IOException;
 
+/**
+ * The {@code UserInfoTag} class represents custom tag
+ *
+ * @author Ruslan Nedvedskiy
+ * @see TagSupport
+ */
 public class UserInfoTag extends TagSupport {
 
     /*<h3>${user.username}</h3>

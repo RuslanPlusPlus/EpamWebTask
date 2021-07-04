@@ -12,6 +12,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.Optional;
 
+/**
+ * The {@code ToMakeBetPageCommand} class is responsible for redirecting
+ * to make bet page.
+ *
+ * @author Ruslan Nedvedskiy
+ * @see Command
+ */
+
 public class ToMakeBetPageCommand implements Command {
 
     static final Logger logger = LogManager.getLogger();

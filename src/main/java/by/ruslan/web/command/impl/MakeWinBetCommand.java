@@ -14,6 +14,12 @@ import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import java.math.BigDecimal;
 
+/**
+ * The {@code MakeWinBetCommand} class is responsible for making win bet.
+ *
+ * @author Ruslan Nedvedskiy
+ * @see Command
+ */
 
 public class MakeWinBetCommand implements Command {
 

@@ -11,6 +11,7 @@ import by.ruslan.web.exception.ServiceException;
 import by.ruslan.web.model.entity.UserRole;
 import by.ruslan.web.model.service.UserService;
 import by.ruslan.web.util.PasswordEncryptor;
+import by.ruslan.web.util.XssProtector;
 import by.ruslan.web.validator.UserValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -20,6 +21,12 @@ import java.security.NoSuchAlgorithmException;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * The {@code UserServiceImpl} class represents user service implementation
+ *
+ * @author Ruslan Nedvedskiy
+ * @see UserService
+ */
 public class UserServiceImpl implements UserService {
 
     static final Logger logger = LogManager.getLogger();
@@ -37,11 +44,16 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Optional<User> findByEmail(String email) throws ServiceException {
+        Optional<User> userOptional = Optional.empty();
         try {
-            return userDao.findUserByEmail(email);
+            email = XssProtector.filterXss(email);
+            if (UserValidator.isEmailValid(email)){
+                userOptional = userDao.findUserByEmail(email);
+            }
         } catch (DAOException e) {
             throw new ServiceException(e);
         }
+        return userOptional;
     }
 
     @Override

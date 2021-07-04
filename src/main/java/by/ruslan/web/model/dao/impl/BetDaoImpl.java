@@ -14,6 +14,12 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The {@code BetDaoImpl} class represents bet dao implementation
+ *
+ * @author Ruslan Nedvedskiy
+ * @see BetDao
+ */
 public class BetDaoImpl implements BetDao {
 
     static final Logger logger = LogManager.getLogger();

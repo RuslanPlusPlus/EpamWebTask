@@ -21,6 +21,13 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * The {@code AddEventCommand} class is responsible for adding event.
+ *
+ * @author Ruslan Nedvedskiy
+ * @see Command
+ */
+
 public class AddEventCommand implements Command {
 
     static final Logger logger = LogManager.getLogger();

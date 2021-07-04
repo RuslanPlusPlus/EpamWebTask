@@ -1,6 +1,7 @@
 package by.ruslan.web.model.dao.impl;
 
 import by.ruslan.web.exception.DAOException;
+import by.ruslan.web.model.dao.EventDao;
 import by.ruslan.web.model.dao.EventMemberColumn;
 import by.ruslan.web.model.dao.EventMemberDao;
 import by.ruslan.web.model.dao.SportKindColumn;
@@ -15,6 +16,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * The {@code EventMemberDaoImpl} class represents event member dao implementation
+ *
+ * @author Ruslan Nedvedskiy
+ * @see EventMemberDao
+ */
 public class EventMemberDaoImpl implements EventMemberDao {
 
     static final Logger logger = LogManager.getLogger();

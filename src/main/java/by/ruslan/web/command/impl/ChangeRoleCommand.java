@@ -12,6 +12,13 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * The {@code ChangeRoleCommand} class is responsible for changing user role.
+ *
+ * @author Ruslan Nedvedskiy
+ * @see Command
+ */
+
 public class ChangeRoleCommand implements Command {
 
     static final Logger logger = LogManager.getLogger();

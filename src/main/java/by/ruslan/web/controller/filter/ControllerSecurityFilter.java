@@ -14,6 +14,13 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Set;
 
+/**
+ * The {@code ControllerSecurityFilter} class is responsible filtering
+ * user access to resources according user role.
+ *
+ * @author Ruslan Nedvedskiy
+ */
+
 @WebFilter(urlPatterns = { "/main-servlet" }, servletNames = { "MainServlet" })
 public class ControllerSecurityFilter implements Filter {
 

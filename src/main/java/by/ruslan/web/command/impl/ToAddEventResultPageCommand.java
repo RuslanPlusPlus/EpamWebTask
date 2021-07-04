@@ -12,6 +12,14 @@ import org.apache.logging.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * The {@code ToAddEventResultPageCommand} class is responsible for redirecting
+ * to add event result page.
+ *
+ * @author Ruslan Nedvedskiy
+ * @see Command
+ */
+
 public class ToAddEventResultPageCommand implements Command {
 
     static final Logger logger = LogManager.getLogger();

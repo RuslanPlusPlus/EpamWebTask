@@ -14,6 +14,11 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * The {@code ConnectionPool} class represents pool of database connections
+ *
+ * @author Ruslan Nedvedskiy
+ */
 public class ConnectionPool {
     private static final Logger logger = LogManager.getLogger();
     private static final int DEFAULT_POOL_SIZE = 8;
@@ -23,6 +28,11 @@ public class ConnectionPool {
     private final BlockingQueue<ProxyConnection> takenConnections;
     private static AtomicBoolean isCreated = new AtomicBoolean(false);
 
+    /**
+     * Get instance of this class
+     *
+     * @return {@link ConnectionPool} instance
+     */
     public static ConnectionPool getInstance() {
         if (!isCreated.get()){
             lock.lock();
@@ -35,6 +45,11 @@ public class ConnectionPool {
         return instance;
     }
 
+    /**
+     * Initialize connection pool
+     *
+     * @throws RuntimeException if no connection created
+     */
     private ConnectionPool(){
         freeConnections = new LinkedBlockingDeque<>(DEFAULT_POOL_SIZE);
         takenConnections = new LinkedBlockingDeque<>(DEFAULT_POOL_SIZE);
@@ -53,6 +68,11 @@ public class ConnectionPool {
         }
     }
 
+    /**
+     * Get a connection from the connection pool
+     *
+     * @return {@link Connection} connection to the database
+     */
     public Connection getConnection(){
         ProxyConnection connection = null;
         try {
@@ -65,6 +85,10 @@ public class ConnectionPool {
         return connection;
     }
 
+    /**
+     * Returns the connection to the connection pool
+     * @param connection {@link Connection} connection to the database
+     */
     public void releaseConnection(Connection connection){
         if (connection.getClass() == ProxyConnection.class){
             if (takenConnections.remove(connection)){
@@ -78,6 +102,9 @@ public class ConnectionPool {
         }
     }
 
+    /**
+     * Destroy connection pool
+     */
     public void destroyPool(){
         for (int i = 0; i < DEFAULT_POOL_SIZE; i++){
             try {
@@ -89,6 +116,9 @@ public class ConnectionPool {
         deregisterDrivers();
     }
 
+    /**
+     * Deregister drivers
+     */
     private void deregisterDrivers() {
         DriverManager.getDrivers().asIterator().forEachRemaining(driver -> {
             try {

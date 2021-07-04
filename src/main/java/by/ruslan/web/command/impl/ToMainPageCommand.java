@@ -21,6 +21,14 @@ import javax.servlet.http.HttpSession;
 import java.math.BigDecimal;
 import java.util.List;
 
+/**
+ * The {@code ToMainPageCommand} class is responsible for redirecting
+ * to main page.
+ *
+ * @author Ruslan Nedvedskiy
+ * @see Command
+ */
+
 public class ToMainPageCommand implements Command {
 
     static final Logger logger = LogManager.getLogger();

@@ -16,6 +16,13 @@ import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import java.math.BigDecimal;
 
+/**
+ * The {@code AddEventResultCommand} class is responsible for adding event result.
+ *
+ * @author Ruslan Nedvedskiy
+ * @see Command
+ */
+
 public class AddEventResultCommand implements Command {
 
     static final Logger logger = LogManager.getLogger();

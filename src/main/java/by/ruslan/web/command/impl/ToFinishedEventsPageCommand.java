@@ -13,6 +13,14 @@ import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The {@code ToFinishedEventsPageCommand} class is responsible for redirecting
+ * to finished events page.
+ *
+ * @author Ruslan Nedvedskiy
+ * @see Command
+ */
+
 public class ToFinishedEventsPageCommand implements Command {
 
     static final Logger logger = LogManager.getLogger();

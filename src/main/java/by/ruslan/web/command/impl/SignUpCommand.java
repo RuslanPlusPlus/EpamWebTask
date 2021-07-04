@@ -10,6 +10,13 @@ import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Optional;
 
+/**
+ * The {@code SignUpCommand} class is responsible for user registration.
+ *
+ * @author Ruslan Nedvedskiy
+ * @see Command
+ */
+
 public class SignUpCommand implements Command {
 
     static final Logger logger = LogManager.getLogger();

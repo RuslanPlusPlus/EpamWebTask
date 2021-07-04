@@ -7,6 +7,14 @@ import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+/**
+ * The {@code ToTopUpBalancePageCommand} class is responsible for redirecting
+ * to top up balance page.
+ *
+ * @author Ruslan Nedvedskiy
+ * @see Command
+ */
+
 public class ToTopUpBalancePageCommand implements Command {
 
     static final Logger logger = LogManager.getLogger();

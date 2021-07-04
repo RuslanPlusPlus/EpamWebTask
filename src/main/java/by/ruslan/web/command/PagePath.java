@@ -1,5 +1,11 @@
 package by.ruslan.web.command;
 
+/**
+ * The {@code PagePath} class contains all page paths.
+ *
+ * @author Ruslan Nedvedskiy
+ */
+
 public final class PagePath {
     public static final String INDEX_JSP = "/index.jsp";
     public static final String MAIN_PAGE = "/pages/main.jsp";

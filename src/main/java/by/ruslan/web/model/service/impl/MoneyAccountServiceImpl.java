@@ -10,6 +10,7 @@ import by.ruslan.web.model.dao.impl.UserDaoImpl;
 import by.ruslan.web.model.entity.MoneyAccount;
 import by.ruslan.web.model.entity.User;
 import by.ruslan.web.model.service.MoneyAccountService;
+import by.ruslan.web.model.service.SportKindService;
 import by.ruslan.web.validator.CardValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,6 +18,12 @@ import org.apache.logging.log4j.Logger;
 import java.math.BigDecimal;
 import java.util.Optional;
 
+/**
+ * The {@code MoneyAccountServiceImpl} class represents money account service implementation
+ *
+ * @author Ruslan Nedvedskiy
+ * @see MoneyAccountService
+ */
 public class MoneyAccountServiceImpl implements MoneyAccountService {
 
     static final Logger logger = LogManager.getLogger();

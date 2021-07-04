@@ -7,12 +7,19 @@ import by.ruslan.web.model.dao.SportKindDao;
 import by.ruslan.web.model.dao.impl.SportKindDaoImpl;
 import by.ruslan.web.model.entity.SportKind;
 import by.ruslan.web.model.service.SportKindService;
+import by.ruslan.web.model.service.UserService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * The {@code SportKindServiceImpl} class represents sport kind service implementation
+ *
+ * @author Ruslan Nedvedskiy
+ * @see SportKindService
+ */
 public class SportKindServiceImpl implements SportKindService {
 
     static final Logger logger = LogManager.getLogger();

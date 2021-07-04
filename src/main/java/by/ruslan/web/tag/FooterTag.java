@@ -7,6 +7,12 @@ import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.TagSupport;
 import java.io.IOException;
 
+/**
+ * The {@code FooterTag} class represents custom tag
+ *
+ * @author Ruslan Nedvedskiy
+ * @see TagSupport
+ */
 public class FooterTag extends TagSupport {
 
     static Logger logger = LogManager.getLogger();

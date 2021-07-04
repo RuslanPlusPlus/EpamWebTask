@@ -1,5 +1,11 @@
 package by.ruslan.web.exception;
 
+/**
+ * The {@code MoneyAccountException} class represents money account exception.
+ *
+ * @author Ruslan Nedvedskiy
+ */
+
 public class MoneyAccountException extends Exception{
     private String errorMessage;
 

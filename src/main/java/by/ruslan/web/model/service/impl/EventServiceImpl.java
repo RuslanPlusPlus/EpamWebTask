@@ -13,6 +13,7 @@ import by.ruslan.web.model.entity.Event;
 import by.ruslan.web.model.entity.EventMember;
 import by.ruslan.web.model.entity.EventResult;
 import by.ruslan.web.model.service.EventService;
+import by.ruslan.web.model.service.MoneyAccountService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -22,6 +23,12 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * The {@code EventServiceImpl} class represents event service implementation
+ *
+ * @author Ruslan Nedvedskiy
+ * @see EventService
+ */
 public class EventServiceImpl implements EventService {
 
     static final Logger logger = LogManager.getLogger();

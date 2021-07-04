@@ -1,5 +1,6 @@
 package by.ruslan.web.model.dao.impl;
 
+import by.ruslan.web.model.dao.SportKindDao;
 import by.ruslan.web.model.dao.UserDao;
 import by.ruslan.web.model.dao.UsersColumn;
 import by.ruslan.web.model.entity.User;
@@ -15,6 +16,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * The {@code UserDaoImpl} class represents user dao implementation
+ *
+ * @author Ruslan Nedvedskiy
+ * @see UserDao
+ */
 public class UserDaoImpl implements UserDao {
 
     static final Logger logger = LogManager.getLogger();

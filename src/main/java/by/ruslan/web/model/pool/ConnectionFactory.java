@@ -10,6 +10,13 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
+/**
+ * The {@code ConnectionFactory} class is responsible for
+ * registering drivers and
+ * creating database connection
+ *
+ * @author Ruslan Nedvedskiy
+ */
 class ConnectionFactory {
     private static final Logger logger = LogManager.getLogger();
     private static final Properties properties = new Properties();
@@ -36,6 +43,12 @@ class ConnectionFactory {
 
     private ConnectionFactory(){}
 
+    /**
+     * Creates a connection to the database
+     *
+     * @return {@link Connection} connection to the database
+     * @throws SQLException throws SQLException
+     */
     static Connection createConnection() throws SQLException {
         return DriverManager.getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD);
     }

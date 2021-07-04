@@ -4,6 +4,13 @@ import by.ruslan.web.command.CommandType;
 
 import java.util.Set;
 
+/**
+ * The {@code RoleAccessType} enum
+ * Assigns allowed command types to user roles
+ *
+ * @author Ruslan Nedvedskiy
+ */
+
 public enum RoleAccessType {
     GUEST(Set.of(
             CommandType.SIGN_IN,

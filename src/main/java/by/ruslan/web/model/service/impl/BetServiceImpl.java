@@ -12,6 +12,7 @@ import by.ruslan.web.model.dao.impl.UserDaoImpl;
 import by.ruslan.web.model.entity.Bet;
 import by.ruslan.web.model.entity.User;
 import by.ruslan.web.model.service.BetService;
+import by.ruslan.web.model.service.EventMemberService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -19,6 +20,12 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * The {@code BetServiceImpl} class represents bet service implementation
+ *
+ * @author Ruslan Nedvedskiy
+ * @see BetService
+ */
 public class BetServiceImpl implements BetService {
 
     static final Logger logger = LogManager.getLogger();

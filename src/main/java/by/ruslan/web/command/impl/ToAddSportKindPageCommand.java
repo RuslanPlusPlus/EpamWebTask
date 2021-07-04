@@ -10,6 +10,14 @@ import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+/**
+ * The {@code ToAddSportKindPageCommand} class is responsible for redirecting
+ * to add kind of sport page.
+ *
+ * @author Ruslan Nedvedskiy
+ * @see Command
+ */
+
 public class ToAddSportKindPageCommand implements Command {
 
     static final Logger logger = LogManager.getLogger();

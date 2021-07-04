@@ -2,6 +2,7 @@ package by.ruslan.web.model.dao.impl;
 
 import by.ruslan.web.exception.DAOException;
 import by.ruslan.web.model.dao.EventMemberColumn;
+import by.ruslan.web.model.dao.EventMemberDao;
 import by.ruslan.web.model.dao.EventResultColumn;
 import by.ruslan.web.model.dao.EventResultDao;
 import by.ruslan.web.model.entity.EventMember;
@@ -16,6 +17,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * The {@code EventResultDaoImpl} class represents event result dao implementation
+ *
+ * @author Ruslan Nedvedskiy
+ * @see EventResultDao
+ */
 public class EventResultDaoImpl implements EventResultDao {
 
     private static final String SQL_ADD_EVENT_RESULT =

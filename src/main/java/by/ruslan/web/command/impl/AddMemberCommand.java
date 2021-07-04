@@ -12,6 +12,13 @@ import org.apache.logging.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * The {@code AddMemberCommand} class is responsible for adding member.
+ *
+ * @author Ruslan Nedvedskiy
+ * @see Command
+ */
+
 public class AddMemberCommand implements Command {
 
     static final Logger logger = LogManager.getLogger();

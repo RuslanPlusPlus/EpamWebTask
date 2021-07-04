@@ -8,6 +8,14 @@ import by.ruslan.web.command.SessionAttribute;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+/**
+ * The {@code ToAdminPageCommand} class is responsible for redirecting
+ * to admin page.
+ *
+ * @author Ruslan Nedvedskiy
+ * @see Command
+ */
+
 public class ToAdminPageCommand implements Command {
     @Override
     public Router execute(HttpServletRequest request) {

@@ -1,5 +1,11 @@
 package by.ruslan.web.command;
 
+/**
+ * The {@code RequestParameter} class contains all request parameters.
+ *
+ * @author Ruslan Nedvedskiy
+ */
+
 public final class RequestParameter {
 
     public static final String EMAIL = "email";

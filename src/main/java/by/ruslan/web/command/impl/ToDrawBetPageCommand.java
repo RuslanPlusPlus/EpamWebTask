@@ -10,6 +10,14 @@ import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+/**
+ * The {@code ToDrawBetPageCommand} class is responsible for redirecting
+ * to draw bet page.
+ *
+ * @author Ruslan Nedvedskiy
+ * @see Command
+ */
+
 public class ToDrawBetPageCommand implements Command {
 
     static final Logger logger = LogManager.getLogger();

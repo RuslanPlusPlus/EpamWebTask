@@ -1,5 +1,11 @@
 package by.ruslan.web.command;
 
+/**
+ * The {@code RequestAttribute} class contains all request attributes.
+ *
+ * @author Ruslan Nedvedskiy
+ */
+
 public final class RequestAttribute {
 
     public static final String ERROR = "error";

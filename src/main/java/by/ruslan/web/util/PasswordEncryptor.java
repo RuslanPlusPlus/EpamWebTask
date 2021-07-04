@@ -5,6 +5,11 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+/**
+ * The {@code PasswordEncryptor} class is responsible for password encryption
+ *
+ * @author Ruslan Nedvedskiy
+ */
 public class PasswordEncryptor {
     private final static String ENCRYPTOR_ALGORITHM = "SHA-1";
     private static final String ENCODING = "utf8";

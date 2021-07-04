@@ -11,6 +11,13 @@ import org.apache.logging.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * The {@code AddSportKindCommand} class is responsible for adding kind of sport.
+ *
+ * @author Ruslan Nedvedskiy
+ * @see Command
+ */
+
 public class AddSportKindCommand implements Command {
 
     static final Logger logger = LogManager.getLogger();

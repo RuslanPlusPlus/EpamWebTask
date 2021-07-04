@@ -18,6 +18,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * The {@code ToPersonalPageCommand} class is responsible for redirecting
+ * to personal page.
+ *
+ * @author Ruslan Nedvedskiy
+ * @see Command
+ */
+
 public class ToPersonalPageCommand implements Command {
 
     static final Logger logger = LogManager.getLogger();

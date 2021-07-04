@@ -8,6 +8,14 @@ import by.ruslan.web.command.SessionAttribute;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+/**
+ * The {@code ToLoginPageCommand} class is responsible for redirecting
+ * to login page.
+ *
+ * @author Ruslan Nedvedskiy
+ * @see Command
+ */
+
 public class ToLoginPageCommand implements Command {
 
     @Override

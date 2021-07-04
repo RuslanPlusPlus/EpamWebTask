@@ -1,5 +1,11 @@
 package by.ruslan.web.command;
 
+/**
+ * The {@code SessionAttribute} class contains all session attributes.
+ *
+ * @author Ruslan Nedvedskiy
+ */
+
 public final class SessionAttribute {
     public final static String USER = "user";
     public final static String LOCALE = "currentLocale";

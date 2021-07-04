@@ -12,6 +12,14 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * The {@code ToEventPageCommand} class is responsible for redirecting
+ * to event page.
+ *
+ * @author Ruslan Nedvedskiy
+ * @see Command
+ */
+
 public class ToEventPageCommand implements Command {
 
     static final Logger logger = LogManager.getLogger();

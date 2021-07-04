@@ -1,5 +1,10 @@
 package by.ruslan.web.model.entity;
 
+/**
+ * The {@code SportKind} class describes the SportKind entity
+ *
+ * @author Ruslan Nedvedskiy
+ */
 public class SportKind {
     private long kindId;
     private String kindName;

@@ -1,7 +1,12 @@
 package by.ruslan.web.model.entity;
 
+/**
+ * The {@code EventResult} class describes the EventResult entity
+ *
+ * @author Ruslan Nedvedskiy
+ */
 public class EventResult {
-    private long eventId; //one to one
+    private long eventId;
     private long winnerId;
     private long loserId;
     private int winnerScore;

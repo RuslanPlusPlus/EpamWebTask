@@ -5,6 +5,13 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.annotation.WebInitParam;
 import java.io.IOException;
 
+/**
+ * The {@code EncodingFilter} class is responsible changing
+ * jsp pages encoding.
+ *
+ * @author Ruslan Nedvedskiy
+ */
+
 @WebFilter(urlPatterns = {"/*"},
             initParams = {
             @WebInitParam(name = "encoding", value = "UTF-8", description = "Encoding param")

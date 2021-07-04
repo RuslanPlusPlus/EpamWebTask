@@ -1,6 +1,7 @@
 package by.ruslan.web.model.dao.impl;
 
 import by.ruslan.web.exception.DAOException;
+import by.ruslan.web.model.dao.EventResultDao;
 import by.ruslan.web.model.dao.MoneyAccountColumn;
 import by.ruslan.web.model.dao.MoneyAccountDao;
 import by.ruslan.web.model.entity.MoneyAccount;
@@ -12,6 +13,12 @@ import java.math.BigDecimal;
 import java.sql.*;
 import java.util.Optional;
 
+/**
+ * The {@code MoneyAccountDaoImpl} class represents money account dao implementation
+ *
+ * @author Ruslan Nedvedskiy
+ * @see MoneyAccountDao
+ */
 public class MoneyAccountDaoImpl implements MoneyAccountDao {
 
     static final Logger logger = LogManager.getLogger();
