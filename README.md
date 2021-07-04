@@ -1,37 +1,30 @@
-# EpamWebTask
-#### EpamWebTask
-The web application is an application for buying train tickets.
-The application contains train routes and their costs. The administrator manages users, trains and tickets. To buy a ticket, the client needs to register.
+# Sport bet web application
+## Developer - Ruslan Nedvedskiy
 
-## User roles and functions available to them
-- Guest
-    - switch language;
-    - train search by stations;
-    - viewing information about trains;
-    - registration;
-    - authorization;
-- Сlient
-    - switch language;
-    - train search by stations;
-    - viewing information about trains;
-    - registration;
-    - authorization;
+## Description
+Sport bet is a web application where you can make bets on various sport events.
+
+## Functional for guests
+* Authorization / registration 
+* Switch language
+* View active sport events
+* View sport events filtered by sport kind
+
+## Common functional for authorized users
+* Logout
+* Switch language
+* View personal page
+* View active sport events
+* View sport events filtered by sport kind
+* Make bet of 3 types (DRAW, WIN, EXACT SCORE)
+* Top up wallet balance 
+
+## Exclusive functional
 - Bookmaker
-    - switch language;
-    - train search by stations;
-    - viewing information about trains;
-    - buy ticket;
-    - viewing own tickets;
-    - change password;
-    - logout;
-
+    - add event;
+    - add sport kind
+    - add sport kind member;
+    - add event result;
 - Administrator
-    - switch language;
-    - train search by stations;
-    - viewing information about trains;
-    - viewing information about users;
-    - changing user role;
-    - adding a train;
-    - view information about tickets;
-    - change password;
-    - logout.
+    - change user role
+    - view user list
